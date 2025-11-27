@@ -13,17 +13,11 @@ class ParsedModelOutput:
 
 
 def parse_model_response(raw_text: str) -> ParsedModelOutput:
-    """
-    Parse the model's response into (reasoning, final_answer).
-
-    Primary expectation: the model returns a pure JSON object as instructed.
-    We still handle mild deviations (extra text, etc.) defensively.
-    """
+    """Parse the model's response into (reasoning, final_answer)."""
     text = raw_text.strip()
 
     obj: Optional[Dict[str, Any]] = None
 
-    # try direct JSON
     try:
         candidate = json.loads(text)
         if isinstance(candidate, dict):
@@ -31,7 +25,6 @@ def parse_model_response(raw_text: str) -> ParsedModelOutput:
     except Exception:
         obj = None
 
-    # try to extract a JSON object substring
     if obj is None:
         match = re.search(r"\{.*\}", text, flags=re.DOTALL)
         if match:
@@ -50,7 +43,6 @@ def parse_model_response(raw_text: str) -> ParsedModelOutput:
         reasoning = obj.get("reasoning") or obj.get("thoughts") or obj.get("explanation")
         final_answer = obj.get("final_answer") or obj.get("answer")
 
-    # fallback: if JSON parsing failed, try a crude pattern
     if final_answer is None:
         m = re.search(
             r"final_answer\s*[:=-]\s*['\"“”]?(.+?)['\"“”]?(?:$|\n)",
@@ -67,14 +59,7 @@ def parse_model_response(raw_text: str) -> ParsedModelOutput:
 
 
 def normalize_answer(ans: str, language: Optional[str] = None) -> str:
-    """
-    Light normalization for comparing answers.
-
-    - Trim whitespace
-    - Collapse internal spaces
-    - Lowercase
-    - Basic Persian normalization: remove diacritics, unify Arabic/Farsi letters.
-    """
+    """Normalize answer for comparison (basic, with Persian support)."""
     s = ans.strip()
     s = re.sub(r"\s+", " ", s)
     s = s.lower()
@@ -85,11 +70,9 @@ def normalize_answer(ans: str, language: Optional[str] = None) -> str:
         lang = ""
 
     if lang.startswith("fa") or "persian" in lang or "farsi" in lang:
-        # Remove diacritics and tatweel
         s = re.sub(r"[\u064b-\u065f\u0670\u06d6-\u06ed\u0640]", "", s)
-        # Normalize Arabic- vs Farsi- forms of yeh and kaf
-        s = s.replace("\u064a", "\u06cc")  # ARABIC YEH -> FARSI YEH
-        s = s.replace("\u0643", "\u06a9")  # ARABIC KAF -> FARSI KAF
+        s = s.replace("\u064a", "\u06cc")
+        s = s.replace("\u0643", "\u06a9")
 
     return s
 
@@ -114,9 +97,7 @@ class SampleEvaluation:
 
 
 def summarize_accuracy(records: List[SampleEvaluation]) -> Dict[str, Any]:
-    """
-    Simple aggregation utility for overall accuracy.
-    """
+    """Simple aggregation utility for overall accuracy."""
     if not records:
         return {"accuracy": 0.0, "n": 0}
 

@@ -29,9 +29,7 @@ from .experiments import (
 
 
 def create_default_models() -> List[VisionLanguageModel]:
-    """
-    Define which VLMs to test.
-    """
+    """Define which VLMs to test."""
     return [
         OpenAIGPT4o(model_name="gpt-4o"),
     ]
@@ -54,10 +52,7 @@ def run_experiment_on_sample(
     sample: PuzzleSample,
     system_prompt: str,
 ) -> Dict[str, Any]:
-    """
-    Run a single experiment/model on a single sample,
-    including handling retries (Experiment IV).
-    """
+    """Run a single experiment/model on a single sample (with retries if needed)."""
     attempts: List[Dict[str, Any]] = []
 
     for attempt_idx in range(experiment.max_attempts):
@@ -103,7 +98,6 @@ def run_experiment_on_sample(
         "experiment_name": experiment.name,
         "model_name": model.name,
         "answer_language": sample.answer_language,
-        "category": sample.category,
         "gold_answer": sample.answer,
         "correct": final_attempt["correct"],
         "attempts_used": len(attempts),
@@ -119,13 +113,7 @@ def run_all_experiments(
     max_samples: Optional[int] = None,
     retry_attempts: int = 3,
 ) -> None:
-    """
-    Top-level runner:
-      - loads dataset,
-      - iterates over experiments, models, and samples,
-      - uses the SQLite cache to avoid re-running completed pairs,
-      - prints aggregate accuracy stats at the end.
-    """
+    """Top-level runner looping over experiments, models, and samples."""
     samples = load_dataset(dataset_path)
     if max_samples is not None:
         samples = samples[:max_samples]

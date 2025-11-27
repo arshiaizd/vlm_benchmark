@@ -11,13 +11,11 @@ from ..dataset import PuzzleSample
 class ExperimentConfig:
     name: str
     description: str
-    max_attempts: int = 1  # for experiment IV, set >1
+    max_attempts: int = 1
 
 
 class Experiment(ABC):
-    """
-    Base class for all experiments.
-    """
+    """Base class for all experiments."""
 
     def __init__(self, name: str, description: str, max_attempts: int = 1):
         self.config = ExperimentConfig(name=name, description=description, max_attempts=max_attempts)
@@ -41,7 +39,5 @@ class Experiment(ABC):
         attempt_index: int,
         previous_attempts: List[Dict[str, Any]],
     ) -> Optional[str]:
-        """
-        Build a human-readable hint string (or None) for this attempt.
-        """
+        """Build a human-readable hint string (or None) for this attempt."""
         raise NotImplementedError

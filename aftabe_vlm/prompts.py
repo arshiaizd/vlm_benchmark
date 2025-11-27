@@ -28,10 +28,10 @@ YOUR TASK:
 
 RESPONSE FORMAT (VERY IMPORTANT):
 You MUST respond with ONLY a single JSON object, with exactly these two keys:
-  {
+  {{
     "reasoning": "<your step-by-step reasoning in plain text>",
     "final_answer": "<your SINGLE best guess word or phrase>"
-  }
+  }}
 
 Constraints:
 - Do NOT include any additional keys.
@@ -48,15 +48,12 @@ def build_puzzle_user_prompt(
     sample: PuzzleSample,
     hint_text: Optional[str] = None,
 ) -> str:
-    """
-    Build the user message text for a puzzle, optionally with hints.
-    The image itself is passed separately to the VLM via the API; this text only.
-    """
+    """Build the user message text for a puzzle, optionally with hints."""
     lines = [
         f"Puzzle ID: {sample.id}",
         "",
         "You are solving a picture word puzzle based on the attached image.",
-        f"Target answer language: {sample.answer_language} (category: {sample.category}).",
+        f"Target answer language: {sample.answer_language}.",
         "",
         "Instructions:",
         "- Look carefully at the attached image.",

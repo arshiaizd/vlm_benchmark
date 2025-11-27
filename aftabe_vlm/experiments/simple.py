@@ -7,11 +7,7 @@ from ..dataset import PuzzleSample
 
 
 class SimpleExperiment(Experiment):
-    """
-    Experiment I:
-      - Just prompt the model with the base instructions and the puzzle image.
-      - No additional hints.
-    """
+    """Experiment I: no hints, just the image and base instructions."""
 
     def __init__(self):
         super().__init__(

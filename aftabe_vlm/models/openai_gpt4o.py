@@ -10,14 +10,7 @@ from .base import VisionLanguageModel, ModelResponse
 
 
 class OpenAIGPT4o(VisionLanguageModel):
-    """
-    Concrete VLM implementation using OpenAI's GPT-4o (or similar) with vision.
-
-    You must set the environment variable OPENAI_API_KEY before running.
-
-    To add another OpenAI model variant, just instantiate with a different
-    `model_name` or create a sibling class.
-    """
+    """Concrete VLM implementation using OpenAI's GPT-4o (or similar) with vision."""
 
     def __init__(self, model_name: str = "gpt-4o"):
         self.client = OpenAI()

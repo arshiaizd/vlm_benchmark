@@ -9,21 +9,18 @@ import csv
 
 @dataclass
 class PuzzleSample:
-    """
-    Representation of one puzzle.
+    """Representation of one puzzle.
 
     Expected fields in the source file:
         - id: unique identifier (string or int)
         - image_path: path to image (relative to dataset file or absolute)
         - answer: ground-truth word/phrase
         - answer_language: e.g. "en", "fa", "cross", "fa-en"
-        - category: e.g. "english", "persian", "cross_lingual"
     """
     id: str
     image_path: str
     answer: str
     answer_language: str
-    category: str
     metadata: Dict[str, Any] = field(default_factory=dict)
 
 
@@ -49,13 +46,11 @@ def _load_jsonl(path: Path) -> List[PuzzleSample]:
                 raise ValueError(f"Missing answer for sample {sid}")
 
             answer_language = obj.get("answer_language", "unknown")
-            category = obj.get("category", obj.get("split", "unknown"))
 
             extra = {
                 k: v
                 for k, v in obj.items()
-                if k
-                not in {"id", "image_path", "image", "image_file", "answer", "answer_language", "category", "split"}
+                if k not in {"id", "image_path", "image", "image_file", "answer", "answer_language"}
             }
 
             samples.append(
@@ -64,7 +59,6 @@ def _load_jsonl(path: Path) -> List[PuzzleSample]:
                     image_path=img_path,
                     answer=str(answer),
                     answer_language=str(answer_language),
-                    category=str(category),
                     metadata=extra,
                 )
             )
@@ -90,12 +84,11 @@ def _load_csv(path: Path) -> List[PuzzleSample]:
                 raise ValueError(f"Missing answer for sample {sid}")
 
             answer_language = row.get("answer_language", "unknown")
-            category = row.get("category", row.get("split", "unknown"))
 
             extra = {
                 k: v
                 for k, v in row.items()
-                if k not in {"id", "image_path", "image", "image_file", "answer", "answer_language", "category", "split"}
+                if k not in {"id", "image_path", "image", "image_file", "answer", "answer_language"}
             }
 
             samples.append(
@@ -104,7 +97,6 @@ def _load_csv(path: Path) -> List[PuzzleSample]:
                     image_path=img_path,
                     answer=str(answer),
                     answer_language=str(answer_language),
-                    category=str(category),
                     metadata=extra,
                 )
             )
@@ -112,12 +104,7 @@ def _load_csv(path: Path) -> List[PuzzleSample]:
 
 
 def load_dataset(path: str | Path) -> List[PuzzleSample]:
-    """
-    Load dataset from JSONL or CSV.
-
-    For JSONL: each line is a JSON object with puzzle fields.
-    For CSV: header row defines column names.
-    """
+    """Load dataset from JSONL or CSV."""
     p = Path(path)
     if not p.exists():
         raise FileNotFoundError(p)

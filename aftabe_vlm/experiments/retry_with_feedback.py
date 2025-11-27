@@ -7,13 +7,7 @@ from ..dataset import PuzzleSample
 
 
 class RetryWithFeedbackExperiment(Experiment):
-    """
-    Experiment IV:
-      - First attempt: like the simple experiment.
-      - If the answer is incorrect, give the model another chance.
-      - The new prompt concatenates previous guesses and explicitly says they were wrong.
-      - max_attempts is a hyperparameter for the number of retries.
-    """
+    """Experiment IV: retries with feedback on previous wrong guesses."""
 
     def __init__(self, max_attempts: int = 3):
         super().__init__(

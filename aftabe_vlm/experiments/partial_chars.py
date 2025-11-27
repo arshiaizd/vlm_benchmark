@@ -10,10 +10,7 @@ from ..dataset import PuzzleSample
 
 
 def _deterministic_indices(answer: str, sample_id: str, fraction: float = 0.1) -> List[int]:
-    """
-    Select a deterministic subset of indices for hint characters,
-    based on sample_id for reproducibility.
-    """
+    """Select a deterministic subset of indices for hint characters."""
     indices = [i for i, ch in enumerate(answer) if not ch.isspace()]
     if not indices:
         return []
@@ -30,13 +27,7 @@ def _deterministic_indices(answer: str, sample_id: str, fraction: float = 0.1) -
 
 
 class PartialCharsExperiment(Experiment):
-    """
-    Experiment III:
-      - Reveal 10% of the characters of the answer with their positions as hints.
-
-    Positions are 1-based and defined over the raw answer string (including spaces),
-    but we only reveal non-space characters.
-    """
+    """Experiment III: reveal 10% of characters with their positions."""
 
     def __init__(self):
         super().__init__(

@@ -7,10 +7,7 @@ from ..dataset import PuzzleSample
 
 
 class CharCountExperiment(Experiment):
-    """
-    Experiment II:
-      - Provide the character count of the answer as a hint.
-    """
+    """Experiment II: provide the character count of the answer as a hint."""
 
     def __init__(self):
         super().__init__(

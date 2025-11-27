@@ -7,21 +7,14 @@ import json
 
 
 class ResultCache:
-    """
-    Very simple CSV-backed cache so we can resume experiments without
-    re-calling models.
-
-    Internally keeps everything in memory as a dict keyed by
-    (sample_id, experiment_name, model_name), and rewrites the whole
-    CSV file on each write. This is intentionally simple and explicit.
-    """
+    """Very simple CSV-backed cache keyed by (sample_id, experiment_name, model_name)."""
 
     def __init__(self, csv_path: str | Path):
         self.csv_path = Path(csv_path)
         self._data: Dict[Tuple[str, str, str], Dict[str, Any]] = {}
         self._load()
 
-    # --- internal helpers -------------------------------------------------
+    # internal helpers
 
     def _load(self) -> None:
         if not self.csv_path.exists():
@@ -61,7 +54,7 @@ class ResultCache:
                     }
                 )
 
-    # --- public API (same as before) --------------------------------------
+    # public API
 
     def has(self, sample_id: str, experiment_name: str, model_name: str) -> bool:
         key = (sample_id, experiment_name, model_name)
@@ -85,5 +78,4 @@ class ResultCache:
         self._write_all()
 
     def close(self) -> None:
-        # Nothing special to do for a CSV file.
         pass

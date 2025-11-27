@@ -19,8 +19,8 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--results-db",
         type=str,
-        default="results.sqlite3",
-        help="Path to SQLite cache / results database.",
+        default="results.csv",
+        help="Path to CSV cache / results file.",
     )
     parser.add_argument(
         "--max-samples",
