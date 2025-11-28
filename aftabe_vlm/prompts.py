@@ -50,9 +50,7 @@ def build_puzzle_user_prompt(
 ) -> str:
     """Build the user message text for a puzzle, optionally with hints."""
     lines = [
-        f"Puzzle ID: {sample.id}",
-        "",
-        "You are solving a picture word puzzle based on the attached image.",
+        f"You are solving a picture word puzzle based on the attached image.",
         f"Target answer language: {sample.answer_language}.",
         "",
         "Instructions:",

@@ -24,8 +24,8 @@ class MetisGPT4o(VisionLanguageModel):
         model: str = "gpt-4o-mini-2024-07-18",
         base_url: str = "https://api.metisai.ir",
         provider: str = "openai_chat_completion",
-        max_tokens: int = 150,
-        timeout: int = 60,
+        max_tokens: int = 500,
+        timeout: int = 120,
     ):
         if api_key is None:
             api_key = os.environ.get("METIS_API_KEY")
