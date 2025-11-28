@@ -1,8 +1,8 @@
 from .base import VisionLanguageModel, ModelResponse
-from .openai_gpt4o import OpenAIGPT4o
+from .metis_gpt4o import MetisGPT4o
 
 __all__ = [
     "VisionLanguageModel",
     "ModelResponse",
-    "OpenAIGPT4o",
+    "MetisGPT4o",
 ]

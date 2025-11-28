@@ -19,8 +19,8 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--results-db",
         type=str,
-        default="results.csv",
-        help="Path to CSV cache / results file.",
+        default="results.jsonl",
+        help="Path to JSON cache / results file.",
     )
     parser.add_argument(
         "--max-samples",
@@ -34,6 +34,14 @@ def parse_args() -> argparse.Namespace:
         default=3,
         help="Max attempts for retry-with-feedback experiment (Experiment IV).",
     )
+
+    parser.add_argument(
+        "--workers",
+        type=int,
+        default=4,
+        help="Number of parallel workers for API calls (default: 4)",
+    )
+
     return parser.parse_args()
 
 
@@ -44,6 +52,7 @@ def main() -> None:
         results_db_path=Path(args.results_db),
         max_samples=args.max_samples,
         retry_attempts=args.retry_attempts,
+        workers=args.workers,
     )
 
 

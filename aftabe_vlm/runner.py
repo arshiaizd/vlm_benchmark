@@ -1,7 +1,9 @@
 from __future__ import annotations
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 from pathlib import Path
 from typing import List, Dict, Any, Optional
+import os
 
 try:
     from tqdm import tqdm
@@ -18,7 +20,7 @@ from .evaluation import (
     SampleEvaluation,
     summarize_accuracy,
 )
-from .models import VisionLanguageModel, OpenAIGPT4o
+from .models import VisionLanguageModel, MetisGPT4o
 from .experiments import (
     Experiment,
     SimpleExperiment,
@@ -29,10 +31,11 @@ from .experiments import (
 
 
 def create_default_models() -> List[VisionLanguageModel]:
-    """Define which VLMs to test."""
-    return [
-        OpenAIGPT4o(model_name="gpt-4o"),
-    ]
+    """Define which VLMs to test (here: Metis wrapper around GPT-4o)."""
+    api_key = "tpsg-MNvTQUAqUL84o4THLV1395IqTBIZHJJ"
+    # MetisGPT4o will re-check the key and raise a clearer error if missing.
+    model = MetisGPT4o(api_key=api_key)
+    return [model]
 
 
 def create_default_experiments(
@@ -112,55 +115,103 @@ def run_all_experiments(
     results_db_path: str | Path,
     max_samples: Optional[int] = None,
     retry_attempts: int = 3,
+    workers: int = 4,
 ) -> None:
-    """Top-level runner looping over experiments, models, and samples."""
-    samples = load_dataset(dataset_path)
+    """
+    Run all defined experiments over the dataset with all configured models.
+
+    This version parallelizes the slow LLM API calls using a thread pool.
+    Only the main thread writes to the CSV cache to avoid corruption.
+    """
+    dataset_path = Path(dataset_path)
+    results_db_path = Path(results_db_path)
+
+    # Load dataset
+    samples: List[PuzzleSample] = load_dataset(dataset_path)
     if max_samples is not None:
         samples = samples[:max_samples]
 
+    # Set up cache, models, experiments, and system prompt
     cache = ResultCache(results_db_path)
-    models = create_default_models()
-    experiments = create_default_experiments(retry_attempts=retry_attempts)
-
+    models: List[VisionLanguageModel] = create_default_models()
+    experiments: List[Experiment] = create_default_experiments(
+        retry_attempts=retry_attempts
+    )
     system_prompt = BASE_SYSTEM_PROMPT
 
     all_eval_records: List[SampleEvaluation] = []
 
     for experiment in experiments:
         for model in models:
-            print(f"\n=== Experiment: {experiment.name} | Model: {model.name} ===")
-            it = tqdm(samples, desc=f"{experiment.name} / {model.name}")
-            for sample in it:
-                if cache.has(sample.id, experiment.name, model.name):
-                    continue  # cached result, skip
+            print(
+                f"\n=== Running experiment '{experiment.name}' "
+                f"with model '{model.name}' ==="
+            )
 
-                result_record = run_experiment_on_sample(
-                    experiment=experiment,
-                    model=model,
-                    sample=sample,
-                    system_prompt=system_prompt,
-                )
+            # Respect cache: only run samples that aren't already stored
+            samples_to_run: List[PuzzleSample] = [
+                s
+                for s in samples
+                if not cache.has(s.id, experiment.name, model.name)
+            ]
 
-                cache.set(
-                    sample_id=sample.id,
-                    experiment_name=experiment.name,
-                    model_name=model.name,
-                    payload=result_record,
-                )
+            if not samples_to_run:
+                print("All samples are already cached; skipping.")
+                continue
 
-                all_eval_records.append(
-                    SampleEvaluation(
+            max_workers = max(1, workers)
+
+            # Threads do ONLY the LLM/API work (run_experiment_on_sample)
+            with ThreadPoolExecutor(max_workers=max_workers) as executor:
+                future_to_sample = {
+                    executor.submit(
+                        run_experiment_on_sample,
+                        experiment,
+                        model,
+                        sample,
+                        system_prompt,
+                    ): sample
+                    for sample in samples_to_run
+                }
+
+                # Main thread collects results and writes to cache
+                for future in tqdm(
+                    as_completed(future_to_sample),
+                    total=len(future_to_sample),
+                    desc=f"{experiment.name} / {model.name}",
+                ):
+                    sample = future_to_sample[future]
+
+                    try:
+                        result_record = future.result()
+                    except Exception as e:
+                        # Log error, skip this sample, continue with others
+                        print(f"Error on sample {sample.id}: {e}")
+                        continue
+
+                    # 🔒 Only the main thread touches the cache / CSV
+                    cache.set(
+                        sample.id,
+                        experiment.name,
+                        model.name,
+                        result_record,
+                    )
+
+                    eval_rec = SampleEvaluation(
                         sample_id=sample.id,
                         experiment_name=experiment.name,
                         model_name=model.name,
-                        correct=result_record["correct"],
-                        attempts_used=result_record["attempts_used"],
+                        correct=bool(result_record["correct"]),
+                        attempts_used=int(result_record["attempts_used"]),
                     )
-                )
+                    all_eval_records.append(eval_rec)
 
     cache.close()
 
-    summary = summarize_accuracy(all_eval_records)
-    print("\n=== Overall summary across all experiments & models ===")
-    print(f"Total samples evaluated: {summary['n']}")
-    print(f"Overall accuracy: {summary['accuracy']:.3f}")
+    if all_eval_records:
+        summary = summarize_accuracy(all_eval_records)
+        print("\n=== Overall summary for this run ===")
+        print(f"Total evaluated samples: {summary['n']}")
+        print(f"Accuracy: {summary['accuracy']:.3f}")
+    else:
+        print("\nNo new evaluations were run (all results were already in the cache).")

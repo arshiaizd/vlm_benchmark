@@ -1,69 +1,83 @@
-from __future__ import annotations
-
-from pathlib import Path
-from typing import Any, Dict, Optional, Tuple
-import csv
 import json
+from pathlib import Path
+from typing import Dict, Tuple, Any, Optional
 
 
 class ResultCache:
-    """Very simple CSV-backed cache keyed by (sample_id, experiment_name, model_name)."""
+    """
+    Result cache backed by a JSONL file instead of CSV.
 
-    def __init__(self, csv_path: str | Path):
-        self.csv_path = Path(csv_path)
+    Each line in the file is a JSON object like:
+    {
+      "sample_id": "...",
+      "experiment_name": "...",
+      "model_name": "...",
+      "payload": { ... result_record ... }
+    }
+
+    In-memory, we index by (sample_id, experiment_name, model_name).
+    """
+
+    def __init__(self, jsonl_path: str | Path):
+        self.jsonl_path = Path(jsonl_path)
         self._data: Dict[Tuple[str, str, str], Dict[str, Any]] = {}
         self._load()
 
-    # internal helpers
-
     def _load(self) -> None:
-        if not self.csv_path.exists():
+        """Load existing results from the JSONL file into memory (if it exists)."""
+        if not self.jsonl_path.exists():
             return
 
-        with self.csv_path.open("r", encoding="utf-8", newline="") as f:
-            reader = csv.DictReader(f)
-            for row in reader:
-                sample_id = row.get("sample_id")
-                experiment_name = row.get("experiment_name")
-                model_name = row.get("model_name")
-                payload_json = row.get("payload_json", "")
+        with self.jsonl_path.open("r", encoding="utf-8") as f:
+            for line in f:
+                line = line.strip()
+                if not line:
+                    continue
+                try:
+                    obj = json.loads(line)
+                except json.JSONDecodeError:
+                    # Skip malformed lines instead of crashing.
+                    continue
 
-                if not (sample_id and experiment_name and model_name):
+                sample_id = str(obj.get("sample_id"))
+                experiment_name = str(obj.get("experiment_name"))
+                model_name = str(obj.get("model_name"))
+                payload = obj.get("payload")
+
+                if sample_id is None or experiment_name is None or model_name is None:
+                    # Not a valid record for our cache; skip it.
                     continue
 
                 key = (sample_id, experiment_name, model_name)
-                try:
-                    payload = json.loads(payload_json)
-                except Exception:
-                    payload = {"raw_payload_json": payload_json}
                 self._data[key] = payload
 
     def _write_all(self) -> None:
-        self.csv_path.parent.mkdir(parents=True, exist_ok=True)
-        fieldnames = ["sample_id", "experiment_name", "model_name", "payload_json"]
-        with self.csv_path.open("w", encoding="utf-8", newline="") as f:
-            writer = csv.DictWriter(f, fieldnames=fieldnames)
-            writer.writeheader()
-            for (sample_id, experiment_name, model_name), payload in self._data.items():
-                writer.writerow(
-                    {
-                        "sample_id": sample_id,
-                        "experiment_name": experiment_name,
-                        "model_name": model_name,
-                        "payload_json": json.dumps(payload, ensure_ascii=False),
-                    }
-                )
+        """
+        Rewrite the entire JSONL file from the in-memory dict.
 
-    # public API
+        This keeps behavior similar to the old CSV cache, just with JSONL.
+        """
+        if self.jsonl_path.parent:
+            self.jsonl_path.parent.mkdir(parents=True, exist_ok=True)
+
+        with self.jsonl_path.open("w", encoding="utf-8") as f:
+            for (sample_id, experiment_name, model_name), payload in self._data.items():
+                obj = {
+                    "sample_id": sample_id,
+                    "experiment_name": experiment_name,
+                    "model_name": model_name,
+                    "payload": payload,
+                }
+                f.write(json.dumps(obj, ensure_ascii=False) + "\n")
 
     def has(self, sample_id: str, experiment_name: str, model_name: str) -> bool:
-        key = (sample_id, experiment_name, model_name)
+        key = (str(sample_id), str(experiment_name), str(model_name))
         return key in self._data
 
     def get(
         self, sample_id: str, experiment_name: str, model_name: str
     ) -> Optional[Dict[str, Any]]:
-        key = (sample_id, experiment_name, model_name)
+        key = (str(sample_id), str(experiment_name), str(model_name))
         return self._data.get(key)
 
     def set(
@@ -73,9 +87,14 @@ class ResultCache:
         model_name: str,
         payload: Dict[str, Any],
     ) -> None:
-        key = (sample_id, experiment_name, model_name)
+        """
+        Store or update a payload and rewrite the JSONL file.
+        Called only from the main thread in our threaded runner.
+        """
+        key = (str(sample_id), str(experiment_name), str(model_name))
         self._data[key] = payload
         self._write_all()
 
     def close(self) -> None:
+        """No-op for now; kept for API compatibility."""
         pass
