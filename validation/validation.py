@@ -12,7 +12,7 @@ from aftabe_vlm.evaluation import parse_model_response, is_correct
 from aftabe_vlm.models import VisionLanguageModel
 from aftabe_vlm.models.metis_gemini_2_0_flash import MetisGemini20Flash
 from aftabe_vlm.models.metis_gpt4o import MetisGPT4o
-from prompts_config import SYSTEM_PROMPTS, return_user_prompts
+from validation.prompts_config import SYSTEM_PROMPTS, return_user_prompts
 from tqdm import tqdm
 
 
@@ -312,9 +312,9 @@ def main() -> None:
     ]
 
     datasets = [
-        ("en", Path("../dataset/en_val/en-dataset-val.jsonl")),
-        ("pe", Path("../dataset/pe_val/pe-dataset-val.jsonl")),
-        ("cross", Path("../dataset/cross_val/cross-dataset-val.jsonl")),
+        ("en", Path("dataset/en_val/en-dataset-val.jsonl")),
+        ("pe", Path("dataset/pe_val/pe-dataset-val.jsonl")),
+        ("cross", Path("dataset/cross_val/cross-dataset-val.jsonl")),
     ]
 
     answer_languages = {
