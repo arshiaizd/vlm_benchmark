@@ -217,5 +217,5 @@ def summarize_accuracy(records: List[SampleEvaluation]) -> Dict[str, Any]:
 if __name__=="__main__":
     s1 = input()
     s2 = input()
-    ans = is_correct(s1 , s2 , "english" , max_edit_distance=1)
+    ans = is_correct(s1 , s2 , "english" , max_edit_distance=0)
     print(ans)

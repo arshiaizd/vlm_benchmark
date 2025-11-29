@@ -12,6 +12,7 @@ from aftabe_vlm.evaluation import parse_model_response, is_correct
 from aftabe_vlm.models import VisionLanguageModel
 from aftabe_vlm.models.metis_gemini_2_0_flash import MetisGemini20Flash
 from aftabe_vlm.models.metis_gpt4o import MetisGPT4o
+from aftabe_vlm.models.gemma3 import Gemma3
 from validation.prompts_config import SYSTEM_PROMPTS, return_user_prompts
 from tqdm import tqdm
 
@@ -100,11 +101,11 @@ def _experiment_name_for_combo(combo: PromptCombo) -> str:
     """
     Build an experiment_name for the cache.
 
-    ResultCache key is (sample_id, experiment_name, model_name).
+    ResultCache key is (sample_id, dataset_name, experiment_name, model_name).
 
-    We include CACHE_VERSION and the prompt combo so that different
-    system/user prompts don't collide and bumping CACHE_VERSION
-    invalidates old results.
+    We include CACHE_VERSION and the prompt combo so that:
+    - different prompt combos don't collide
+    - bumping CACHE_VERSION invalidates old results.
     """
     return f"{CACHE_VERSION}__{combo.combo_name}"
 
@@ -234,8 +235,8 @@ def run_validation(
             for sample in samples:
                 sample_id_str = str(sample.id)
 
-                if cache is not None and cache.has(sample_id_str, experiment_name, model.name):
-                    payload = cache.get(sample_id_str, experiment_name, model.name)
+                if cache is not None and cache.has(sample_id_str, dataset_name, experiment_name, model.name):
+                    payload = cache.get(sample_id_str, dataset_name, experiment_name, model.name)
                     if payload is None:
                         to_run.append(sample)
                         continue
@@ -308,6 +309,7 @@ def run_validation(
                     if cache is not None:
                         cache.set(
                             sample_id=sample_id_str,
+                            dataset_name=dataset_name,
                             experiment_name=experiment_name,
                             model_name=model.name,
                             payload=debug,
@@ -378,8 +380,10 @@ def main() -> None:
     Example entrypoint. Adjust models, dataset paths, and workers as needed.
     """
     models: List[VisionLanguageModel] = [
+        Gemma3(),
         MetisGemini20Flash(),
         MetisGPT4o(),
+
     ]
 
     datasets = [
