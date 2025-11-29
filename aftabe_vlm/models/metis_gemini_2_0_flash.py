@@ -15,7 +15,7 @@ from aftabe_vlm.models.base import VisionLanguageModel, ModelResponse
 class MetisGemini20FlashConfig:
     api_key: Optional[str] = "tpsg-MNvTQUAqUL84o4THLV1395IqTBIZHJJ"
     # 👇 adjust to whatever Metis expects as the Gemini model id
-    model_name: str = "gemini-2.0-flash"
+    model_name: str = "gemini-2.5-flash"
     base_url: str = "https://api.metisai.ir"
     # 👇 provider name depends on how your Metis wrapper is configured;
     # if they expose Gemini through another provider, change this.

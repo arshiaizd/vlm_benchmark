@@ -16,6 +16,12 @@ from prompts_config import SYSTEM_PROMPTS, return_user_prompts
 from tqdm import tqdm
 
 
+from aftabe_vlm.caching import ResultCache
+
+
+CACHE_VERSION = "simple_validation_v1"
+
+
 # =====================================================
 # 1) INTERNAL HELPERS
 # =====================================================
@@ -90,6 +96,19 @@ def _write_results_jsonl(
     return path
 
 
+def _experiment_name_for_combo(combo: PromptCombo) -> str:
+    """
+    Build an experiment_name for the cache.
+
+    ResultCache key is (sample_id, experiment_name, model_name).
+
+    We include CACHE_VERSION and the prompt combo so that different
+    system/user prompts don't collide and bumping CACHE_VERSION
+    invalidates old results.
+    """
+    return f"{CACHE_VERSION}__{combo.combo_name}"
+
+
 # =====================================================
 # 2) PER-SAMPLE EVALUATION
 # =====================================================
@@ -154,7 +173,7 @@ def _evaluate_one_sample(
 
 
 # =====================================================
-# 3) MAIN VALIDATION LOGIC (MULTITHREADED + JSON OUTPUT)
+# 3) MAIN VALIDATION LOGIC (MULTITHREADED + JSON OUTPUT + CACHE)
 # =====================================================
 
 def run_validation(
@@ -164,6 +183,7 @@ def run_validation(
     max_samples: Optional[int] = None,
     workers: int = 4,
     output_dir: str | Path = "validation_outputs",
+    cache: Optional[ResultCache] = None,
 ) -> Dict[str, Any]:
     """
     Run validation on a dataset JSONL using:
@@ -172,6 +192,7 @@ def run_validation(
       - all combinations of SYSTEM_PROMPTS x user prompt templates
       - parallelized model calls with a thread pool
       - per-(dataset, model, prompt combo) JSONL outputs
+      - optional ResultCache to skip repeated API calls
     """
     dataset_path = Path(dataset_path)
     samples: List[PuzzleSample] = load_dataset(dataset_path)
@@ -195,6 +216,8 @@ def run_validation(
     stats: Dict[tuple, Dict[str, int]] = defaultdict(lambda: {"correct": 0, "total": 0})
 
     for combo in combos:
+        experiment_name = _experiment_name_for_combo(combo)
+
         for model in models:
             print(
                 f"\n=== Validation: model='{model.name}', "
@@ -205,7 +228,42 @@ def run_validation(
             # Collect per-sample results to dump to JSONL after threads finish
             results_for_combo_model: List[Dict[str, Any]] = []
 
-            # Thread pool per (combo, model), parallel over samples
+            # Split samples into cached vs to_run
+            to_run: List[PuzzleSample] = []
+
+            for sample in samples:
+                sample_id_str = str(sample.id)
+
+                if cache is not None and cache.has(sample_id_str, experiment_name, model.name):
+                    payload = cache.get(sample_id_str, experiment_name, model.name)
+                    if payload is None:
+                        to_run.append(sample)
+                        continue
+
+                    # payload is exactly what we stored (debug_info)
+                    correct_cached = bool(payload.get("correct", False))
+                    key_stats = (model.name, combo.combo_name)
+                    stats[key_stats]["total"] += 1
+                    if correct_cached:
+                        stats[key_stats]["correct"] += 1
+
+                    results_for_combo_model.append(payload)
+                else:
+                    to_run.append(sample)
+
+            if not to_run:
+                print("  All samples for this (model, prompt) are cached; skipping API calls.")
+                written_path = _write_results_jsonl(
+                    results=results_for_combo_model,
+                    dataset_name=dataset_name,
+                    model_name=model.name,
+                    combo=combo,
+                    output_dir=output_dir,
+                )
+                print(f"  Saved results to: {written_path}")
+                continue
+
+            # Thread pool per (combo, model), parallel over uncached samples
             with ThreadPoolExecutor(max_workers=workers) as executor:
                 futures = {
                     executor.submit(
@@ -215,7 +273,7 @@ def run_validation(
                         sample,
                         dataset_name,
                     ): sample
-                    for sample in samples
+                    for sample in to_run
                 }
 
                 for future in tqdm(
@@ -224,9 +282,13 @@ def run_validation(
                     desc=f"{model.name} / {combo.combo_name}",
                 ):
                     sample = futures[future]
+                    sample_id_str = str(sample.id)
+
                     try:
                         correct, debug = future.result()
                     except Exception as e:
+                        # e.g. HTTP 400/500 etc.: no cache entry is written,
+                        # and this sample will be retried on the next run.
                         print(
                             f"Error on sample {sample.id} for "
                             f"{model.name} / {combo.combo_name}: {e}"
@@ -234,13 +296,22 @@ def run_validation(
                         continue
 
                     # Update stats
-                    key = (model.name, combo.combo_name)
-                    stats[key]["total"] += 1
+                    key_stats = (model.name, combo.combo_name)
+                    stats[key_stats]["total"] += 1
                     if correct:
-                        stats[key]["correct"] += 1
+                        stats[key_stats]["correct"] += 1
 
                     # Collect for JSONL
                     results_for_combo_model.append(debug)
+
+                    # Store in cache (payload is debug dict)
+                    if cache is not None:
+                        cache.set(
+                            sample_id=sample_id_str,
+                            experiment_name=experiment_name,
+                            model_name=model.name,
+                            payload=debug,
+                        )
 
             # After all samples for this (model, combo) are done -> write JSONL
             written_path = _write_results_jsonl(
@@ -323,6 +394,11 @@ def main() -> None:
         "cross": "Persian",
     }
 
+    # One cache shared across all datasets/models/combos for this run.
+    script_dir = Path(__file__).resolve().parent
+    cache_path = script_dir / "validation_cache.jsonl"
+    cache = ResultCache(cache_path)
+
     for dataset_name, val_jsonl_path in datasets:
         print(f"\n##### VALIDATION on {dataset_name} #####")
         results = run_validation(
@@ -332,6 +408,7 @@ def main() -> None:
             max_samples=50,    # or None for full val set
             workers=8,         # tweak as you like
             output_dir="validation_outputs",  # where JSONL logs go
+            cache=cache,       # ✅ enable caching
         )
 
         print("\nPer-model / per-prompt-combo accuracy:")
@@ -351,6 +428,8 @@ def main() -> None:
             f"\nOverall best combo (avg across models): "
             f"{overall['combo_name']} (avg_acc={overall['avg_accuracy']:.3f})"
         )
+
+    cache.close()
 
 
 if __name__ == "__main__":

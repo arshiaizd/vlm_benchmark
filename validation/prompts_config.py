@@ -199,6 +199,8 @@ REQUIRED JSON STRUCTURE:
 def return_user_prompts(answer_language):
     return [
 
+
+
     {
         "name": "user_v0",
         "template":  (
@@ -254,4 +256,23 @@ def return_user_prompts(answer_language):
             'Return ONLY a single JSON object with keys "reasoning" and "final_answer" as specified in the system prompt.'
         ),
     },
+
+    {
+        "name": "user_v4",
+        "template":  (
+        "You are a creative thinker solving a picture word puzzle based on the attached image.\n"
+        "Your task is to analyze the picture very carefully and identify the key words, symbols, or concepts it contains. "
+        "Then infer a single word or short phrase that meaningfully combines or represents them.\n"
+        "Take a deep breath, and think step by step until you arrive at your best answer.\n"
+        f"Target answer language: {answer_language}.\n"
+        "\n"
+        "Instructions:\n"
+        "- Look carefully at the attached image.\n"
+        "- Infer the intended single-word or short-phrase answer.\n"
+        "- The answer must be in the target language specified above.\n"
+        "\n"
+        'Return ONLY a single JSON object with keys "reasoning" and "final_answer" as specified in the system prompt.'
+        )
+    },
+
 ]
