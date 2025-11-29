@@ -1,3 +1,7 @@
 dataset/
 .idea/
-
+validation_outputs/
+.dist/
+**/__pycache__/
+__pycache__/
+/aftabe_vlm/__pycache__/

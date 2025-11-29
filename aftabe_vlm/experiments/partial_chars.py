@@ -6,7 +6,7 @@ import hashlib
 import random
 
 from .base import Experiment
-from ..dataset import PuzzleSample
+from dataset import PuzzleSample
 
 
 def _deterministic_indices(answer: str, sample_id: str, fraction: float = 0.1) -> List[int]:
