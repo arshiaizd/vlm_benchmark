@@ -5,3 +5,5 @@ validation_outputs/
 **/__pycache__/
 __pycache__/
 /aftabe_vlm/__pycache__/
+dataset.zip
+validation/validation_cache.jsonl
