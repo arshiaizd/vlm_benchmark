@@ -13,9 +13,8 @@ from aftabe_vlm.models import VisionLanguageModel
 from aftabe_vlm.models.metis_gemini_2_0_flash import MetisGemini20Flash
 from aftabe_vlm.models.metis_gpt4o import MetisGPT4o
 from aftabe_vlm.models.gemma3 import Gemma3
-from validation.prompts_config import SYSTEM_PROMPTS, return_user_prompts
+from validation.prompts_config import get_base_prompts, get_prompt_variants
 from tqdm import tqdm
-
 
 from aftabe_vlm.caching import ResultCache
 
@@ -29,36 +28,99 @@ CACHE_VERSION = "simple_validation_v1"
 
 @dataclass
 class PromptCombo:
-    system_name: str
-    user_name: str
-    system_text: str
-    user_template: str
+    """
+    A single "experiment":
+
+    - variant_name: which prompt variant (user_v1, user_v2, ...)
+    - mode:        "system" or "user" (where the combined prompt is placed)
+    - text:        the full combined prompt (base + variant)
+    """
+    variant_name: str
+    mode: str   # "system" or "user"
+    text: str
 
     @property
     def combo_name(self) -> str:
-        return f"{self.system_name}__{self.user_name}"
+        # This is what we use to key stats / cache experiments
+        return f"{self.variant_name}__as_{self.mode}"
 
 
-def _build_prompt_combos(answer_language: str) -> List[PromptCombo]:
+def _build_prompt_combos(category: str) -> List[PromptCombo]:
+    """
+    Build all prompt combinations for a given dataset category (en, pe, cross).
+
+    For each category:
+      - get the base prompt via get_base_prompts(category)
+      - get 3 variants via get_prompt_variants(category)
+      - produce 3 combined prompts (base + variant)
+      - for each combined prompt, create 2 combos:
+          - as SYSTEM prompt  (mode="system")
+          - as USER prompt    (mode="user")
+    => 3 * 2 = 6 combos per category
+    """
     combos: List[PromptCombo] = []
-    for sys in SYSTEM_PROMPTS:
-        for usr in return_user_prompts(answer_language):
-            combos.append(
-                PromptCombo(
-                    system_name=sys["name"],
-                    user_name=usr["name"],
-                    system_text=sys["text"],
-                    user_template=usr["template"],
-                )
+
+    base = get_base_prompts(category)
+    variants = get_prompt_variants(category)
+
+    for var in variants:
+        variant_name = var["name"]
+        variant_text = var["template"]
+        combined = (base + "\n\n" + variant_text).strip()
+
+        # Scenario 1: combined prompt as system prompt
+        combos.append(
+            PromptCombo(
+                variant_name=variant_name,
+                mode="system",
+                text=combined,
             )
+        )
+
+        # Scenario 2: combined prompt as user prompt
+        combos.append(
+            PromptCombo(
+                variant_name=variant_name,
+                mode="user",
+                text=combined,
+            )
+        )
+
     return combos
 
 
-def _build_user_prompt_from_template(template: str, sample: PuzzleSample) -> str:
-    return template.format(
-        id=sample.id,
-        answer_language=sample.answer_language,
-    )
+def _build_user_prompt_for_mode(
+    combo: PromptCombo,
+    sample: PuzzleSample,
+) -> Tuple[str, str]:
+    """
+    Given a combo and a sample, build (system_prompt, user_prompt)
+    according to the mode.
+
+    - If mode == "system":
+        system_prompt = combo.text   (base + variant)
+        user_prompt   = a minimal, sample-aware instruction
+    - If mode == "user":
+        system_prompt = a short generic system instruction
+        user_prompt   = combo.text   (base + variant)
+
+    You can tweak these if you want different behavior, but the key
+    requirement is:
+      - "system" mode => prompt before the image (system role)
+      - "user"   mode => prompt after the image (user role)
+    """
+    if combo.mode == "system":
+        system_prompt = combo.text
+        user_prompt = (
+            "Here is the puzzle image. Please provide the answer according to the system instructions."
+        )
+    else:  # combo.mode == "user"
+        system_prompt = (
+            "You are an expert assistant that solves picture word puzzles."
+        )
+        user_prompt = combo.text
+
+    return system_prompt, user_prompt
 
 
 def _sanitize_for_filename(part: str) -> str:
@@ -85,8 +147,7 @@ def _write_results_jsonl(
     fname = (
         f"{_sanitize_for_filename(dataset_name)}__"
         f"{_sanitize_for_filename(model_name)}__"
-        f"{_sanitize_for_filename(combo.system_name)}__"
-        f"{_sanitize_for_filename(combo.user_name)}.jsonl"
+        f"{_sanitize_for_filename(combo.combo_name)}.jsonl"
     )
     path = output_dir / fname
 
@@ -103,8 +164,8 @@ def _experiment_name_for_combo(combo: PromptCombo) -> str:
 
     ResultCache key is (sample_id, dataset_name, experiment_name, model_name).
 
-    We include CACHE_VERSION and the prompt combo so that:
-    - different prompt combos don't collide
+    We include CACHE_VERSION and the combo_name so that:
+    - different prompt variants/modes don't collide
     - bumping CACHE_VERSION invalidates old results.
     """
     return f"{CACHE_VERSION}__{combo.combo_name}"
@@ -126,14 +187,13 @@ def _evaluate_one_sample(
     Returns:
       (correct: bool, debug_info: dict)
     """
-    system_prompt = combo.system_text
-    user_prompt = _build_user_prompt_from_template(combo.user_template, sample)
+    system_prompt, user_prompt = _build_user_prompt_for_mode(combo, sample)
 
     extra_metadata = {
         "experiment": "simple_validation",
         "prompt_combo": combo.combo_name,
-        "system_name": combo.system_name,
-        "user_name": combo.user_name,
+        "prompt_variant": combo.variant_name,
+        "prompt_mode": combo.mode,  # "system" or "user"
         "sample_id": sample.id,
         "dataset": dataset_name,
     }
@@ -152,22 +212,20 @@ def _evaluate_one_sample(
         language=sample.answer_language,
     )
 
-    # Try to get reasoning trace if parse_model_response exposes it.
     reasoning = getattr(parsed, "reasoning", None)
 
     debug_info: Dict[str, Any] = {
         "dataset": dataset_name,
         "sample_id": str(sample.id),
         "model_name": model.name,
-        "system_name": combo.system_name,
-        "user_name": combo.user_name,
         "prompt_combo": combo.combo_name,
-        # do NOT save raw prompts or image path
+        "prompt_variant": combo.variant_name,
+        "prompt_mode": combo.mode,
         "final_answer": parsed.final_answer,
         "gold": sample.answer,
         "answer_language": sample.answer_language,
         "correct": bool(correct),
-        "reasoning": reasoning,  # model reasoning trace
+        "reasoning": reasoning,
     }
 
     return correct, debug_info
@@ -179,10 +237,10 @@ def _evaluate_one_sample(
 
 def run_validation(
     dataset_path: str | Path,
-    answer_language: str,
+    category: str,
     models: List[VisionLanguageModel],
     max_samples: Optional[int] = None,
-    workers: int = 4,
+    workers: int = 8,
     output_dir: str | Path = "validation_outputs",
     cache: Optional[ResultCache] = None,
 ) -> Dict[str, Any]:
@@ -190,7 +248,7 @@ def run_validation(
     Run validation on a dataset JSONL using:
       - one attempt per sample (SimpleExperiment-like behaviour, no hints)
       - multiple models
-      - all combinations of SYSTEM_PROMPTS x user prompt templates
+      - all combinations of (prompt_variant x mode) for the given category
       - parallelized model calls with a thread pool
       - per-(dataset, model, prompt combo) JSONL outputs
       - optional ResultCache to skip repeated API calls
@@ -204,11 +262,11 @@ def run_validation(
         raise ValueError(f"No samples loaded from {dataset_path}")
 
     dataset_name = dataset_path.name
-    combos = _build_prompt_combos(answer_language)
+    combos = _build_prompt_combos(category)
     if not combos:
         raise ValueError(
             "No prompt combinations defined. "
-            "Check SYSTEM_PROMPTS and return_user_prompts()."
+            "Check get_base_prompts() and get_prompt_variants()."
         )
 
     workers = max(1, int(workers))
@@ -222,8 +280,8 @@ def run_validation(
         for model in models:
             print(
                 f"\n=== Validation: model='{model.name}', "
-                f"system='{combo.system_name}', user='{combo.user_name}' "
-                f"on dataset='{dataset_name}' ==="
+                f"combo='{combo.combo_name}' "
+                f"on dataset='{dataset_name}' (category='{category}') ==="
             )
 
             # Collect per-sample results to dump to JSONL after threads finish
@@ -235,13 +293,16 @@ def run_validation(
             for sample in samples:
                 sample_id_str = str(sample.id)
 
-                if cache is not None and cache.has(sample_id_str, dataset_name, experiment_name, model.name):
-                    payload = cache.get(sample_id_str, dataset_name, experiment_name, model.name)
+                if cache is not None and cache.has(
+                    sample_id_str, dataset_name, experiment_name, model.name
+                ):
+                    payload = cache.get(
+                        sample_id_str, dataset_name, experiment_name, model.name
+                    )
                     if payload is None:
                         to_run.append(sample)
                         continue
 
-                    # payload is exactly what we stored (debug_info)
                     correct_cached = bool(payload.get("correct", False))
                     key_stats = (model.name, combo.combo_name)
                     stats[key_stats]["total"] += 1
@@ -253,7 +314,7 @@ def run_validation(
                     to_run.append(sample)
 
             if not to_run:
-                print("  All samples for this (model, prompt) are cached; skipping API calls.")
+                print("  All samples for this (model, combo) are cached; skipping API calls.")
                 written_path = _write_results_jsonl(
                     results=results_for_combo_model,
                     dataset_name=dataset_name,
@@ -296,16 +357,13 @@ def run_validation(
                         )
                         continue
 
-                    # Update stats
                     key_stats = (model.name, combo.combo_name)
                     stats[key_stats]["total"] += 1
                     if correct:
                         stats[key_stats]["correct"] += 1
 
-                    # Collect for JSONL
                     results_for_combo_model.append(debug)
 
-                    # Store in cache (payload is debug dict)
                     if cache is not None:
                         cache.set(
                             sample_id=sample_id_str,
@@ -315,7 +373,6 @@ def run_validation(
                             payload=debug,
                         )
 
-            # After all samples for this (model, combo) are done -> write JSONL
             written_path = _write_results_jsonl(
                 results=results_for_combo_model,
                 dataset_name=dataset_name,
@@ -377,44 +434,43 @@ def run_validation(
 
 def main() -> None:
     """
-    Example entrypoint. Adjust models, dataset paths, and workers as needed.
+    Entry point. Runs all 3 categories (en, pe, cross) with
+    the models and writes:
+      - per-experiment JSONL files
+      - a summary JSON file per category with accuracies
     """
     models: List[VisionLanguageModel] = [
-        Gemma3(),
         MetisGemini20Flash(),
         MetisGPT4o(),
-
     ]
 
+    # dataset_key == category: 'en', 'pe', 'cross'
     datasets = [
         ("en", Path("dataset/en_val/en-dataset-val.jsonl")),
         ("pe", Path("dataset/pe_val/pe-dataset-val.jsonl")),
         ("cross", Path("dataset/cross_val/cross-dataset-val.jsonl")),
     ]
 
-    answer_languages = {
-        "en": "English",
-        "pe": "Persian",
-        "cross": "Persian",
-    }
-
-    # One cache shared across all datasets/models/combos for this run.
     script_dir = Path(__file__).resolve().parent
     cache_path = script_dir / "validation_cache.jsonl"
     cache = ResultCache(cache_path)
 
-    for dataset_name, val_jsonl_path in datasets:
-        print(f"\n##### VALIDATION on {dataset_name} #####")
+    summary_dir = script_dir / "validation_outputs"
+    summary_dir.mkdir(parents=True, exist_ok=True)
+
+    for dataset_key, val_jsonl_path in datasets:
+        print(f"\n##### VALIDATION on category={dataset_key} #####")
         results = run_validation(
             dataset_path=val_jsonl_path,
-            answer_language=answer_languages[dataset_name],
+            category=dataset_key,
             models=models,
             max_samples=50,    # or None for full val set
-            workers=8,         # tweak as you like
-            output_dir="validation_outputs",  # where JSONL logs go
-            cache=cache,       # ✅ enable caching
+            workers=8,
+            output_dir=summary_dir,
+            cache=cache,
         )
 
+        # Console summary
         print("\nPer-model / per-prompt-combo accuracy:")
         for model_name, combo_accs in results["per_model_prompt_accuracy"].items():
             for combo_name, acc in combo_accs.items():
@@ -432,6 +488,12 @@ def main() -> None:
             f"\nOverall best combo (avg across models): "
             f"{overall['combo_name']} (avg_acc={overall['avg_accuracy']:.3f})"
         )
+
+        # 🔥 Write a summary file with performance & results for this category
+        summary_path = summary_dir / f"{dataset_key}__summary.json"
+        with summary_path.open("w", encoding="utf-8") as f:
+            json.dump(results, f, ensure_ascii=False, indent=2)
+        print(f"\nSaved summary to: {summary_path}")
 
     cache.close()
 

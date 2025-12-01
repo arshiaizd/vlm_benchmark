@@ -113,12 +113,14 @@ class Gemma3(VisionLanguageModel):
             },
         ]
 
+
         try:
             response = self.client.chat.completions.create(
                 model=self.model_name,
                 messages=messages,
                 temperature=self.temperature,
                 max_tokens=self.max_tokens,
+
             )
         except Exception as e:
             raise RuntimeError(f"AvalAI chat.completions request failed: {e}") from e
@@ -159,10 +161,10 @@ if __name__ == "__main__":
         # --------------------------------------------------
 
         # Path to the image you want to test
-        image_path = "../../dataset/en/en_images/113.jpg"
+        image_path = "../../dataset/en/en_images/1.jpg"
 
         # Which Aval AI model to use (Gemma on Aval)
-        model_name = "gemma-3-27b-it"
+        model_name = "gpt-4o-mini"
 
         # If you want to rely on env AVALAI_API_KEY, set api_key=None.
         api_key = os.environ.get("AVALAI_API_KEY") or "aa-FlbWzVY6khetwVhVvuCnWPW3yl0Hd2vWishfxs2dRFSkTAtc"
