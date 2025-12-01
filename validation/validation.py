@@ -12,7 +12,7 @@ from aftabe_vlm.evaluation import parse_model_response, is_correct
 from aftabe_vlm.models import VisionLanguageModel
 from aftabe_vlm.models.metis_gemini_2_0_flash import MetisGemini20Flash
 from aftabe_vlm.models.metis_gpt4o import MetisGPT4o
-from aftabe_vlm.models.gemma3 import Gemma3
+# from aftabe_vlm.models.gemma3 import Gemma3
 from validation.prompts_config import get_base_prompts, get_prompt_variants
 from tqdm import tqdm
 
@@ -441,7 +441,7 @@ def main() -> None:
     """
     models: List[VisionLanguageModel] = [
         MetisGemini20Flash(),
-        MetisGPT4o(),
+        # MetisGPT4o(),
     ]
 
     # dataset_key == category: 'en', 'pe', 'cross'

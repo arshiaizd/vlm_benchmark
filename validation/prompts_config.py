@@ -103,7 +103,12 @@ def get_prompt_variants(category: str) -> List[Dict[str, str]]:
                         Please structure your response with the following headers:
                         1. VISUAL INVENTORY: List the specific objects, colors, or actions visible.
                         2. SEMANTIC ASSOCIATIONS: List related idioms, puns, or synonyms based on the inventory.
-                        3. FINAL ANSWER: Return the single best solution.
+                        3. FINAL ANSWER: the single best solution.
+                        Return ONLY a single valid JSON object. Do not output markdown blocks or conversational text. Use the following keys:
+                        {
+                        "reasoning": "Your step-by-step analysis of the visual elements and linguistic connections",
+                        "final_answer": "The inferred word or phrase"
+                        }
                 """
             ),
         },
