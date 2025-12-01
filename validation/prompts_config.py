@@ -78,7 +78,10 @@ def get_prompt_variants(category: str) -> List[Dict[str, str]]:
             "template": (
                 """
                     OUTPUT FORMAT:
-                        Provide ONLY the final answer text. Do not write out your reasoning, introduction, or punctuation.
+                        Return ONLY a single valid JSON object. Do not write out your reasoning, markdown blocks or conversational text. Use the following keys:
+                        {
+                        "final_answer": "The inferred word or phrase"
+                        }
                 """
             ),
         },
