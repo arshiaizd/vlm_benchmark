@@ -68,14 +68,14 @@ def _build_prompt_combos(category: str) -> List[PromptCombo]:
         variant_text = var["template"]
         combined = (base + "\n\n" + variant_text).strip()
 
-        # Scenario 1: combined prompt as system prompt
-        combos.append(
-            PromptCombo(
-                variant_name=variant_name,
-                mode="system",
-                text=combined,
-            )
-        )
+        # # Scenario 1: combined prompt as system prompt
+        # combos.append(
+        #     PromptCombo(
+        #         variant_name=variant_name,
+        #         mode="system",
+        #         text=combined,
+        #     )
+        # )
 
         # Scenario 2: combined prompt as user prompt
         combos.append(
