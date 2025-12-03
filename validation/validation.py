@@ -441,7 +441,7 @@ def main() -> None:
     """
     models: List[VisionLanguageModel] = [
         MetisGemini20Flash(),
-        # MetisGPT4o(),
+        MetisGPT4o(),
     ]
 
     # dataset_key == category: 'en', 'pe', 'cross'

@@ -20,18 +20,21 @@ def get_base_prompts(category: str) -> str:
     if category == "en":
         rules = "- The target answer language is English.\n\n"
 
-    elif category == "pe":
+    elif category == "pe" or category == "fa":
         rules = """
         - The target answer language is Persian (Farsi).
         - CULTURAL LENS: Do not simply translate English concepts. You must interpret the visual elements through the lens of Persian culture, literature, common daily idioms, etc.
         - PUNS: If the image suggests a pun, look for phonetic similarities in Persian words, not English words.\n\n"""
 
-    else:
-        """
+    elif category == "cross":
+        rules = """
         - The target answer language is Persian (Farsi).
         - ENGLISH KNOWLEDGE REQUIRED: The puzzle may rely on English words, concepts, or numbers depicted in the image.
         - You may need to take these English elements and use them directly in the Persian answer (transliteration) or combine them to form the final Persian phrase.\n\n"""
 
+    else:
+        raise ValueError(f"Unknown category '{category}' for base prompts.")
+    
     first_part = """
     You are an expert multi-modal puzzle solver. You solve picture word puzzles.
 
