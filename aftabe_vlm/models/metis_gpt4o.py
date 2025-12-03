@@ -26,6 +26,7 @@ class MetisGPT4o(VisionLanguageModel):
         base_url: str = "https://api.tapsage.com",
         provider: str = "openai_chat_completion",
         max_tokens: int = 500,
+        effort: str = None,
         timeout: int = 1200,
     ):
         if api_key is None:
@@ -34,6 +35,7 @@ class MetisGPT4o(VisionLanguageModel):
             raise RuntimeError("MetisGPT4o requires an API key (set METIS_API_KEY env var or pass api_key).")
 
         self.api_key = api_key
+        self.effort = effort
         self.model_name = model
         self.base_url = base_url.rstrip("/")
         self.provider = provider
@@ -58,7 +60,7 @@ class MetisGPT4o(VisionLanguageModel):
         system_prompt: str,
         user_prompt: str,
         image_path: str,
-        effort : str = None,
+
         extra_metadata: Optional[Dict[str, Any]] = None,
     ) -> ModelResponse:
         """Call the Metis API once and return the assistant's text output."""
@@ -76,7 +78,7 @@ class MetisGPT4o(VisionLanguageModel):
             },
         ]
 
-        if effort is None:
+        if self.effort is None:
             payload: Dict[str, Any] = {
                 "model": self.model_name,
                 "messages": messages,
@@ -88,7 +90,7 @@ class MetisGPT4o(VisionLanguageModel):
             payload: Dict[str, Any] = {
                 "model": self.model_name,
                 "messages": messages,
-                "reasoning_effort" : effort
+                "reasoning_effort" : self.effort
             }
 
 
