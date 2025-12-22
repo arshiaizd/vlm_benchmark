@@ -7,3 +7,5 @@ __pycache__/
 /aftabe_vlm/__pycache__/
 dataset.zip
 validation/validation_cache.jsonl
+validation/our_prompt_llm_extraction/
+validation/comparison_results/

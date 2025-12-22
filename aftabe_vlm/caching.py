@@ -47,6 +47,9 @@ class ResultCache:
                 model_name = obj.get("model_name")
                 payload = obj.get("payload")
 
+                if not payload or payload.get("final_answer") is None:
+                    continue
+
                 if sample_id is None or experiment_name is None or model_name is None:
                     # Not a valid record for our cache; skip it.
                     continue
@@ -70,6 +73,9 @@ class ResultCache:
 
         with self.jsonl_path.open("w", encoding="utf-8") as f:
             for (sample_id, dataset_name, experiment_name, model_name), payload in self._data.items():
+                
+                if payload.get("final_answer") is None:
+                    continue
                 obj = {
                     "sample_id": sample_id,
                     "dataset_name": dataset_name,
@@ -111,6 +117,9 @@ class ResultCache:
         Store or update a payload and rewrite the JSONL file.
         Called only from the main thread in our threaded runner.
         """
+        if payload.get("final_answer") is None:
+            return
+        
         key = (str(sample_id), str(dataset_name), str(experiment_name), str(model_name))
         self._data[key] = payload
         self._write_all()

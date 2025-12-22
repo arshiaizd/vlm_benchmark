@@ -3,7 +3,7 @@ from __future__ import annotations
 from typing import Any, Dict, List, Optional
 
 from .base import Experiment
-from dataset import PuzzleSample
+from aftabe_vlm.dataset import PuzzleSample
 
 
 class CharCountExperiment(Experiment):
@@ -28,6 +28,6 @@ class CharCountExperiment(Experiment):
         total_len = len(answer)
 
         return (
-            f"The target answer has {n} non-space characters "
-            f"({total_len} characters including spaces). Use this as a constraint."
+            f"The target answer has {n} non-space characters."
+            # f"({total_len} characters including spaces). Use this as a constraint."
         )

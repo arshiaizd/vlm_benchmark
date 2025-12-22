@@ -12,7 +12,7 @@ except ImportError:  # fallback if tqdm not installed
         return x  # type: ignore
 
 from .dataset import load_dataset, PuzzleSample
-from .prompts import BASE_SYSTEM_PROMPT, build_puzzle_user_prompt
+from .prompts import BASE_SYSTEM_PROMPT, build_puzzle_user_prompt, get_prompt_variants
 from .caching import ResultCache
 from .evaluation import (
     parse_model_response,
@@ -21,6 +21,7 @@ from .evaluation import (
     summarize_accuracy,
 )
 from .models import VisionLanguageModel, MetisGPT4o
+from .models import GoogleAPI
 from .experiments import (
     Experiment,
     SimpleExperiment,
@@ -34,7 +35,8 @@ def create_default_models() -> List[VisionLanguageModel]:
     """Define which VLMs to test (here: Metis wrapper around GPT-4o)."""
     api_key = "tpsg-MNvTQUAqUL84o4THLV1395IqTBIZHJJ"
     # MetisGPT4o will re-check the key and raise a clearer error if missing.
-    model = MetisGPT4o(api_key=api_key)
+    model = GoogleAPI.GoogleVertexGemini()
+    # model = MetisGPT4o()
     return [model]
 
 
@@ -42,10 +44,10 @@ def create_default_experiments(
     retry_attempts: int = 3,
 ) -> List[Experiment]:
     return [
-        SimpleExperiment(),
+        # SimpleExperiment(),
         CharCountExperiment(),
-        PartialCharsExperiment(),
-        RetryWithFeedbackExperiment(max_attempts=retry_attempts),
+        # PartialCharsExperiment(),
+        # RetryWithFeedbackExperiment(max_attempts=retry_attempts),
     ]
 
 
@@ -54,16 +56,18 @@ def run_experiment_on_sample(
     model: VisionLanguageModel,
     sample: PuzzleSample,
     system_prompt: str,
+    variant: Dict[str, str],
 ) -> Dict[str, Any]:
     """Run a single experiment/model on a single sample (with retries if needed)."""
     attempts: List[Dict[str, Any]] = []
 
     for attempt_idx in range(experiment.max_attempts):
         hint_text = experiment.build_hint_text(sample, attempt_idx, attempts)
-        user_prompt = build_puzzle_user_prompt(sample, hint_text)
-
+        user_prompt = build_puzzle_user_prompt(sample, hint_text, variant=variant)
+        
         extra_metadata = {
             "experiment": experiment.name,
+            "variant": variant["name"],
             "attempt_index": attempt_idx,
             "sample_id": sample.id,
         }
@@ -99,6 +103,7 @@ def run_experiment_on_sample(
     result_record: Dict[str, Any] = {
         "sample_id": sample.id,
         "experiment_name": experiment.name,
+        "variant_name": variant["name"],
         "model_name": model.name,
         "answer_language": sample.answer_language,
         "gold_answer": sample.answer,
@@ -137,74 +142,79 @@ def run_all_experiments(
     experiments: List[Experiment] = create_default_experiments(
         retry_attempts=retry_attempts
     )
-    system_prompt = BASE_SYSTEM_PROMPT
+    # system_prompt = BASE_SYSTEM_PROMPT
+    system_prompt = ""
 
     all_eval_records: List[SampleEvaluation] = []
 
+    variants = get_prompt_variants()
+
     for experiment in experiments:
         for model in models:
-            print(
-                f"\n=== Running experiment '{experiment.name}' "
-                f"with model '{model.name}' ==="
-            )
+            for variant in variants:
+                print(
+                    f"\n=== Exp: '{experiment.name}' | Model: '{model.name}' | Variant: '{variant['name']}' ==="
+                )
 
-            # Respect cache: only run samples that aren't already stored
-            samples_to_run: List[PuzzleSample] = [
-                s
-                for s in samples
-                if not cache.has(s.id, experiment.name, model.name)
-            ]
+                effective_exp_name = f"{experiment.name}_{variant['name']}"
 
-            if not samples_to_run:
-                print("All samples are already cached; skipping.")
-                continue
+                # Respect cache using the composite key
+                samples_to_run: List[PuzzleSample] = [
+                    s for s in samples
+                    if not cache.has(s.id, dataset_path, effective_exp_name, model.name)
+                ]
 
-            max_workers = max(1, workers)
+                if not samples_to_run:
+                    print("All samples are already cached for this variant; skipping.")
+                    continue
 
-            # Threads do ONLY the LLM/API work (run_experiment_on_sample)
-            with ThreadPoolExecutor(max_workers=max_workers) as executor:
-                future_to_sample = {
-                    executor.submit(
-                        run_experiment_on_sample,
-                        experiment,
-                        model,
-                        sample,
-                        system_prompt,
-                    ): sample
-                    for sample in samples_to_run
-                }
+                max_workers = max(1, workers)
 
-                # Main thread collects results and writes to cache
-                for future in tqdm(
-                    as_completed(future_to_sample),
-                    total=len(future_to_sample),
-                    desc=f"{experiment.name} / {model.name}",
-                ):
-                    sample = future_to_sample[future]
+                # Threads do ONLY the LLM/API work (run_experiment_on_sample)
+                with ThreadPoolExecutor(max_workers=max_workers) as executor:
+                    future_to_sample = {
+                        executor.submit(
+                            run_experiment_on_sample,
+                            experiment,
+                            model,
+                            sample,
+                            system_prompt,
+                            variant,
+                        ): sample
+                        for sample in samples_to_run
+                    }
 
-                    try:
-                        result_record = future.result()
-                    except Exception as e:
-                        # Log error, skip this sample, continue with others
-                        print(f"Error on sample {sample.id}: {e}")
-                        continue
+                    # Main thread collects results and writes to cache
+                    for future in tqdm(
+                        as_completed(future_to_sample),
+                        total=len(future_to_sample),
+                        desc=f"{experiment.name} / {model.name}",
+                    ):
+                        sample = future_to_sample[future]
 
-                    # 🔒 Only the main thread touches the cache / CSV
-                    cache.set(
-                        sample.id,
-                        experiment.name,
-                        model.name,
-                        result_record,
-                    )
+                        try:
+                            result_record = future.result()
+                        except Exception as e:
+                            # Log error, skip this sample, continue with others
+                            print(f"Error on sample {sample.id}: {e}")
+                            continue
 
-                    eval_rec = SampleEvaluation(
-                        sample_id=sample.id,
-                        experiment_name=experiment.name,
-                        model_name=model.name,
-                        correct=bool(result_record["correct"]),
-                        attempts_used=int(result_record["attempts_used"]),
-                    )
-                    all_eval_records.append(eval_rec)
+                        # 🔒 Only the main thread touches the cache / CSV
+                        cache.set(
+                            sample.id,
+                            experiment.name,
+                            model.name,
+                            result_record,
+                        )
+
+                        eval_rec = SampleEvaluation(
+                            sample_id=sample.id,
+                            experiment_name=experiment.name,
+                            model_name=model.name,
+                            correct=bool(result_record["correct"]),
+                            attempts_used=int(result_record["attempts_used"]),
+                        )
+                        all_eval_records.append(eval_rec)
 
     cache.close()
 

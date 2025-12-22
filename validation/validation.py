@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 from dataclasses import dataclass
+import os
 from pathlib import Path
 from typing import List, Dict, Any, Optional, Tuple
 from collections import defaultdict
@@ -12,9 +13,11 @@ from aftabe_vlm.evaluation import parse_model_response, is_correct
 from aftabe_vlm.models import VisionLanguageModel
 from aftabe_vlm.models.metis_gemini_2_0_flash import MetisGemini20Flash
 from aftabe_vlm.models.metis_gpt4o import MetisGPT4o
+from aftabe_vlm.models.GoogleAPI import GoogleVertexGemini
 # from aftabe_vlm.models.gemma3 import Gemma3
 from validation.prompts_config import get_base_prompts, get_prompt_variants
 from tqdm import tqdm
+import re
 
 from aftabe_vlm.caching import ResultCache
 
@@ -51,7 +54,7 @@ def _build_prompt_combos(category: str) -> List[PromptCombo]:
 
     For each category:
       - get the base prompt via get_base_prompts(category)
-      - get 3 variants via get_prompt_variants(category)
+      - get 3 variants via get_prompt_variants()
       - produce 3 combined prompts (base + variant)
       - for each combined prompt, create 2 combos:
           - as SYSTEM prompt  (mode="system")
@@ -61,14 +64,14 @@ def _build_prompt_combos(category: str) -> List[PromptCombo]:
     combos: List[PromptCombo] = []
 
     base = get_base_prompts(category)
-    variants = get_prompt_variants(category)
+    variants = get_prompt_variants()
 
     for var in variants:
         variant_name = var["name"]
         variant_text = var["template"]
         combined = (base + "\n\n" + variant_text).strip()
 
-        # # Scenario 1: combined prompt as system prompt
+        # Scenario 1: combined prompt as system prompt
         # combos.append(
         #     PromptCombo(
         #         variant_name=variant_name,
@@ -92,6 +95,7 @@ def _build_prompt_combos(category: str) -> List[PromptCombo]:
 def _build_user_prompt_for_mode(
     combo: PromptCombo,
     sample: PuzzleSample,
+    hint_text: str = "",
 ) -> Tuple[str, str]:
     """
     Given a combo and a sample, build (system_prompt, user_prompt)
@@ -119,6 +123,8 @@ def _build_user_prompt_for_mode(
             "You are an expert assistant that solves picture word puzzles."
         )
         user_prompt = combo.text
+        if hint_text:
+            user_prompt += f"\n\n{hint_text}"
 
     return system_prompt, user_prompt
 
@@ -174,6 +180,7 @@ def _experiment_name_for_combo(combo: PromptCombo) -> str:
 # =====================================================
 # 2) PER-SAMPLE EVALUATION
 # =====================================================
+answer_extractor = GoogleVertexGemini()
 
 def _evaluate_one_sample(
     model: VisionLanguageModel,
@@ -187,7 +194,12 @@ def _evaluate_one_sample(
     Returns:
       (correct: bool, debug_info: dict)
     """
-    system_prompt, user_prompt = _build_user_prompt_for_mode(combo, sample)
+    answer_text = sample.answer
+    non_space_count = len([c for c in answer_text if not c.isspace()])
+    hint_text = f"HINT: The target answer has {non_space_count} non-space characters."
+
+    # 2. Pass hint to the builder
+    system_prompt, user_prompt = _build_user_prompt_for_mode(combo, sample, hint_text=hint_text)
 
     extra_metadata = {
         "experiment": "simple_validation",
@@ -196,6 +208,7 @@ def _evaluate_one_sample(
         "prompt_mode": combo.mode,  # "system" or "user"
         "sample_id": sample.id,
         "dataset": dataset_name,
+        "hint_used": hint_text, # Good to track that a hint was used
     }
 
     model_response = model.generate(
@@ -205,14 +218,100 @@ def _evaluate_one_sample(
         extra_metadata=extra_metadata,
     )
 
-    parsed = parse_model_response(model_response.raw_text)
+    # OLDER PARSE CODE (FOR JSON FORMAT)
+    # parsed = parse_model_response(model_response.raw_text)
+    # correct = is_correct(
+    #     predicted=parsed.final_answer,
+    #     gold=sample.answer,
+    #     language=sample.answer_language,
+    # )
+
+    # reasoning = getattr(parsed, "reasoning", None)
+    
+    # debug_info: Dict[str, Any] = {
+    #     "dataset": dataset_name,
+    #     "sample_id": str(sample.id),
+    #     "model_name": model.name,
+    #     "prompt_combo": combo.combo_name,
+    #     "prompt_variant": combo.variant_name,
+    #     "prompt_mode": combo.mode,
+    #     "final_answer": parsed.final_answer,
+    #     "gold": sample.answer,
+    #     "answer_language": sample.answer_language,
+    #     "correct": bool(correct),
+    #     "reasoning": reasoning,
+    #     "hint_text": hint_text, # Add this to debug info
+    #     "full_system_prompt": system_prompt,   # The exact system instruction used
+    #     "full_user_prompt": user_prompt,       # The exact user message used
+    #     "full_model_output": model_response.raw_text, # The raw unparsed string from the LLM
+    # }
+
+    # return correct, debug_info
+
+    # 1. Parse the raw model output to separate reasoning from the final answer
+    raw_output = model_response.raw_text
+    # Pattern looks for everything up to "answer":[...]
+    # Group 1 = Reasoning, Group 2 = The content inside the brackets
+    def extract_final_answer(raw_model_output: str, vertex_client) -> Optional[str]:
+        """
+        Extracts the 'final answer' from raw text using the Vertex AI client.
+        
+        Args:
+            raw_model_output: The long string containing reasoning and answer.
+            vertex_client: An instance of GoogleVertexGemini.
+        """
+
+        # 2. Construct the Prompt
+        # We explicitly tell the model to ignore the image.
+        system_instructions = (
+            "You are a text processing engine. "
+            "IGNORE the provided image; it is a placeholder. "
+            "Focus ONLY on the text provided by the user."
+        )
+
+        user_query = f"""
+        I have a raw text output from a reasoning model. 
+        It usually ends with a JSON-like format: "answer":"<CONTENT>"
+
+        TASK:
+        Extract strictly the <CONTENT> string.
+        
+        RULES:
+        - Return ONLY the content string.
+        - Do not include the key "answer".
+        - Do not include quotes unless they are part of the content.
+        - Do not include reasoning.
+
+        --- RAW TEXT START ---
+        {raw_model_output}
+        --- RAW TEXT END ---
+        """
+
+        # 3. Call the API
+        response = vertex_client.generate(
+            system_prompt=system_instructions,
+            user_prompt=user_query,
+            image_path=None  # Passing the dummy image path
+        )
+
+        # 4. Cleanup and Format
+        result = response.raw_text.strip()
+        
+        # Remove surrounding quotes if the model added them (e.g. "Cat" -> Cat)
+        if len(result) > 1 and result.startswith('"') and result.endswith('"'):
+            result = result[1:-1]
+
+        return result
+
+    extracted_answer = extract_final_answer(raw_output, answer_extractor)
+    extracted_reasoning = raw_output
+
     correct = is_correct(
-        predicted=parsed.final_answer,
+        predicted=extracted_answer,
         gold=sample.answer,
         language=sample.answer_language,
     )
 
-    reasoning = getattr(parsed, "reasoning", None)
 
     debug_info: Dict[str, Any] = {
         "dataset": dataset_name,
@@ -221,11 +320,15 @@ def _evaluate_one_sample(
         "prompt_combo": combo.combo_name,
         "prompt_variant": combo.variant_name,
         "prompt_mode": combo.mode,
-        "final_answer": parsed.final_answer,
+        "final_answer": extracted_answer,
         "gold": sample.answer,
         "answer_language": sample.answer_language,
         "correct": bool(correct),
-        "reasoning": reasoning,
+        "reasoning": extracted_reasoning,
+        "hint_text": hint_text, # Add this to debug info
+        "full_system_prompt": system_prompt,   # The exact system instruction used
+        "full_user_prompt": user_prompt,       # The exact user message used
+        "full_model_output": model_response.raw_text, # The raw unparsed string from the LLM
     }
 
     return correct, debug_info
@@ -255,9 +358,8 @@ def run_validation(
     """
     dataset_path = Path(dataset_path)
     samples: List[PuzzleSample] = load_dataset(dataset_path)
-    if max_samples is not None:
-        samples = samples[:max_samples]
-
+    # if max_samples is not None:
+    #     samples = samples[:max_samples]
     if not samples:
         raise ValueError(f"No samples loaded from {dataset_path}")
 
@@ -322,7 +424,7 @@ def run_validation(
                     combo=combo,
                     output_dir=output_dir,
                 )
-                print(f"  Saved results to: {written_path}")
+                print(f" Saved results to: {written_path}")
                 continue
 
             # Thread pool per (combo, model), parallel over uncached samples
@@ -440,15 +542,17 @@ def main() -> None:
       - a summary JSON file per category with accuracies
     """
     models: List[VisionLanguageModel] = [
-        MetisGemini20Flash(),
-        MetisGPT4o(),
+        # MetisGemini20Flash(),
+        GoogleVertexGemini(),
+        # MetisGPT4o(model = "gpt-5.1",
+        #            effort = "none"),
     ]
 
     # dataset_key == category: 'en', 'pe', 'cross'
     datasets = [
-        ("en", Path("dataset/en_val/en-dataset-val.jsonl")),
-        ("pe", Path("dataset/pe_val/pe-dataset-val.jsonl")),
-        ("cross", Path("dataset/cross_val/cross-dataset-val.jsonl")),
+        ("en", Path("dataset/en/en-dataset.jsonl")),
+        ("pe", Path("dataset/pe/pe-dataset.jsonl")),
+        # ("cross", Path("dataset/cross/cross-dataset.jsonl")),
     ]
 
     script_dir = Path(__file__).resolve().parent
@@ -464,7 +568,7 @@ def main() -> None:
             dataset_path=val_jsonl_path,
             category=dataset_key,
             models=models,
-            max_samples=50,    # or None for full val set
+            max_samples=None,    # or None for full val set
             workers=8,
             output_dir=summary_dir,
             cache=cache,

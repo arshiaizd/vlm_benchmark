@@ -6,7 +6,7 @@ import os
 import requests
 
 from validation.prompts_config import get_base_prompts, get_prompt_variants
-from base import VisionLanguageModel, ModelResponse
+from .base import VisionLanguageModel, ModelResponse
 
 
 class MetisGPT4o(VisionLanguageModel):
