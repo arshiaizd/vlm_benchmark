@@ -2,34 +2,25 @@ import os
 import base64
 import mimetypes
 import requests
+import json
 from dataclasses import dataclass
-from typing import Optional, Dict, Any
+from typing import Optional, Dict, Any, List
 from pathlib import Path
 
-import requests
-
 from aftabe_vlm.models.base import VisionLanguageModel, ModelResponse
-
-# Assuming you have these base classes defined in your project
-# from your_module import VisionLanguageModel, ModelResponse 
 
 @dataclass
 class GoogleVertexConfig:
     # Put your Google Cloud API Key here (starts with AIza...)
     api_key: Optional[str] = "AQ.Ab8RN6JUameBc8_AaLAu4VQIRIKpiKQYbshldsDW0Mq5pqShgg" 
-    # The model name from your curl command
     model_name: str = "gemini-2.5-flash" 
-    # The Vertex AI global base URL
     base_url: str = "https://aiplatform.googleapis.com"
-    # max_output_tokens: int = 500
-    timeout: int = 120
-
+    timeout: int = 240
 
 class GoogleVertexGemini(VisionLanguageModel):
     def __init__(self, config: Optional[GoogleVertexConfig] = None) -> None:
         self.config = config or GoogleVertexConfig()
 
-        # Check for GOOGLE_API_KEY in environment variables if not provided in config
         api_key = self.config.api_key or os.environ.get("GOOGLE_API_KEY")
         if not api_key:
             raise RuntimeError("Set GOOGLE_API_KEY or pass GoogleVertexConfig(api_key=...).")
@@ -37,11 +28,8 @@ class GoogleVertexGemini(VisionLanguageModel):
         self.api_key = api_key
         self.model_name = self.config.model_name
         self.base_url = self.config.base_url.rstrip("/")
-        # self.max_output_tokens = self.config.max_output_tokens
         self.timeout = self.config.timeout
 
-        # Construct the URL exactly as shown in your curl documentation
-        # Note: We use :generateContent (blocking) instead of :streamGenerateContent
         self.endpoint = f"{self.base_url}/v1/publishers/google/models/{self.model_name}:generateContent"
         
         self.headers = {
@@ -59,7 +47,6 @@ class GoogleVertexGemini(VisionLanguageModel):
 
         mime, _ = mimetypes.guess_type(str(path))
         if not mime or not mime.startswith("image/"):
-            # Safe fallback
             mime = "image/png"
 
         b64 = base64.b64encode(path.read_bytes()).decode("ascii")
@@ -72,9 +59,11 @@ class GoogleVertexGemini(VisionLanguageModel):
         image_path: str | Path,
         extra_metadata: Optional[Dict[str, Any]] = None,
     ) -> ModelResponse:
+        """
+        Single-turn generation (legacy support).
+        """
         mime, image_b64 = self._encode_image_b64(image_path) if image_path else (None, None)
 
-        # Gemini payload structure
         payload: Dict[str, Any] = {
             "contents": [
                 {
@@ -87,13 +76,51 @@ class GoogleVertexGemini(VisionLanguageModel):
                     ],
                 }
             ],
-            # "generationConfig": {
-                # "maxOutputTokens": self.max_output_tokens
-            # },
         }
 
+        return self._send_request(payload, extra_metadata)
+
+    def generate_chat(self, messages: List[Dict[str, Any]], extra_metadata: Optional[Dict[str, Any]] = None) -> ModelResponse:
+        """
+        Multi-turn chat generation.
+        
+        Args:
+            messages: List of dicts, e.g.:
+                [
+                    {"role": "user", "text": "...", "image_path": "..."},
+                    {"role": "model", "text": "..."}
+                ]
+        """
+        contents = []
+        
+        for msg in messages:
+            role = msg["role"]
+            parts = []
+            
+            # Add text
+            if msg.get("text"):
+                parts.append({"text": msg["text"]})
+            
+            # Add image
+            if msg.get("image_path"):
+                mime, b64 = self._encode_image_b64(msg["image_path"])
+                parts.append({"inline_data": {"mime_type": mime, "data": b64}})
+                
+            contents.append({"role": role, "parts": parts})
+
+        payload = {
+            "contents": contents,
+            "generationConfig": {
+                "temperature": 0.2,
+                # "maxOutputTokens": 1000
+            }
+        }
+        
+        return self._send_request(payload, extra_metadata)
+
+    def _send_request(self, payload: Dict[str, Any], extra_metadata: Optional[Dict[str, Any]] = None) -> ModelResponse:
+        """Helper to handle the actual HTTP request and parsing."""
         try:
-            # CHANGE: Pass the API Key as a query parameter (?key=YOUR_KEY)
             resp = requests.post(
                 self.endpoint,
                 params={"key": self.api_key},
@@ -103,13 +130,9 @@ class GoogleVertexGemini(VisionLanguageModel):
             )
             resp.raise_for_status()
             data = resp.json()
-        except requests.RequestException as e:
-            # If you get a 404, double check the 'model_name' or your API Key permissions
+        except Exception as e:
             raise RuntimeError(f"Google Vertex request failed: {e}") from e
-        except ValueError as e:
-            raise RuntimeError(f"Google Vertex returned non-JSON: {resp.text[:500]}") from e
 
-        # Parse the response
         text_parts: list[str] = []
         for cand in data.get("candidates", [])[:1]:
             for part in (cand.get("content", {}) or {}).get("parts", []) or []:
@@ -126,3 +149,4 @@ class GoogleVertexGemini(VisionLanguageModel):
         }
         
         return ModelResponse(raw_text=text, provider_payload=provider_payload)
+
