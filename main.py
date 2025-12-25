@@ -10,7 +10,9 @@ import string
 
 # --- Import from your updated files ---
 from clean.prompt import get_prompt
+from clean.examples import load_derivations
 from aftabe_vlm.models.GoogleAPI import GoogleVertexGemini, GoogleVertexConfig
+from aftabe_vlm.models.DeepSeekAPI import DeepSeekAPI
 from aftabe_vlm.models.GemmaAPI import GemmaAPI
 from aftabe_vlm.models.OpenaiAPI import OpenaiGPT
 from aftabe_vlm.models.QwenAPI import Qwen3
@@ -19,7 +21,7 @@ from aftabe_vlm.models.QwenAPI import Qwen3
 # --- Configuration ---
 DATASET_ROOT = "dataset"
 CACHE_FILE = "results_cache.jsonl"
-MAX_WORKERS = 1
+MAX_WORKERS = 16
 
 # Logging Setup
 logging.basicConfig(
@@ -70,7 +72,7 @@ def load_dataset(root_path: str) -> Dict[str, List[Dict]]:
     lang_dirs = sorted(lang_dirs)
     
     for lang in lang_dirs:
-        if lang not in ["en", "pe"]:
+        if lang not in ["en"]:
             continue
         jsonl_path = os.path.join(root_path, lang, f"{lang}-dataset.jsonl")
         if not os.path.exists(jsonl_path):
@@ -108,14 +110,10 @@ def prepare_data_split(lang: str, dataset: List[Dict], num_examples: int):
         logger.warning(f"Not enough data to split {num_examples} examples. Using 0.")
         return [], dataset
     
-    ids = {
-        'en' : [1,25,117],
-        'pe' : [36,80,161],
-        'cross' : [6,104,239],
-        # 'ar' : [5,29,121]
-        }
-    examples = [dataset[i] for i in ids[lang]]
-    test_set = [item for i, item in enumerate(dataset) if i not in ids[lang]]
+    derivations = load_derivations()
+
+    examples = [[dataset[i], derivations[lang][i]] for i in derivations[lang].keys()]
+    test_set = [item for i, item in enumerate(dataset) if i not in derivations[lang].keys()]
     return examples, test_set
 
 def load_cache() -> Dict[str, Any]:
@@ -177,14 +175,18 @@ def clean_json_response(text: str) -> Dict:
 # =============================================================================
 def process_sample(
     sample: Dict, 
-    examples: List[Dict], 
-    model: GoogleVertexGemini, 
+    examples: List[List[Any]], 
+    model: Any, 
     use_context: bool, 
     hint_type: Optional[str],
     pass_at_enabled: bool,
     num_pass: int,
     model_name: str
 ):
+    if 'gemini' in model_name.lower():
+        role = 'model'
+    else:
+        role = 'assistant'
     try:
         lang = sample['language']
         
@@ -196,26 +198,34 @@ def process_sample(
         
         # 2. In-Context Examples (Images + Answers)
         if use_context and examples:
-            first_ex = examples[0]
+            first_ex_data, derivation = examples[0]
             messages.append({
                 "role": "user",
                 "text": f"{sys_prompt}\n\nHere is an example puzzle:\n",
-                "image_path": first_ex['full_image_path']
+                "image_path": first_ex_data['full_image_path']
             })
             messages.append({
-                "role": "model",
-                "text": json.dumps({"final_answer": first_ex['answer']}, ensure_ascii=False)
+                "role": role,
+                "text": json.dumps({
+                    "primary_clues": derivation["primary_clues"],
+                    "candidates": derivation["candidates"],
+                    "final_answer": first_ex_data['answer']
+                    }, ensure_ascii=False)
             })
             
-            for ex in examples[1:]:
+            for ex_data, ex_derivation in examples[1:]:
                 messages.append({
                     "role": "user",
                     "text": "Here is another example:",
-                    "image_path": ex['full_image_path']
+                    "image_path": ex_data['full_image_path']
                 })
                 messages.append({
-                    "role": "model",
-                    "text": json.dumps({"final_answer": ex['answer']}, ensure_ascii=False)
+                    "role": role,
+                    "text": json.dumps({
+                        "primary_clues": ex_derivation["primary_clues"], # Using the derivation list here
+                        "candidates": ex_derivation["candidates"],
+                        "final_answer": ex_data['answer']
+                    }, ensure_ascii=False)
                 })
             
             # Final Target setup
@@ -272,7 +282,7 @@ def process_sample(
             # If wrong, append feedback
             if i < max_loops - 1:
                 current_history.append({
-                    "role": "model", 
+                    "role": role, 
                     "text": response.raw_text
                 })
                 current_history.append({
@@ -307,10 +317,11 @@ def process_sample(
 def main():
     # Init model (now containing generate_chat)
     models = {
-        "gemma": GemmaAPI(),
+        # "gemma": GemmaAPI(),
+        # "deepseek": DeepSeekAPI(),
         "gemini-flash": GoogleVertexGemini(GoogleVertexConfig(model_name="gemini-2.5-flash")),
         # "gemini-pro": GoogleVertexGemini(GoogleVertexConfig(model_name="gemini-2.5-pro")),
-        "gpt": OpenaiGPT(),
+        # "gpt": OpenaiGPT(),
         # "qwen": Qwen3(),
     }
     for model in models.keys():
@@ -318,7 +329,7 @@ def main():
         MODEL_NAME = model.model_name
         
         # Configuration
-        USE_CONTEXT = False
+        USE_CONTEXT = True
         NUM_EXAMPLES = 3     
         HINT_TYPE = "char_count" 
         PASS_AT_ENABLED = False
@@ -366,7 +377,7 @@ def main():
                     )
                     tasks.append(future)
 
-                    time.sleep(5) # To avoid rate limits
+                    # time.sleep(5) # To avoid rate limits
 
             for future in as_completed(tasks):
                 try:

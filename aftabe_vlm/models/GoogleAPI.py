@@ -15,7 +15,7 @@ class GoogleVertexConfig:
     api_key: Optional[str] = "AQ.Ab8RN6JUameBc8_AaLAu4VQIRIKpiKQYbshldsDW0Mq5pqShgg" 
     model_name: str = "gemini-2.5-flash" 
     base_url: str = "https://aiplatform.googleapis.com"
-    timeout: int = 240
+    timeout: int = 480
 
 class GoogleVertexGemini(VisionLanguageModel):
     def __init__(self, config: Optional[GoogleVertexConfig] = None) -> None:
@@ -110,10 +110,10 @@ class GoogleVertexGemini(VisionLanguageModel):
 
         payload = {
             "contents": contents,
-            "generationConfig": {
-                "temperature": 0.2,
+            # "generationConfig": {
+                # "temperature": 0.2,
                 # "maxOutputTokens": 1000
-            }
+            # }
         }
         
         return self._send_request(payload, extra_metadata)
