@@ -21,7 +21,7 @@ from aftabe_vlm.models.QwenAPI import Qwen3
 # --- Configuration ---
 DATASET_ROOT = "dataset"
 CACHE_FILE = "results_cache.jsonl"
-MAX_WORKERS = 16
+MAX_WORKERS = 1
 
 # Logging Setup
 logging.basicConfig(
@@ -72,7 +72,7 @@ def load_dataset(root_path: str) -> Dict[str, List[Dict]]:
     lang_dirs = sorted(lang_dirs)
     
     for lang in lang_dirs:
-        if lang not in ["en"]:
+        if lang not in ["en", "pe", "cross"]:
             continue
         jsonl_path = os.path.join(root_path, lang, f"{lang}-dataset.jsonl")
         if not os.path.exists(jsonl_path):
@@ -143,21 +143,57 @@ def save_to_cache(result: Dict):
         with open(CACHE_FILE, 'a', encoding='utf-8') as f:
             f.write(json.dumps(result, ensure_ascii=False) + "\n")
 
+# --- Global Cache for Hints ---
+# Structure: {'en': {'123': 'b_s_c', ...}, 'pe': {...}}
+_CLEAN_PATTERNS_CACHE = {}
+CLEAN_DATASET_ROOT = "clean"  # Ensure this folder exists and contains your generated files
+
+def _ensure_clean_patterns_loaded():
+    """Lazy-loads the clean patterns into memory only once."""
+    global _CLEAN_PATTERNS_CACHE
+    if _CLEAN_PATTERNS_CACHE:
+        return
+
+    # Check if folder exists
+    if not os.path.exists(CLEAN_DATASET_ROOT):
+        print(f"Warning: '{CLEAN_DATASET_ROOT}' folder not found. Hints will be random.")
+        return
+
+    # Load each language file
+    for filename in os.listdir(CLEAN_DATASET_ROOT):
+        if filename.endswith("-dataset.jsonl"):
+            # Extract lang from filename (e.g., "en-dataset.jsonl" -> "en")
+            lang = filename.split("-")[0] 
+            _CLEAN_PATTERNS_CACHE[lang] = {}
+            
+            filepath = os.path.join(CLEAN_DATASET_ROOT, filename)
+            try:
+                with open(filepath, 'r', encoding='utf-8') as f:
+                    for line in f:
+                        if line.strip():
+                            row = json.loads(line)
+                            # Store by ID (ensure string format for consistency)
+                            _CLEAN_PATTERNS_CACHE[lang][str(row['id'])] = row.get('hint_pattern', '')
+            except Exception as e:
+                print(f"Error loading clean file {filename}: {e}")
+
 # =============================================================================
 # Helpers
 # =============================================================================
-def generate_hint(answer: str, hint_type: str) -> str:
+def generate_hint(sample_id: str, language: str, answer: str, hint_type: str) -> str:
     if not answer: return ""
     clean = answer.strip()
     
     if hint_type == "char_count":
         return f"\nHINT: The answer has {len(clean.replace(' ', ''))} characters (excluding spaces)."
     elif hint_type == "shuffle_chars":
-        indices = [i for i, c in enumerate(clean) if c != ' ']
-        reveal_count = max(1, int(0.1 * len(indices)))
-        reveal_indices = set(random.sample(indices, min(reveal_count, len(indices))))
-        masked = "".join([c if (i in reveal_indices or c == ' ') else '_' for i, c in enumerate(clean)])
-        return f"\nHINT: Pattern of the answer is: {masked}"
+
+        masked = _CLEAN_PATTERNS_CACHE[language].get(str(sample_id))
+
+        return (
+            f"\nHINT: The pattern of the answer is '{masked}'. "
+            f"In this pattern, '_' represents a hidden character and spaces represent actual spaces in the answer."
+        )
     return ""
 
 def clean_json_response(text: str) -> Dict:
@@ -189,6 +225,7 @@ def process_sample(
         role = 'assistant'
     try:
         lang = sample['language']
+        id = sample['id']
         
         # --- Build Message History ---
         messages = []
@@ -229,7 +266,7 @@ def process_sample(
                 })
             
             # Final Target setup
-            hint_str = generate_hint(sample['answer'], hint_type) if hint_type else ""
+            hint_str = generate_hint(sample['id'], sample['language'], sample['answer'], hint_type) if hint_type else ""
             messages.append({
                 "role": "user",
                 "text": f"Now solve this new puzzle. Provide the JSON output.{hint_str}",
@@ -237,7 +274,7 @@ def process_sample(
             })
         else:
             # No context: System prompt + Target Image
-            hint_str = generate_hint(sample['answer'], hint_type) if hint_type else ""
+            hint_str = generate_hint(sample['id'], sample['language'], sample['answer'], hint_type) if hint_type else ""
             messages.append({
                 "role": "user",
                 "text": f"{sys_prompt}\n\nAnalyze the image and provide the JSON solution.{hint_str}",
@@ -287,7 +324,10 @@ def process_sample(
                 })
                 current_history.append({
                     "role": "user", 
-                    "text": f"The answer '{model_ans}' is incorrect. Please re-analyze the image and provide the correct JSON."
+                    "text": f"The answer '{model_ans}' is incorrect. Please Step-by-Step:\n"
+                            f"1. List the primary clues you see in the image again.\n"
+                            f"2. Consider alternative interpretations or puns for these elements.\n"
+                            f"3. Provide a NEW answer in the correct JSON format."
                 })
 
         # --- Save Result ---
@@ -320,8 +360,8 @@ def main():
         # "gemma": GemmaAPI(),
         # "deepseek": DeepSeekAPI(),
         "gemini-flash": GoogleVertexGemini(GoogleVertexConfig(model_name="gemini-2.5-flash")),
-        # "gemini-pro": GoogleVertexGemini(GoogleVertexConfig(model_name="gemini-2.5-pro")),
-        # "gpt": OpenaiGPT(),
+        "gemini-pro": GoogleVertexGemini(GoogleVertexConfig(model_name="gemini-2.5-pro")),
+        "gpt": OpenaiGPT(),
         # "qwen": Qwen3(),
     }
     for model in models.keys():
@@ -329,7 +369,7 @@ def main():
         MODEL_NAME = model.model_name
         
         # Configuration
-        USE_CONTEXT = True
+        USE_CONTEXT = False
         NUM_EXAMPLES = 3     
         HINT_TYPE = "char_count" 
         PASS_AT_ENABLED = False
@@ -339,6 +379,7 @@ def main():
 
         datasets = load_dataset(DATASET_ROOT)
         cache = load_cache()
+        _ensure_clean_patterns_loaded()
         tasks = []
 
         with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
@@ -377,7 +418,7 @@ def main():
                     )
                     tasks.append(future)
 
-                    # time.sleep(5) # To avoid rate limits
+                    time.sleep(50) # To avoid rate limits
 
             for future in as_completed(tasks):
                 try:

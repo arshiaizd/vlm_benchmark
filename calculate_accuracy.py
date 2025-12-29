@@ -2,10 +2,8 @@ import json
 import os
 from collections import defaultdict
 
-# Path to your cache file
-CACHE_FILE = "results_cache.jsonl"
 
-def calculate_accuracy():
+def calculate_accuracy(CACHE_FILE):
     """
     Reads the cache file and calculates accuracy per Model/Configuration per Language.
     """
@@ -88,4 +86,13 @@ def calculate_accuracy():
         print("-" * 110)
 
 if __name__ == "__main__":
-    calculate_accuracy()
+
+    for CACHE_FILE in [
+        # "context_true_gemini_with_temp_0.01.jsonl",
+        # "context_true_gemini_with_temp_0.2.jsonl",
+        # "context_true_gemini_with_temp_1.jsonl",
+        # "context_true_gemini_with_temp_2.jsonl",
+        "results_cache.jsonl",
+        # "gpt-5.2_old_without_assistant.jsonl"
+    ]:
+        calculate_accuracy(CACHE_FILE)

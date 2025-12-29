@@ -12,7 +12,7 @@ from aftabe_vlm.models.base import VisionLanguageModel, ModelResponse
 @dataclass
 class GoogleVertexConfig:
     # Put your Google Cloud API Key here (starts with AIza...)
-    api_key: Optional[str] = "AQ.Ab8RN6JUameBc8_AaLAu4VQIRIKpiKQYbshldsDW0Mq5pqShgg" 
+    api_key: Optional[str] = "AQ.Ab8RN6IRSLIDAoGOmI4qHJqj2ZgyG3_w9EDQDg-zexqpCkARgQ" 
     model_name: str = "gemini-2.5-flash" 
     base_url: str = "https://aiplatform.googleapis.com"
     timeout: int = 480
@@ -110,10 +110,10 @@ class GoogleVertexGemini(VisionLanguageModel):
 
         payload = {
             "contents": contents,
-            # "generationConfig": {
-                # "temperature": 0.2,
+            "generationConfig": {
+                # "temperature": 2.0,
                 # "maxOutputTokens": 1000
-            # }
+            }
         }
         
         return self._send_request(payload, extra_metadata)

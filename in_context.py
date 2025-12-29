@@ -18,8 +18,8 @@ def split_jsonl_by_context(input_file, true_output_file, others_output_file):
                 try:
                     data = json.loads(line)
                     
-                    # Check if 'use_context' is strictly True
-                    if data.get("use_context") is True:
+                    # Check if 'model_name' is strictly "gemini-2.5-flash"
+                    if data.get("model_name") == "gpt-5.2":
                         f_true.write(line + '\n')
                         count_true += 1
                     else:
@@ -39,7 +39,7 @@ def split_jsonl_by_context(input_file, true_output_file, others_output_file):
 # --- usage ---
 # Replace 'data.jsonl' with your actual file name
 input_filename = 'results_cache.jsonl' 
-output_filename = 'context_true.jsonl'
-remaining_filename = 'data_cleaned.jsonl'
+output_filename = 'gpt-5.2_old_without_assistant.jsonl'
+remaining_filename = 'results_cache11.jsonl'
 
 split_jsonl_by_context(input_filename, output_filename, remaining_filename)

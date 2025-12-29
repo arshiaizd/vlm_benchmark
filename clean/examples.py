@@ -94,9 +94,50 @@ pe = {
 }
 
 cross = {
-    ids["cross"][0] : "",
-    ids["cross"][1] : "",
-    ids["cross"][2] : "",
+    ids["cross"][0] : {
+        "primary_clues": [
+            "The image shows the Persian letter 'Seen' (س).",
+            "Placed on top ('Roosh' - روش) of the 'Seen' are three ('Se' - سه) hats ('Hat' - هت).",
+            "Combining 'Seen' + 'Roosh' creates the name 'Soroush' (سروش).",
+            "Combining 'Se' (Three) + 'Hat' (English word for hat) sounds like 'Sehhat' (صحت).",
+            "Together, they form the name of the famous Iranian director 'Soroush Sehhat' (سروش صحت)."
+        ],
+        "candidates": [
+            "سه کلاه س",
+            "کلاه سه س",
+            "سروش صحت" 
+        ],
+    },
+    ids["cross"][1] : {
+        "primary_clues": [
+            "The image shows the letter 'k' surrounded by three checkmarks (ticks).",
+            "The letter 'k' is in the middle, which translates to 'Mian' (میان) in Persian.",
+            "Combining 'K' + 'Mian' phonetically sounds like 'Kamion' (کامیون), meaning Truck.",
+            "The 'k' is placed among ('La' - لا) the three ('Se' - سه) ticks ('Tick' - تیک).",
+            "The phrase 'La-Se-Tick' (لا سه تیک) sounds like 'Lastik' (لاستیک), meaning Tire.",
+            "Together, the visual pun creates 'Lastik Kamion' (لاستیک کامیون)."
+        ],
+        "candidates": [
+            "لاستیک اتوبوس",
+            "لاستیک دوچرخه",
+            "لاستیک کامیون"
+        ],
+    },
+    ids["cross"][2] : {
+        "primary_clues": [
+            "The image features a garden, which translates to 'Bagh' (باغ) in Persian.",
+            "The letters 'DR' are superimposed on the scene.",
+            "Phonetically, the English letters 'DR' (Dee-Ar) sound identical to the Persian word 'Diar' (دیار), meaning 'Land' or 'Realm'.",
+            "Combining the two components yields 'Diar' + 'Bagh'.",
+            "This creates a pun on the common phrase 'Diar-e Baghi' (دیار باقی), which means 'The Eternal Realm' or 'The Afterlife'.",
+            "The pun works by substituting the word 'Bagh' (Garden) for the phonetically similar 'Baghi' (Eternal)."
+        ],
+        "candidates": [
+            "دکتر باغی",
+            "باغ دیوار",
+            "دیار باقی"
+        ],
+    },
 }
 
 ar = {
