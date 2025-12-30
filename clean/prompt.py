@@ -22,6 +22,12 @@ def get_prompt(category: str) -> str:
                 - The target answer language is Persian (Farsi).
                 - CULTURAL LENS: Do not simply translate English concepts. You must interpret the visual elements through the lens of Persian culture, literature, and common daily idioms.
                 - WORDPLAY: If the image suggests wordplay, prioritize phonetic/semantic connections natural in Persian.\n\n"""
+    
+    elif category == "ar":
+        rules = """
+                - The target answer language is Arabic.
+                - CULTURAL LENS: Do not simply translate English concepts. You must interpret the visual elements through the lens of Arabic culture, literature, and common daily idioms.
+                - WORDPLAY: If the image suggests wordplay, prioritize phonetic/semantic connections natural in Arabic.\n\n"""
 
     elif category == "cross":
         rules = """

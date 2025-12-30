@@ -1,30 +1,29 @@
-# Use the environment variable if the user doesn't provide Project ID.
-import os
+import string
+import re
 
-import vertexai
+def normalize_answer(text: str) -> str:
+    """
+    Normalizes text to handle robustness cases:
+    - Case insensitive
+    - Ignores spaces ("match point" == "matchpoint")
+    - Ignores hyphens ("match-point" == "matchpoint")
+    - Ignores trailing punctuation
+    """
+    if not text:
+        return ""
+    
+    # 1. Lowercase
 
-PROJECT_ID = ""  # @param {type: "string", placeholder: "[your-project-id]", isTemplate: true}
+    text = re.sub(r'[\u064B-\u0652]', '', text)
+    
+    text = text.lower()
+    # 2. Remove punctuation (keeps letters/digits safe, removes .,-!?)
+    # This map removes all standard punctuation
+    text = text.translate(str.maketrans('', '', string.punctuation))
+    
+    # 3. Remove spaces
+    text = text.replace(" ", "")
+    
+    return text
 
-if not PROJECT_ID:
-    PROJECT_ID = os.environ.get("GOOGLE_CLOUD_PROJECT")
-
-REGION = ""  # @param {type: "string", placeholder: "[your-region]", isTemplate: true}
-
-if not REGION:
-    REGION = os.environ.get("GOOGLE_CLOUD_REGION", "us-central1")
-
-vertexai.init(project=PROJECT_ID, location=REGION)
-
-print(f"Project: {PROJECT_ID}\nLocation: {REGION}")
-     
-
-from vertexai import model_garden
-
-
-
-all_model_versions = model_garden.list_deployable_models(
-    model_filter="gemma3", list_hf_models=False
-)
-     
-
-print(all_model_versions)
+print(normalize_answer("دَبَّابَة"))

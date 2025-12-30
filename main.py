@@ -7,11 +7,13 @@ import time
 from typing import List, Dict, Any, Optional
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import string
+import re
 
 # --- Import from your updated files ---
 from clean.prompt import get_prompt
 from clean.examples import load_derivations
 from aftabe_vlm.models.GoogleAPI import GoogleVertexGemini, GoogleVertexConfig
+from aftabe_vlm.models.AvalaiGemini import AvalAiGemini
 from aftabe_vlm.models.DeepSeekAPI import DeepSeekAPI
 from aftabe_vlm.models.GemmaAPI import GemmaAPI
 from aftabe_vlm.models.OpenaiAPI import OpenaiGPT
@@ -21,7 +23,7 @@ from aftabe_vlm.models.QwenAPI import Qwen3
 # --- Configuration ---
 DATASET_ROOT = "dataset"
 CACHE_FILE = "results_cache.jsonl"
-MAX_WORKERS = 1
+MAX_WORKERS = 8
 
 # Logging Setup
 logging.basicConfig(
@@ -48,8 +50,10 @@ def normalize_answer(text: str) -> str:
         return ""
     
     # 1. Lowercase
-    text = text.lower()
+
+    text = re.sub(r'[\u064B-\u0652]', '', text)
     
+    text = text.lower()
     # 2. Remove punctuation (keeps letters/digits safe, removes .,-!?)
     # This map removes all standard punctuation
     text = text.translate(str.maketrans('', '', string.punctuation))
@@ -72,7 +76,7 @@ def load_dataset(root_path: str) -> Dict[str, List[Dict]]:
     lang_dirs = sorted(lang_dirs)
     
     for lang in lang_dirs:
-        if lang not in ["en", "pe", "cross"]:
+        if lang not in ["en", "pe", "cross", "ar"]:
             continue
         jsonl_path = os.path.join(root_path, lang, f"{lang}-dataset.jsonl")
         if not os.path.exists(jsonl_path):
@@ -359,8 +363,10 @@ def main():
     models = {
         # "gemma": GemmaAPI(),
         # "deepseek": DeepSeekAPI(),
-        "gemini-flash": GoogleVertexGemini(GoogleVertexConfig(model_name="gemini-2.5-flash")),
-        "gemini-pro": GoogleVertexGemini(GoogleVertexConfig(model_name="gemini-2.5-pro")),
+        "gemini-flash": AvalAiGemini(model="gemini-2.5-flash"),
+        "gemini-pro": AvalAiGemini(model="gemini-2.5-pro"),
+        # "gemini-flash": GoogleVertexGemini(GoogleVertexConfig(model_name="gemini-2.5-flash")),
+        # "gemini-pro": GoogleVertexGemini(GoogleVertexConfig(model_name="gemini-2.5-pro")),
         "gpt": OpenaiGPT(),
         # "qwen": Qwen3(),
     }
@@ -371,7 +377,7 @@ def main():
         # Configuration
         USE_CONTEXT = False
         NUM_EXAMPLES = 3     
-        HINT_TYPE = "char_count" 
+        HINT_TYPE = "shuffle_chars" 
         PASS_AT_ENABLED = False
         NUM_PASS = 3
         
@@ -418,7 +424,7 @@ def main():
                     )
                     tasks.append(future)
 
-                    time.sleep(50) # To avoid rate limits
+                    # time.sleep(4) # To avoid rate limits
 
             for future in as_completed(tasks):
                 try:

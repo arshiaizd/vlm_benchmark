@@ -2,7 +2,7 @@ ids = {
         'en' : [1,25,117],
         'pe' : [36,80,161],
         'cross' : [6,104,239],
-        # 'ar' : [5,29,121]
+        'ar' : [11,20,15]
         }
 
 en = {
@@ -141,9 +141,50 @@ cross = {
 }
 
 ar = {
-    # ids["ar"][0] : "",
-    # ids["ar"][1] : "",
-    # ids["ar"][2] : "",
+    ids["ar"][0] : {
+        "primary_clues": [
+            "The image features the Arabic letter 'Qaf' (ق).",
+            "The letter has wings attached to it, indicating the action of flying.",
+            "The Arabic verb for 'he flew' is 'Tara' (طار).",
+            "Combining the letter 'Q' (ق) with the verb 'Tara' (طار) creates the sequence 'Q-Tara'.",
+            "This forms the word 'Qitar' (قطار).",
+            "The word 'Qitar' (قطار) means 'Train' in Arabic."
+        ],
+        "candidates": [
+            "قطار",
+            "طائر",
+            "طارق"
+        ]
+    },
+    ids["ar"][1] : {
+        "primary_clues": [
+            "The image features the word 'LOGIC' along with truth tables and logic gates.",
+            "The concept of 'Logic' translates to 'Mantiq' (منطق) in Arabic.",
+            "The central character is female, indicating the presence of a 'feminine marker'.",
+            "In Arabic morphology, the feminine marker is added as 'Ta Marbuta' (ـة).",
+            "Combining the word 'Mantiq' (منطق) with the feminine suffix (ـة) yields 'Mintaqah' (منطقة).",
+            "While the base word means Logic, the resulting word 'Mintaqah' (منطقة) means 'Area' or 'Zone'."
+        ],
+        "candidates": [
+            "منطقة",
+            "منطقي",
+            "منظمة"
+        ]
+    },
+    ids["ar"][2] : {
+        "primary_clues": [
+            "The image features a large, bright crescent moon inside a structure.",
+            "The Arabic word for 'Moon' is 'Qamar' (قمر).",
+            "The setting is a mosque filled with worshippers, symbolizing 'Religion' or 'Faith', which translates to 'Din' (دين) in Arabic.",
+            "Combining the word for Moon 'Qamar' and Religion 'Din' yields the compound 'Qamar al-Din' (قمر الدين).",
+            "This forms the term 'Qamar al-Din', which refers to sheets of dried apricot paste."
+        ],
+        "candidates": [
+            "قمر الدين",
+            "شمس الدين",
+            "نور الدين"
+        ]
+    },
 }
 
 def load_derivations():
@@ -151,5 +192,5 @@ def load_derivations():
         'en' : en,
         'pe' : pe,
         'cross' : cross,
-        # 'ar' : ar,
+        'ar' : ar,
     }
