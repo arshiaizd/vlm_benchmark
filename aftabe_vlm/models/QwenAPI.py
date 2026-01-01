@@ -29,6 +29,7 @@ class Qwen3(VisionLanguageModel):
             model: str = "qwen/qwen3-vl-235b-a22b-instruct",  # Updated to Qwen 3 Flagship
             base_url: str = "https://openrouter.ai/api/v1",
             timeout: int = 120,
+            temperature: Optional[float] = None,
     ):
         if not api_key:
             raise RuntimeError("API key is required.")
@@ -37,6 +38,7 @@ class Qwen3(VisionLanguageModel):
         self.model_name = model
         self.base_url = base_url.rstrip("/")
         self.timeout = timeout
+        self.temperature = temperature
 
         if self.base_url.endswith("/v1"):
             self.endpoint = f"{self.base_url}/chat/completions"
@@ -70,17 +72,19 @@ class Qwen3(VisionLanguageModel):
             user_prompt: str,
             image_path: str,
             extra_metadata: Optional[Dict[str, Any]] = None,
+            temperature: Optional[float] = None,
     ) -> ModelResponse:
         """Single-turn wrapper."""
         messages = [
             {"role": "user", "text": f"{system_prompt}\n\n{user_prompt}", "image_path": image_path}
         ]
-        return self.generate_chat(messages, extra_metadata)
+        return self.generate_chat(messages, extra_metadata, temperature)
 
     def generate_chat(
             self,
             messages: List[Dict[str, Any]],
-            extra_metadata: Optional[Dict[str, Any]] = None
+            extra_metadata: Optional[Dict[str, Any]] = None,
+            temperature: Optional[float] = None
     ) -> ModelResponse:
         """
         Multi-turn chat generation.
@@ -118,6 +122,10 @@ class Qwen3(VisionLanguageModel):
             # "max_tokens": 4000
         }
 
+        temp = self.temperature if temperature is None else temperature
+        if temp is not None:
+            payload["temperature"] = float(temp)
+
         try:
             resp = requests.post(
                 self.endpoint,
@@ -149,7 +157,6 @@ class Qwen3(VisionLanguageModel):
         }
 
         return ModelResponse(raw_text=raw_text, provider_payload=provider_payload)
-
 
 
 # def main():

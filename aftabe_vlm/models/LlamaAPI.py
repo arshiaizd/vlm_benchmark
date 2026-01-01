@@ -25,6 +25,7 @@ class LlamaVision(VisionLanguageModel):
         model: str = "llama-4-scout-17b-16e-instruct",
         base_url: str = "https://api.avalai.ir/v1",
         timeout: int = 120,
+        temperature: Optional[float] = None,
     ):
         # Prefer environment variable to avoid hardcoding secrets in code
         api_key = api_key or os.getenv("AVALAI_API_KEY")
@@ -35,6 +36,7 @@ class LlamaVision(VisionLanguageModel):
         self.model_name = model
         self.base_url = base_url.rstrip("/")
         self.timeout = timeout
+        self.temperature = temperature
 
         # OpenAI-compatible Chat Completions endpoint
         self.endpoint = f"{self.base_url}/chat/completions" if self.base_url.endswith("/v1") else f"{self.base_url}/v1/chat/completions"
@@ -71,19 +73,21 @@ class LlamaVision(VisionLanguageModel):
         image_path: Optional[str] = None,
         extra_metadata: Optional[Dict[str, Any]] = None,
         max_tokens: Optional[int] = None,
+        temperature: Optional[float] = None,
     ) -> ModelResponse:
         """Single-turn wrapper (system + user, optional image)."""
         messages = [
             {"role": "system", "text": system_prompt},
             {"role": "user", "text": user_prompt, "image_path": image_path},
         ]
-        return self.generate_chat(messages, extra_metadata=extra_metadata, max_tokens=max_tokens)
+        return self.generate_chat(messages, extra_metadata=extra_metadata, max_tokens=max_tokens, temperature=temperature)
 
     def generate_chat(
         self,
         messages: List[Dict[str, Any]],
         extra_metadata: Optional[Dict[str, Any]] = None,
         max_tokens: Optional[int] = None,
+        temperature: Optional[float] = None,
     ) -> ModelResponse:
         """Multi-turn chat generation."""
         openai_messages = []
@@ -115,6 +119,10 @@ class LlamaVision(VisionLanguageModel):
         }
         if max_tokens is not None:
             payload["max_tokens"] = max_tokens
+
+        temp = self.temperature if temperature is None else temperature
+        if temp is not None:
+            payload["temperature"] = float(temp)
 
         try:
             resp = requests.post(

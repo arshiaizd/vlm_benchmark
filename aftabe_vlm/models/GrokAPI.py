@@ -30,6 +30,7 @@ class GrokAPI(VisionLanguageModel):
         base_url: str = "https://openrouter.ai/api/v1",
         timeout: int = 120,
         image_detail: str = "high",  # "low" | "high" (if supported by the model)
+        temperature: Optional[float] = None,
     ):
         if not api_key:
             raise RuntimeError("API key is required (use env var XAI_API_KEY).")
@@ -39,6 +40,7 @@ class GrokAPI(VisionLanguageModel):
         self.base_url = base_url.rstrip("/")
         self.timeout = timeout
         self.image_detail = image_detail
+        self.temperature = temperature
 
         # If base_url already ends with /v1, append /chat/completions, else append /v1/chat/completions
         if self.base_url.endswith("/v1"):
@@ -79,18 +81,20 @@ class GrokAPI(VisionLanguageModel):
         user_prompt: str,
         image_path: str,
         extra_metadata: Optional[Dict[str, Any]] = None,
+        temperature: Optional[float] = None,
     ) -> ModelResponse:
         """Single-turn wrapper."""
         messages = [
             {"role": "system", "text": system_prompt},
             {"role": "user", "text": user_prompt, "image_path": image_path},
         ]
-        return self.generate_chat(messages, extra_metadata)
+        return self.generate_chat(messages, extra_metadata, temperature)
 
     def generate_chat(
         self,
         messages: List[Dict[str, Any]],
         extra_metadata: Optional[Dict[str, Any]] = None,
+        temperature: Optional[float] = None,
     ) -> ModelResponse:
         openai_messages = []
 
@@ -122,6 +126,10 @@ class GrokAPI(VisionLanguageModel):
             "model": self.model_name,
             "messages": openai_messages,
         }
+
+        temp = self.temperature if temperature is None else temperature
+        if temp is not None:
+            payload["temperature"] = float(temp)
 
         try:
             resp = requests.post(
