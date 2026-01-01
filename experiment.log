@@ -1,0 +1,2101 @@
+2026-01-02 02:07:04,846 [INFO] Config: Model=x-ai/grok-4.1-fast, Context=False(3 imgs), Hint=char_count, Pass@=False
+2026-01-02 02:07:04,861 [INFO] Loaded 50 samples for language 'ar'
+2026-01-02 02:07:04,877 [INFO] Loaded 322 samples for language 'cross'
+2026-01-02 02:07:04,896 [INFO] Loaded 300 samples for language 'en'
+2026-01-02 02:07:04,936 [INFO] Loaded 670 samples for language 'pe'
+2026-01-02 02:07:05,052 [INFO] Language ar: Using 3 examples, 47 test samples.
+2026-01-02 02:07:05,054 [INFO] Processing ar-1 | Attempt 1
+2026-01-02 02:07:05,055 [INFO] Processing ar-2 | Attempt 1
+2026-01-02 02:07:05,056 [INFO] Processing ar-3 | Attempt 1
+2026-01-02 02:07:05,057 [INFO] Processing ar-4 | Attempt 1
+2026-01-02 02:07:05,058 [INFO] Processing ar-5 | Attempt 1
+2026-01-02 02:07:05,058 [INFO] Processing ar-6 | Attempt 1
+2026-01-02 02:07:05,060 [INFO] Processing ar-7 | Attempt 1
+2026-01-02 02:07:05,063 [INFO] Processing ar-8 | Attempt 1
+2026-01-02 02:07:05,064 [INFO] Processing ar-9 | Attempt 1
+2026-01-02 02:07:05,064 [INFO] Processing ar-10 | Attempt 1
+2026-01-02 02:07:05,069 [INFO] Processing ar-11 | Attempt 1
+2026-01-02 02:07:05,072 [INFO] Processing ar-13 | Attempt 1
+2026-01-02 02:07:05,074 [INFO] Processing ar-14 | Attempt 1
+2026-01-02 02:07:05,078 [INFO] Processing ar-15 | Attempt 1
+2026-01-02 02:07:05,081 [INFO] Processing ar-17 | Attempt 1
+2026-01-02 02:07:05,084 [INFO] Processing ar-18 | Attempt 1
+2026-01-02 02:07:05,088 [INFO] Processing ar-19 | Attempt 1
+2026-01-02 02:07:05,088 [INFO] Processing ar-20 | Attempt 1
+2026-01-02 02:07:05,090 [INFO] Processing ar-22 | Attempt 1
+2026-01-02 02:07:05,091 [INFO] Processing ar-23 | Attempt 1
+2026-01-02 02:07:05,095 [INFO] Processing ar-24 | Attempt 1
+2026-01-02 02:07:05,098 [INFO] Processing ar-25 | Attempt 1
+2026-01-02 02:07:05,103 [INFO] Processing ar-26 | Attempt 1
+2026-01-02 02:07:05,105 [INFO] Processing ar-27 | Attempt 1
+2026-01-02 02:07:05,106 [INFO] Processing ar-28 | Attempt 1
+2026-01-02 02:07:05,110 [INFO] Processing ar-29 | Attempt 1
+2026-01-02 02:07:05,117 [INFO] Processing ar-30 | Attempt 1
+2026-01-02 02:07:05,118 [INFO] Processing ar-31 | Attempt 1
+2026-01-02 02:07:05,121 [INFO] Processing ar-32 | Attempt 1
+2026-01-02 02:07:05,122 [INFO] Processing ar-33 | Attempt 1
+2026-01-02 02:07:05,125 [INFO] Processing ar-34 | Attempt 1
+2026-01-02 02:07:05,127 [INFO] Processing ar-35 | Attempt 1
+2026-01-02 02:07:05,134 [INFO] Processing ar-36 | Attempt 1
+2026-01-02 02:07:05,137 [INFO] Processing ar-37 | Attempt 1
+2026-01-02 02:07:05,141 [INFO] Processing ar-38 | Attempt 1
+2026-01-02 02:07:05,143 [INFO] Processing ar-39 | Attempt 1
+2026-01-02 02:07:05,147 [INFO] Processing ar-40 | Attempt 1
+2026-01-02 02:07:05,150 [INFO] Processing ar-41 | Attempt 1
+2026-01-02 02:07:05,153 [INFO] Processing ar-42 | Attempt 1
+2026-01-02 02:07:05,155 [INFO] Processing ar-43 | Attempt 1
+2026-01-02 02:07:05,157 [INFO] Processing ar-44 | Attempt 1
+2026-01-02 02:07:05,159 [INFO] Processing ar-45 | Attempt 1
+2026-01-02 02:07:05,160 [INFO] Processing ar-46 | Attempt 1
+2026-01-02 02:07:05,161 [INFO] Processing ar-47 | Attempt 1
+2026-01-02 02:07:05,170 [INFO] Processing ar-48 | Attempt 1
+2026-01-02 02:07:05,173 [INFO] Processing ar-49 | Attempt 1
+2026-01-02 02:07:05,177 [INFO] Processing ar-50 | Attempt 1
+2026-01-02 02:07:05,179 [INFO] Language cross: Using 3 examples, 319 test samples.
+2026-01-02 02:07:05,187 [INFO] Processing cross-1 | Attempt 1
+2026-01-02 02:07:05,191 [INFO] Processing cross-2 | Attempt 1
+2026-01-02 02:07:05,193 [INFO] Processing cross-3 | Attempt 1
+2026-01-02 02:07:05,197 [INFO] Processing cross-4 | Attempt 1
+2026-01-02 02:07:05,198 [INFO] Processing cross-5 | Attempt 1
+2026-01-02 02:07:05,202 [INFO] Processing cross-6 | Attempt 1
+2026-01-02 02:07:05,204 [INFO] Processing cross-8 | Attempt 1
+2026-01-02 02:07:05,206 [INFO] Processing cross-9 | Attempt 1
+2026-01-02 02:07:05,206 [INFO] Processing cross-10 | Attempt 1
+2026-01-02 02:07:05,208 [INFO] Processing cross-11 | Attempt 1
+2026-01-02 02:07:05,218 [INFO] Processing cross-12 | Attempt 1
+2026-01-02 02:07:05,220 [INFO] Processing cross-13 | Attempt 1
+2026-01-02 02:07:05,222 [INFO] Processing cross-14 | Attempt 1
+2026-01-02 02:07:05,224 [INFO] Processing cross-15 | Attempt 1
+2026-01-02 02:07:05,235 [INFO] Processing cross-16 | Attempt 1
+2026-01-02 02:07:05,239 [INFO] Processing cross-17 | Attempt 1
+2026-01-02 02:07:05,242 [INFO] Processing cross-18 | Attempt 1
+2026-01-02 02:07:05,258 [INFO] Language en: Using 3 examples, 297 test samples.
+2026-01-02 02:07:05,266 [INFO] Language pe: Using 3 examples, 667 test samples.
+2026-01-02 02:07:14,488 [ERROR] Failed ar-11: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:07:14,497 [INFO] Processing cross-19 | Attempt 1
+2026-01-02 02:07:14,556 [ERROR] Failed ar-1: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:07:14,561 [INFO] Processing cross-20 | Attempt 1
+2026-01-02 02:07:14,584 [ERROR] Failed ar-10: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:07:14,598 [INFO] Processing cross-21 | Attempt 1
+2026-01-02 02:07:14,891 [ERROR] Failed ar-14: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:07:14,932 [INFO] Processing cross-22 | Attempt 1
+2026-01-02 02:07:15,083 [ERROR] Failed ar-18: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:07:15,092 [ERROR] Failed ar-19: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:07:15,105 [INFO] Processing cross-23 | Attempt 1
+2026-01-02 02:07:15,150 [INFO] Processing cross-24 | Attempt 1
+2026-01-02 02:07:15,511 [ERROR] Failed ar-13: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:07:15,519 [INFO] Processing cross-25 | Attempt 1
+2026-01-02 02:07:15,853 [ERROR] Failed cross-10: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:07:15,854 [ERROR] Failed cross-5: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:07:15,873 [INFO] Processing cross-26 | Attempt 1
+2026-01-02 02:07:15,880 [INFO] Processing cross-27 | Attempt 1
+2026-01-02 02:07:15,894 [ERROR] Failed ar-35: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:07:15,918 [INFO] Processing cross-28 | Attempt 1
+2026-01-02 02:07:15,962 [ERROR] Failed ar-42: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:07:15,976 [INFO] Processing cross-29 | Attempt 1
+2026-01-02 02:07:16,052 [ERROR] Failed cross-12: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:07:16,065 [INFO] Processing cross-30 | Attempt 1
+2026-01-02 02:07:16,101 [ERROR] Failed cross-3: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:07:16,107 [INFO] Processing cross-31 | Attempt 1
+2026-01-02 02:07:16,165 [ERROR] Failed ar-17: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:07:16,170 [INFO] Processing cross-32 | Attempt 1
+2026-01-02 02:07:16,185 [ERROR] Failed ar-33: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:07:16,187 [INFO] Processing cross-33 | Attempt 1
+2026-01-02 02:07:16,222 [ERROR] Failed ar-15: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:07:16,225 [INFO] Processing cross-34 | Attempt 1
+2026-01-02 02:07:16,284 [ERROR] Failed cross-9: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:07:16,294 [INFO] Processing cross-35 | Attempt 1
+2026-01-02 02:07:16,307 [ERROR] Failed cross-4: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:07:16,314 [INFO] Processing cross-36 | Attempt 1
+2026-01-02 02:07:16,428 [ERROR] Failed cross-6: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:07:16,428 [ERROR] Failed cross-13: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:07:16,434 [ERROR] Failed cross-11: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:07:16,443 [INFO] Processing cross-37 | Attempt 1
+2026-01-02 02:07:16,447 [INFO] Processing cross-38 | Attempt 1
+2026-01-02 02:07:16,462 [INFO] Processing cross-39 | Attempt 1
+2026-01-02 02:07:16,581 [ERROR] Failed cross-8: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:07:16,597 [ERROR] Failed ar-41: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:07:16,599 [INFO] Processing cross-40 | Attempt 1
+2026-01-02 02:07:16,605 [INFO] Processing cross-41 | Attempt 1
+2026-01-02 02:07:16,699 [ERROR] Failed ar-39: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:07:16,713 [INFO] Processing cross-42 | Attempt 1
+2026-01-02 02:07:16,822 [ERROR] Failed ar-44: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:07:16,831 [INFO] Processing cross-43 | Attempt 1
+2026-01-02 02:07:16,866 [ERROR] Failed ar-36: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:07:16,878 [INFO] Processing cross-44 | Attempt 1
+2026-01-02 02:07:16,891 [ERROR] Failed cross-15: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:07:16,903 [INFO] Processing cross-45 | Attempt 1
+2026-01-02 02:07:16,904 [ERROR] Failed ar-43: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:07:16,910 [INFO] Processing cross-46 | Attempt 1
+2026-01-02 02:07:16,929 [ERROR] Failed ar-22: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:07:16,943 [INFO] Processing cross-47 | Attempt 1
+2026-01-02 02:07:17,041 [ERROR] Failed ar-34: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:07:17,047 [INFO] Processing cross-48 | Attempt 1
+2026-01-02 02:07:17,220 [ERROR] Failed ar-40: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:07:17,232 [INFO] Processing cross-49 | Attempt 1
+2026-01-02 02:07:17,404 [ERROR] Failed cross-14: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:07:17,425 [INFO] Processing cross-50 | Attempt 1
+2026-01-02 02:07:18,360 [ERROR] Failed ar-24: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:07:18,364 [INFO] Processing cross-51 | Attempt 1
+2026-01-02 02:07:18,428 [ERROR] Failed ar-37: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:07:18,432 [INFO] Processing cross-52 | Attempt 1
+2026-01-02 02:07:18,521 [ERROR] Failed ar-38: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:07:18,532 [INFO] Processing cross-53 | Attempt 1
+2026-01-02 02:07:18,861 [ERROR] Failed ar-20: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:07:18,882 [INFO] Processing cross-54 | Attempt 1
+2026-01-02 02:07:19,339 [ERROR] Failed ar-30: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:07:19,349 [INFO] Processing cross-55 | Attempt 1
+2026-01-02 02:07:19,807 [ERROR] Failed ar-23: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:07:19,815 [INFO] Processing cross-56 | Attempt 1
+2026-01-02 02:07:20,124 [ERROR] Failed ar-3: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:07:20,143 [INFO] Processing cross-57 | Attempt 1
+2026-01-02 02:07:20,241 [ERROR] Failed ar-28: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:07:20,251 [INFO] Processing cross-58 | Attempt 1
+2026-01-02 02:07:20,400 [ERROR] Failed cross-20: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:07:20,406 [INFO] Processing cross-59 | Attempt 1
+2026-01-02 02:07:20,442 [ERROR] Failed cross-21: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:07:20,448 [INFO] Processing cross-60 | Attempt 1
+2026-01-02 02:07:20,652 [ERROR] Failed cross-19: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:07:20,656 [INFO] Processing cross-61 | Attempt 1
+2026-01-02 02:07:20,773 [ERROR] Failed cross-24: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:07:20,776 [INFO] Processing cross-62 | Attempt 1
+2026-01-02 02:07:20,983 [ERROR] Failed cross-17: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:07:20,987 [INFO] Processing cross-63 | Attempt 1
+2026-01-02 02:07:21,050 [ERROR] Failed ar-49: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:07:21,052 [INFO] Processing cross-64 | Attempt 1
+2026-01-02 02:07:21,074 [ERROR] Failed cross-25: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:07:21,077 [INFO] Processing cross-65 | Attempt 1
+2026-01-02 02:07:21,249 [ERROR] Failed cross-16: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:07:21,252 [INFO] Processing cross-66 | Attempt 1
+2026-01-02 02:07:21,266 [ERROR] Failed cross-2: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:07:21,270 [INFO] Processing cross-67 | Attempt 1
+2026-01-02 02:07:21,340 [ERROR] Failed cross-23: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:07:21,343 [INFO] Processing cross-68 | Attempt 1
+2026-01-02 02:07:21,429 [ERROR] Failed cross-29: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:07:21,431 [INFO] Processing cross-69 | Attempt 1
+2026-01-02 02:07:21,523 [ERROR] Failed cross-30: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:07:21,525 [INFO] Processing cross-70 | Attempt 1
+2026-01-02 02:07:21,688 [ERROR] Failed cross-34: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:07:21,690 [INFO] Processing cross-71 | Attempt 1
+2026-01-02 02:07:21,729 [ERROR] Failed cross-31: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:07:21,732 [INFO] Processing cross-72 | Attempt 1
+2026-01-02 02:07:21,774 [ERROR] Failed cross-33: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:07:21,776 [INFO] Processing cross-73 | Attempt 1
+2026-01-02 02:07:21,780 [ERROR] Failed cross-32: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:07:21,782 [INFO] Processing cross-74 | Attempt 1
+2026-01-02 02:07:21,973 [ERROR] Failed cross-28: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:07:21,975 [INFO] Processing cross-75 | Attempt 1
+2026-01-02 02:07:22,120 [ERROR] Failed cross-37: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:07:22,122 [INFO] Processing cross-76 | Attempt 1
+2026-01-02 02:07:22,154 [ERROR] Failed cross-41: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:07:22,155 [ERROR] Failed cross-1: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:07:22,157 [INFO] Processing cross-77 | Attempt 1
+2026-01-02 02:07:22,159 [INFO] Processing cross-78 | Attempt 1
+2026-01-02 02:07:22,176 [ERROR] Failed cross-27: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:07:22,180 [INFO] Processing cross-79 | Attempt 1
+2026-01-02 02:07:22,251 [ERROR] Failed cross-40: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:07:22,254 [INFO] Processing cross-80 | Attempt 1
+2026-01-02 02:07:22,426 [ERROR] Failed cross-22: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:07:22,429 [INFO] Processing cross-81 | Attempt 1
+2026-01-02 02:07:22,534 [ERROR] Failed cross-36: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:07:22,536 [INFO] Processing cross-82 | Attempt 1
+2026-01-02 02:07:22,625 [ERROR] Failed cross-35: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:07:22,628 [INFO] Processing cross-83 | Attempt 1
+2026-01-02 02:07:22,677 [ERROR] Failed cross-18: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:07:22,679 [INFO] Processing cross-84 | Attempt 1
+2026-01-02 02:07:22,685 [ERROR] Failed cross-43: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:07:22,687 [INFO] Processing cross-85 | Attempt 1
+2026-01-02 02:07:22,725 [ERROR] Failed cross-38: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:07:22,728 [INFO] Processing cross-86 | Attempt 1
+2026-01-02 02:07:22,748 [ERROR] Failed cross-39: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:07:22,750 [INFO] Processing cross-87 | Attempt 1
+2026-01-02 02:07:23,035 [ERROR] Failed cross-26: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:07:23,038 [INFO] Processing cross-88 | Attempt 1
+2026-01-02 02:08:32,577 [INFO] Config: Model=x-ai/grok-4.1-fast, Context=False(3 imgs), Hint=char_count, Pass@=False
+2026-01-02 02:08:32,582 [INFO] Loaded 300 samples for language 'en'
+2026-01-02 02:08:32,588 [INFO] Language en: Using 3 examples, 297 test samples.
+2026-01-02 02:08:32,590 [INFO] Processing en-1 | Attempt 1
+2026-01-02 02:08:32,591 [INFO] Processing en-3 | Attempt 1
+2026-01-02 02:08:32,591 [INFO] Processing en-4 | Attempt 1
+2026-01-02 02:08:32,592 [INFO] Processing en-5 | Attempt 1
+2026-01-02 02:08:32,592 [INFO] Processing en-6 | Attempt 1
+2026-01-02 02:08:32,593 [INFO] Processing en-7 | Attempt 1
+2026-01-02 02:08:32,594 [INFO] Processing en-8 | Attempt 1
+2026-01-02 02:08:32,595 [INFO] Processing en-9 | Attempt 1
+2026-01-02 02:08:32,597 [INFO] Processing en-10 | Attempt 1
+2026-01-02 02:08:32,598 [INFO] Processing en-11 | Attempt 1
+2026-01-02 02:08:32,601 [INFO] Processing en-12 | Attempt 1
+2026-01-02 02:08:32,601 [INFO] Processing en-13 | Attempt 1
+2026-01-02 02:08:32,602 [INFO] Processing en-14 | Attempt 1
+2026-01-02 02:08:32,603 [INFO] Processing en-15 | Attempt 1
+2026-01-02 02:08:32,604 [INFO] Processing en-16 | Attempt 1
+2026-01-02 02:08:32,605 [INFO] Processing en-17 | Attempt 1
+2026-01-02 02:08:32,607 [INFO] Processing en-18 | Attempt 1
+2026-01-02 02:08:32,609 [INFO] Processing en-19 | Attempt 1
+2026-01-02 02:08:32,610 [INFO] Processing en-20 | Attempt 1
+2026-01-02 02:08:32,613 [INFO] Processing en-21 | Attempt 1
+2026-01-02 02:08:32,615 [INFO] Processing en-22 | Attempt 1
+2026-01-02 02:08:32,618 [INFO] Processing en-23 | Attempt 1
+2026-01-02 02:08:32,621 [INFO] Processing en-24 | Attempt 1
+2026-01-02 02:08:32,624 [INFO] Processing en-25 | Attempt 1
+2026-01-02 02:08:32,626 [INFO] Processing en-27 | Attempt 1
+2026-01-02 02:08:32,629 [INFO] Processing en-28 | Attempt 1
+2026-01-02 02:08:32,632 [INFO] Processing en-29 | Attempt 1
+2026-01-02 02:08:32,633 [INFO] Processing en-30 | Attempt 1
+2026-01-02 02:08:32,635 [INFO] Processing en-31 | Attempt 1
+2026-01-02 02:08:32,637 [INFO] Processing en-32 | Attempt 1
+2026-01-02 02:08:32,640 [INFO] Processing en-33 | Attempt 1
+2026-01-02 02:08:32,641 [INFO] Processing en-34 | Attempt 1
+2026-01-02 02:08:32,643 [INFO] Processing en-35 | Attempt 1
+2026-01-02 02:08:32,644 [INFO] Processing en-36 | Attempt 1
+2026-01-02 02:08:32,647 [INFO] Processing en-37 | Attempt 1
+2026-01-02 02:08:32,654 [INFO] Processing en-38 | Attempt 1
+2026-01-02 02:08:32,660 [INFO] Processing en-39 | Attempt 1
+2026-01-02 02:08:32,665 [INFO] Processing en-40 | Attempt 1
+2026-01-02 02:08:32,669 [INFO] Processing en-41 | Attempt 1
+2026-01-02 02:08:32,681 [INFO] Processing en-42 | Attempt 1
+2026-01-02 02:08:32,703 [INFO] Processing en-43 | Attempt 1
+2026-01-02 02:08:32,733 [INFO] Processing en-44 | Attempt 1
+2026-01-02 02:08:32,754 [INFO] Processing en-45 | Attempt 1
+2026-01-02 02:08:32,766 [INFO] Processing en-46 | Attempt 1
+2026-01-02 02:08:32,779 [INFO] Processing en-47 | Attempt 1
+2026-01-02 02:08:32,792 [INFO] Processing en-48 | Attempt 1
+2026-01-02 02:08:32,838 [INFO] Processing en-49 | Attempt 1
+2026-01-02 02:08:32,845 [INFO] Processing en-50 | Attempt 1
+2026-01-02 02:08:32,863 [INFO] Processing en-51 | Attempt 1
+2026-01-02 02:08:32,904 [INFO] Processing en-52 | Attempt 1
+2026-01-02 02:08:32,933 [INFO] Processing en-53 | Attempt 1
+2026-01-02 02:08:32,938 [INFO] Processing en-54 | Attempt 1
+2026-01-02 02:08:32,943 [INFO] Processing en-55 | Attempt 1
+2026-01-02 02:08:32,951 [INFO] Processing en-56 | Attempt 1
+2026-01-02 02:08:32,953 [INFO] Processing en-57 | Attempt 1
+2026-01-02 02:08:32,979 [INFO] Processing en-58 | Attempt 1
+2026-01-02 02:08:33,022 [INFO] Processing en-59 | Attempt 1
+2026-01-02 02:08:33,037 [INFO] Processing en-60 | Attempt 1
+2026-01-02 02:08:33,046 [INFO] Processing en-61 | Attempt 1
+2026-01-02 02:08:33,061 [INFO] Processing en-62 | Attempt 1
+2026-01-02 02:08:33,084 [INFO] Processing en-63 | Attempt 1
+2026-01-02 02:08:33,261 [INFO] Processing en-64 | Attempt 1
+2026-01-02 02:08:33,314 [INFO] Processing en-65 | Attempt 1
+2026-01-02 02:08:33,346 [INFO] Processing en-66 | Attempt 1
+2026-01-02 02:08:40,187 [ERROR] Failed en-21: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:40,192 [INFO] Processing en-67 | Attempt 1
+2026-01-02 02:08:40,247 [ERROR] Failed en-16: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:40,259 [INFO] Processing en-68 | Attempt 1
+2026-01-02 02:08:40,291 [ERROR] Failed en-15: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:40,311 [INFO] Processing en-69 | Attempt 1
+2026-01-02 02:08:40,408 [ERROR] Failed en-22: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:40,418 [INFO] Processing en-70 | Attempt 1
+2026-01-02 02:08:40,540 [ERROR] Failed en-43: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:40,550 [INFO] Processing en-71 | Attempt 1
+2026-01-02 02:08:40,564 [ERROR] Failed en-14: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:40,571 [INFO] Processing en-72 | Attempt 1
+2026-01-02 02:08:40,586 [ERROR] Failed en-35: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:40,592 [INFO] Processing en-73 | Attempt 1
+2026-01-02 02:08:40,657 [ERROR] Failed en-36: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:40,659 [INFO] Processing en-74 | Attempt 1
+2026-01-02 02:08:41,045 [ERROR] Failed en-20: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:41,049 [INFO] Processing en-75 | Attempt 1
+2026-01-02 02:08:41,100 [ERROR] Failed en-37: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:41,115 [INFO] Processing en-76 | Attempt 1
+2026-01-02 02:08:41,263 [ERROR] Failed en-41: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:41,271 [INFO] Processing en-77 | Attempt 1
+2026-01-02 02:08:41,325 [ERROR] Failed en-1: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:41,353 [INFO] Processing en-78 | Attempt 1
+2026-01-02 02:08:41,584 [ERROR] Failed en-42: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:41,609 [INFO] Processing en-79 | Attempt 1
+2026-01-02 02:08:42,246 [ERROR] Failed en-56: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:42,257 [INFO] Processing en-80 | Attempt 1
+2026-01-02 02:08:42,319 [ERROR] Failed en-61: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:42,332 [INFO] Processing en-81 | Attempt 1
+2026-01-02 02:08:42,335 [ERROR] Failed en-55: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:42,339 [ERROR] Failed en-11: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:42,367 [INFO] Processing en-82 | Attempt 1
+2026-01-02 02:08:42,371 [INFO] Processing en-83 | Attempt 1
+2026-01-02 02:08:42,725 [ERROR] Failed en-57: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:42,737 [ERROR] Failed en-19: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:42,765 [INFO] Processing en-84 | Attempt 1
+2026-01-02 02:08:42,772 [INFO] Processing en-85 | Attempt 1
+2026-01-02 02:08:42,877 [ERROR] Failed en-34: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:42,886 [ERROR] Failed en-32: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:42,919 [INFO] Processing en-86 | Attempt 1
+2026-01-02 02:08:42,922 [INFO] Processing en-87 | Attempt 1
+2026-01-02 02:08:42,927 [ERROR] Failed en-38: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:42,938 [INFO] Processing en-88 | Attempt 1
+2026-01-02 02:08:43,143 [ERROR] Failed en-62: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:43,171 [INFO] Processing en-89 | Attempt 1
+2026-01-02 02:08:43,180 [ERROR] Failed en-18: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:43,190 [INFO] Processing en-90 | Attempt 1
+2026-01-02 02:08:43,203 [ERROR] Failed en-54: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:43,216 [INFO] Processing en-91 | Attempt 1
+2026-01-02 02:08:43,280 [ERROR] Failed en-33: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:43,281 [ERROR] Failed en-13: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:43,284 [INFO] Processing en-92 | Attempt 1
+2026-01-02 02:08:43,291 [INFO] Processing en-93 | Attempt 1
+2026-01-02 02:08:43,346 [ERROR] Failed en-39: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:43,351 [INFO] Processing en-94 | Attempt 1
+2026-01-02 02:08:43,424 [ERROR] Failed en-12: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:43,433 [INFO] Processing en-95 | Attempt 1
+2026-01-02 02:08:43,447 [ERROR] Failed en-52: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:43,451 [INFO] Processing en-96 | Attempt 1
+2026-01-02 02:08:43,485 [ERROR] Failed en-17: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:43,485 [ERROR] Failed en-40: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:43,489 [INFO] Processing en-97 | Attempt 1
+2026-01-02 02:08:43,502 [INFO] Processing en-98 | Attempt 1
+2026-01-02 02:08:43,526 [ERROR] Failed en-60: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:43,539 [ERROR] Failed en-59: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:43,551 [INFO] Processing en-99 | Attempt 1
+2026-01-02 02:08:43,648 [ERROR] Failed en-58: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:43,650 [INFO] Processing en-100 | Attempt 1
+2026-01-02 02:08:43,657 [ERROR] Failed en-63: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:43,715 [INFO] Processing en-101 | Attempt 1
+2026-01-02 02:08:43,902 [INFO] Processing en-102 | Attempt 1
+2026-01-02 02:08:44,113 [ERROR] Failed en-50: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:44,119 [ERROR] Failed en-5: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:44,139 [INFO] Processing en-103 | Attempt 1
+2026-01-02 02:08:44,207 [INFO] Processing en-104 | Attempt 1
+2026-01-02 02:08:44,571 [ERROR] Failed en-53: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:44,577 [INFO] Processing en-105 | Attempt 1
+2026-01-02 02:08:44,614 [ERROR] Failed en-9: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:44,633 [INFO] Processing en-106 | Attempt 1
+2026-01-02 02:08:44,758 [ERROR] Failed en-8: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:44,782 [INFO] Processing en-107 | Attempt 1
+2026-01-02 02:08:44,882 [ERROR] Failed en-49: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:44,904 [INFO] Processing en-108 | Attempt 1
+2026-01-02 02:08:44,932 [ERROR] Failed en-7: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:44,954 [ERROR] Failed en-23: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:44,958 [INFO] Processing en-109 | Attempt 1
+2026-01-02 02:08:44,965 [INFO] Processing en-110 | Attempt 1
+2026-01-02 02:08:45,067 [ERROR] Failed en-6: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:45,109 [INFO] Processing en-111 | Attempt 1
+2026-01-02 02:08:45,153 [ERROR] Failed en-28: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:45,192 [ERROR] Failed en-25: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:45,207 [ERROR] Failed en-3: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:45,217 [INFO] Processing en-112 | Attempt 1
+2026-01-02 02:08:45,225 [ERROR] Failed en-27: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:45,236 [INFO] Processing en-113 | Attempt 1
+2026-01-02 02:08:45,267 [ERROR] Failed en-51: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:45,270 [ERROR] Failed en-45: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:45,275 [INFO] Processing en-114 | Attempt 1
+2026-01-02 02:08:45,300 [ERROR] Failed en-44: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:45,314 [INFO] Processing en-115 | Attempt 1
+2026-01-02 02:08:45,345 [ERROR] Failed en-64: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:45,367 [ERROR] Failed en-4: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:45,375 [INFO] Processing en-116 | Attempt 1
+2026-01-02 02:08:45,392 [ERROR] Failed en-24: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:45,407 [ERROR] Failed en-48: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:45,431 [ERROR] Failed en-46: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:45,443 [INFO] Processing en-117 | Attempt 1
+2026-01-02 02:08:45,458 [ERROR] Failed en-29: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:45,475 [INFO] Processing en-119 | Attempt 1
+2026-01-02 02:08:45,481 [INFO] Processing en-120 | Attempt 1
+2026-01-02 02:08:45,503 [INFO] Processing en-121 | Attempt 1
+2026-01-02 02:08:45,546 [INFO] Processing en-122 | Attempt 1
+2026-01-02 02:08:45,550 [INFO] Processing en-123 | Attempt 1
+2026-01-02 02:08:45,556 [INFO] Processing en-124 | Attempt 1
+2026-01-02 02:08:45,562 [ERROR] Failed en-31: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:45,577 [ERROR] Failed en-10: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:45,607 [ERROR] Failed en-47: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:45,622 [ERROR] Failed en-30: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:45,632 [INFO] Processing en-125 | Attempt 1
+2026-01-02 02:08:45,689 [ERROR] Failed en-66: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:45,754 [INFO] Processing en-126 | Attempt 1
+2026-01-02 02:08:45,808 [INFO] Processing en-127 | Attempt 1
+2026-01-02 02:08:45,810 [ERROR] Failed en-65: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:45,844 [INFO] Processing en-128 | Attempt 1
+2026-01-02 02:08:45,901 [INFO] Processing en-129 | Attempt 1
+2026-01-02 02:08:45,960 [INFO] Processing en-130 | Attempt 1
+2026-01-02 02:08:46,066 [INFO] Processing en-131 | Attempt 1
+2026-01-02 02:08:48,030 [ERROR] Failed en-68: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:48,038 [INFO] Processing en-132 | Attempt 1
+2026-01-02 02:08:48,340 [ERROR] Failed en-67: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:48,344 [INFO] Processing en-133 | Attempt 1
+2026-01-02 02:08:48,423 [ERROR] Failed en-72: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:48,438 [ERROR] Failed en-73: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:48,464 [ERROR] Failed en-70: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:48,473 [INFO] Processing en-134 | Attempt 1
+2026-01-02 02:08:48,498 [INFO] Processing en-135 | Attempt 1
+2026-01-02 02:08:48,507 [INFO] Processing en-136 | Attempt 1
+2026-01-02 02:08:48,639 [ERROR] Failed en-71: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:48,651 [INFO] Processing en-137 | Attempt 1
+2026-01-02 02:08:48,742 [ERROR] Failed en-76: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:48,760 [INFO] Processing en-138 | Attempt 1
+2026-01-02 02:08:48,789 [ERROR] Failed en-69: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:48,820 [INFO] Processing en-139 | Attempt 1
+2026-01-02 02:08:48,964 [ERROR] Failed en-74: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:48,973 [INFO] Processing en-140 | Attempt 1
+2026-01-02 02:08:49,061 [ERROR] Failed en-78: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:49,089 [INFO] Processing en-141 | Attempt 1
+2026-01-02 02:08:49,163 [ERROR] Failed en-77: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:49,229 [INFO] Processing en-142 | Attempt 1
+2026-01-02 02:08:49,264 [ERROR] Failed en-79: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:49,265 [ERROR] Failed en-75: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:49,309 [INFO] Processing en-143 | Attempt 1
+2026-01-02 02:08:49,366 [INFO] Processing en-144 | Attempt 1
+2026-01-02 02:08:49,657 [ERROR] Failed en-81: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:49,679 [INFO] Processing en-145 | Attempt 1
+2026-01-02 02:08:49,794 [ERROR] Failed en-82: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:49,822 [INFO] Processing en-146 | Attempt 1
+2026-01-02 02:08:49,924 [ERROR] Failed en-80: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:49,945 [INFO] Processing en-147 | Attempt 1
+2026-01-02 02:08:50,021 [ERROR] Failed en-83: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:50,033 [INFO] Processing en-148 | Attempt 1
+2026-01-02 02:08:50,251 [ERROR] Failed en-89: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:50,273 [INFO] Processing en-149 | Attempt 1
+2026-01-02 02:08:50,325 [ERROR] Failed en-84: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:50,340 [INFO] Processing en-150 | Attempt 1
+2026-01-02 02:08:50,894 [ERROR] Failed en-86: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:50,921 [INFO] Processing en-151 | Attempt 1
+2026-01-02 02:08:51,024 [ERROR] Failed en-87: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:51,032 [INFO] Processing en-152 | Attempt 1
+2026-01-02 02:08:51,096 [ERROR] Failed en-85: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:51,109 [INFO] Processing en-153 | Attempt 1
+2026-01-02 02:08:51,253 [ERROR] Failed en-88: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:51,268 [INFO] Processing en-154 | Attempt 1
+2026-01-02 02:08:51,481 [ERROR] Failed en-103: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:51,511 [INFO] Processing en-155 | Attempt 1
+2026-01-02 02:08:51,543 [ERROR] Failed en-97: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:51,558 [INFO] Processing en-156 | Attempt 1
+2026-01-02 02:08:51,573 [ERROR] Failed en-104: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:51,586 [ERROR] Failed en-95: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:51,607 [ERROR] Failed en-91: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:51,618 [INFO] Processing en-157 | Attempt 1
+2026-01-02 02:08:51,619 [ERROR] Failed en-102: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:51,635 [ERROR] Failed en-92: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:51,650 [INFO] Processing en-158 | Attempt 1
+2026-01-02 02:08:51,699 [INFO] Processing en-159 | Attempt 1
+2026-01-02 02:08:51,719 [INFO] Processing en-160 | Attempt 1
+2026-01-02 02:08:51,722 [INFO] Processing en-161 | Attempt 1
+2026-01-02 02:08:51,772 [ERROR] Failed en-93: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:51,927 [INFO] Processing en-162 | Attempt 1
+2026-01-02 02:08:51,999 [ERROR] Failed en-94: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:52,035 [ERROR] Failed en-90: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:52,037 [INFO] Processing en-163 | Attempt 1
+2026-01-02 02:08:52,055 [INFO] Processing en-164 | Attempt 1
+2026-01-02 02:08:52,082 [ERROR] Failed en-99: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:52,177 [INFO] Processing en-165 | Attempt 1
+2026-01-02 02:08:52,332 [ERROR] Failed en-100: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:52,366 [INFO] Processing en-166 | Attempt 1
+2026-01-02 02:08:52,439 [ERROR] Failed en-96: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:52,465 [ERROR] Failed en-105: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:52,474 [INFO] Processing en-167 | Attempt 1
+2026-01-02 02:08:52,483 [INFO] Processing en-168 | Attempt 1
+2026-01-02 02:08:52,492 [ERROR] Failed en-106: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:52,561 [ERROR] Failed en-98: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:52,565 [ERROR] Failed en-101: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:52,577 [INFO] Processing en-169 | Attempt 1
+2026-01-02 02:08:52,584 [INFO] Processing en-170 | Attempt 1
+2026-01-02 02:08:52,587 [INFO] Processing en-171 | Attempt 1
+2026-01-02 02:08:53,131 [ERROR] Failed en-108: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:53,147 [INFO] Processing en-172 | Attempt 1
+2026-01-02 02:08:53,204 [ERROR] Failed en-110: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:53,226 [INFO] Processing en-173 | Attempt 1
+2026-01-02 02:08:53,326 [ERROR] Failed en-111: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:53,351 [INFO] Processing en-174 | Attempt 1
+2026-01-02 02:08:53,511 [ERROR] Failed en-113: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:53,522 [INFO] Processing en-175 | Attempt 1
+2026-01-02 02:08:53,678 [ERROR] Failed en-109: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:53,689 [INFO] Processing en-176 | Attempt 1
+2026-01-02 02:08:53,756 [ERROR] Failed en-107: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:53,800 [INFO] Processing en-177 | Attempt 1
+2026-01-02 02:08:54,031 [ERROR] Failed en-115: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:54,043 [INFO] Processing en-178 | Attempt 1
+2026-01-02 02:08:54,208 [ERROR] Failed en-112: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:54,224 [INFO] Processing en-179 | Attempt 1
+2026-01-02 02:08:54,357 [ERROR] Failed en-124: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:54,377 [INFO] Processing en-180 | Attempt 1
+2026-01-02 02:08:54,409 [ERROR] Failed en-120: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:54,450 [INFO] Processing en-181 | Attempt 1
+2026-01-02 02:08:54,540 [ERROR] Failed en-114: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:54,542 [ERROR] Failed en-117: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:54,562 [ERROR] Failed en-122: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:54,565 [INFO] Processing en-182 | Attempt 1
+2026-01-02 02:08:54,587 [INFO] Processing en-183 | Attempt 1
+2026-01-02 02:08:54,590 [INFO] Processing en-184 | Attempt 1
+2026-01-02 02:08:54,620 [ERROR] Failed en-123: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:54,645 [ERROR] Failed en-121: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:54,669 [ERROR] Failed en-119: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:54,710 [INFO] Processing en-185 | Attempt 1
+2026-01-02 02:08:54,738 [INFO] Processing en-186 | Attempt 1
+2026-01-02 02:08:54,740 [INFO] Processing en-187 | Attempt 1
+2026-01-02 02:08:54,746 [ERROR] Failed en-116: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:54,888 [INFO] Processing en-188 | Attempt 1
+2026-01-02 02:08:54,900 [ERROR] Failed en-130: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:54,942 [INFO] Processing en-189 | Attempt 1
+2026-01-02 02:08:54,969 [ERROR] Failed en-125: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:55,035 [ERROR] Failed en-128: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:55,038 [ERROR] Failed en-127: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:55,044 [INFO] Processing en-190 | Attempt 1
+2026-01-02 02:08:55,053 [INFO] Processing en-191 | Attempt 1
+2026-01-02 02:08:55,056 [INFO] Processing en-192 | Attempt 1
+2026-01-02 02:08:55,351 [ERROR] Failed en-126: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:55,362 [INFO] Processing en-193 | Attempt 1
+2026-01-02 02:08:55,423 [ERROR] Failed en-129: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:55,435 [INFO] Processing en-194 | Attempt 1
+2026-01-02 02:08:55,477 [ERROR] Failed en-131: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:55,500 [INFO] Processing en-195 | Attempt 1
+2026-01-02 02:08:55,615 [ERROR] Failed en-132: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:55,623 [INFO] Processing en-196 | Attempt 1
+2026-01-02 02:08:56,146 [ERROR] Failed en-133: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:56,153 [INFO] Processing en-197 | Attempt 1
+2026-01-02 02:08:56,503 [ERROR] Failed en-134: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:56,518 [INFO] Processing en-198 | Attempt 1
+2026-01-02 02:08:56,847 [ERROR] Failed en-136: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:56,848 [ERROR] Failed en-139: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:56,855 [INFO] Processing en-199 | Attempt 1
+2026-01-02 02:08:56,858 [INFO] Processing en-200 | Attempt 1
+2026-01-02 02:08:56,953 [ERROR] Failed en-138: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:56,978 [INFO] Processing en-201 | Attempt 1
+2026-01-02 02:08:57,011 [ERROR] Failed en-137: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:57,014 [ERROR] Failed en-140: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:57,022 [INFO] Processing en-202 | Attempt 1
+2026-01-02 02:08:57,031 [INFO] Processing en-203 | Attempt 1
+2026-01-02 02:08:57,081 [ERROR] Failed en-142: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:57,100 [ERROR] Failed en-135: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:57,104 [INFO] Processing en-204 | Attempt 1
+2026-01-02 02:08:57,133 [INFO] Processing en-205 | Attempt 1
+2026-01-02 02:08:57,157 [ERROR] Failed en-141: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:57,162 [INFO] Processing en-206 | Attempt 1
+2026-01-02 02:08:57,194 [ERROR] Failed en-144: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:57,231 [INFO] Processing en-207 | Attempt 1
+2026-01-02 02:08:57,470 [ERROR] Failed en-147: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:57,493 [INFO] Processing en-208 | Attempt 1
+2026-01-02 02:08:57,494 [ERROR] Failed en-145: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:57,524 [INFO] Processing en-209 | Attempt 1
+2026-01-02 02:08:57,611 [ERROR] Failed en-143: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:57,634 [INFO] Processing en-210 | Attempt 1
+2026-01-02 02:08:57,790 [ERROR] Failed en-146: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:57,794 [INFO] Processing en-211 | Attempt 1
+2026-01-02 02:08:57,926 [ERROR] Failed en-149: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:57,943 [ERROR] Failed en-150: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:57,973 [INFO] Processing en-212 | Attempt 1
+2026-01-02 02:08:57,986 [INFO] Processing en-213 | Attempt 1
+2026-01-02 02:08:58,417 [ERROR] Failed en-148: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:58,436 [INFO] Processing en-214 | Attempt 1
+2026-01-02 02:08:58,675 [ERROR] Failed en-152: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:58,699 [INFO] Processing en-215 | Attempt 1
+2026-01-02 02:08:58,849 [ERROR] Failed en-151: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:58,866 [INFO] Processing en-216 | Attempt 1
+2026-01-02 02:08:59,276 [ERROR] Failed en-160: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:59,290 [ERROR] Failed en-153: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:59,297 [INFO] Processing en-217 | Attempt 1
+2026-01-02 02:08:59,324 [INFO] Processing en-218 | Attempt 1
+2026-01-02 02:08:59,441 [ERROR] Failed en-156: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:59,471 [INFO] Processing en-219 | Attempt 1
+2026-01-02 02:08:59,640 [ERROR] Failed en-154: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:08:59,690 [INFO] Processing en-220 | Attempt 1
+2026-01-02 02:09:00,058 [ERROR] Failed en-155: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:00,077 [ERROR] Failed en-157: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:00,086 [INFO] Processing en-221 | Attempt 1
+2026-01-02 02:09:00,094 [INFO] Processing en-222 | Attempt 1
+2026-01-02 02:09:00,324 [ERROR] Failed en-169: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:00,335 [INFO] Processing en-223 | Attempt 1
+2026-01-02 02:09:00,359 [ERROR] Failed en-161: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:00,371 [INFO] Processing en-224 | Attempt 1
+2026-01-02 02:09:00,449 [ERROR] Failed en-159: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:00,454 [INFO] Processing en-225 | Attempt 1
+2026-01-02 02:09:00,542 [ERROR] Failed en-158: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:00,561 [INFO] Processing en-226 | Attempt 1
+2026-01-02 02:09:00,633 [ERROR] Failed en-163: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:00,681 [INFO] Processing en-227 | Attempt 1
+2026-01-02 02:09:00,696 [ERROR] Failed en-166: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:00,699 [INFO] Processing en-228 | Attempt 1
+2026-01-02 02:09:00,984 [ERROR] Failed en-162: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:00,993 [INFO] Processing en-229 | Attempt 1
+2026-01-02 02:09:01,065 [ERROR] Failed en-164: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:01,067 [INFO] Processing en-230 | Attempt 1
+2026-01-02 02:09:01,080 [ERROR] Failed en-165: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:01,098 [INFO] Processing en-231 | Attempt 1
+2026-01-02 02:09:01,174 [ERROR] Failed en-171: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:01,195 [ERROR] Failed en-172: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:01,218 [INFO] Processing en-232 | Attempt 1
+2026-01-02 02:09:01,235 [INFO] Processing en-233 | Attempt 1
+2026-01-02 02:09:01,360 [ERROR] Failed en-168: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:01,377 [ERROR] Failed en-173: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:01,389 [INFO] Processing en-234 | Attempt 1
+2026-01-02 02:09:01,402 [INFO] Processing en-235 | Attempt 1
+2026-01-02 02:09:01,491 [ERROR] Failed en-167: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:01,509 [INFO] Processing en-236 | Attempt 1
+2026-01-02 02:09:01,514 [ERROR] Failed en-170: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:01,536 [ERROR] Failed en-175: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:01,550 [INFO] Processing en-237 | Attempt 1
+2026-01-02 02:09:01,555 [INFO] Processing en-238 | Attempt 1
+2026-01-02 02:09:02,060 [ERROR] Failed en-177: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:02,091 [INFO] Processing en-239 | Attempt 1
+2026-01-02 02:09:02,138 [ERROR] Failed en-174: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:02,155 [ERROR] Failed en-178: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:02,183 [INFO] Processing en-240 | Attempt 1
+2026-01-02 02:09:02,186 [INFO] Processing en-241 | Attempt 1
+2026-01-02 02:09:02,439 [ERROR] Failed en-176: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:02,452 [INFO] Processing en-242 | Attempt 1
+2026-01-02 02:09:02,859 [ERROR] Failed en-180: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:02,875 [INFO] Processing en-243 | Attempt 1
+2026-01-02 02:09:03,006 [ERROR] Failed en-181: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:03,017 [INFO] Processing en-244 | Attempt 1
+2026-01-02 02:09:03,131 [ERROR] Failed en-179: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:03,179 [ERROR] Failed en-196: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:03,190 [INFO] Processing en-245 | Attempt 1
+2026-01-02 02:09:03,229 [INFO] Processing en-246 | Attempt 1
+2026-01-02 02:09:03,555 [ERROR] Failed en-188: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:03,579 [INFO] Processing en-247 | Attempt 1
+2026-01-02 02:09:03,712 [ERROR] Failed en-183: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:03,745 [INFO] Processing en-248 | Attempt 1
+2026-01-02 02:09:03,790 [ERROR] Failed en-185: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:03,795 [INFO] Processing en-249 | Attempt 1
+2026-01-02 02:09:03,935 [ERROR] Failed en-189: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:03,935 [ERROR] Failed en-182: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:03,985 [INFO] Processing en-250 | Attempt 1
+2026-01-02 02:09:04,033 [INFO] Processing en-251 | Attempt 1
+2026-01-02 02:09:04,161 [ERROR] Failed en-186: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:04,166 [ERROR] Failed en-194: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:04,168 [INFO] Processing en-252 | Attempt 1
+2026-01-02 02:09:04,169 [ERROR] Failed en-191: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:04,221 [ERROR] Failed en-184: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:04,224 [INFO] Processing en-253 | Attempt 1
+2026-01-02 02:09:04,249 [INFO] Processing en-254 | Attempt 1
+2026-01-02 02:09:04,332 [INFO] Processing en-255 | Attempt 1
+2026-01-02 02:09:04,390 [ERROR] Failed en-195: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:04,394 [INFO] Processing en-256 | Attempt 1
+2026-01-02 02:09:04,447 [ERROR] Failed en-190: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:04,460 [ERROR] Failed en-192: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:04,471 [INFO] Processing en-257 | Attempt 1
+2026-01-02 02:09:04,483 [INFO] Processing en-258 | Attempt 1
+2026-01-02 02:09:04,542 [ERROR] Failed en-187: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:04,550 [INFO] Processing en-259 | Attempt 1
+2026-01-02 02:09:04,780 [ERROR] Failed en-198: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:04,792 [INFO] Processing en-260 | Attempt 1
+2026-01-02 02:09:04,813 [ERROR] Failed en-193: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:04,819 [INFO] Processing en-261 | Attempt 1
+2026-01-02 02:09:04,945 [ERROR] Failed en-200: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:04,949 [INFO] Processing en-262 | Attempt 1
+2026-01-02 02:09:05,240 [ERROR] Failed en-197: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:05,248 [INFO] Processing en-263 | Attempt 1
+2026-01-02 02:09:05,304 [ERROR] Failed en-199: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:05,307 [INFO] Processing en-264 | Attempt 1
+2026-01-02 02:09:05,338 [ERROR] Failed en-201: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:05,351 [INFO] Processing en-265 | Attempt 1
+2026-01-02 02:09:05,503 [ERROR] Failed en-205: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:05,508 [ERROR] Failed en-203: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:05,513 [INFO] Processing en-266 | Attempt 1
+2026-01-02 02:09:05,526 [INFO] Processing en-267 | Attempt 1
+2026-01-02 02:09:05,740 [ERROR] Failed en-206: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:05,750 [INFO] Processing en-268 | Attempt 1
+2026-01-02 02:09:05,752 [ERROR] Failed en-207: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:05,756 [INFO] Processing en-269 | Attempt 1
+2026-01-02 02:09:05,759 [ERROR] Failed en-202: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:05,759 [ERROR] Failed en-208: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:05,764 [INFO] Processing en-270 | Attempt 1
+2026-01-02 02:09:05,787 [INFO] Processing en-271 | Attempt 1
+2026-01-02 02:09:05,789 [ERROR] Failed en-209: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:05,896 [ERROR] Failed en-204: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:05,905 [INFO] Processing en-272 | Attempt 1
+2026-01-02 02:09:05,907 [INFO] Processing en-273 | Attempt 1
+2026-01-02 02:09:05,957 [ERROR] Failed en-210: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:06,000 [INFO] Processing en-274 | Attempt 1
+2026-01-02 02:09:06,087 [ERROR] Failed en-212: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:06,112 [INFO] Processing en-275 | Attempt 1
+2026-01-02 02:09:06,209 [ERROR] Failed en-211: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:06,222 [INFO] Processing en-276 | Attempt 1
+2026-01-02 02:09:06,318 [ERROR] Failed en-213: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:06,325 [INFO] Processing en-277 | Attempt 1
+2026-01-02 02:09:06,409 [ERROR] Failed en-215: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:06,422 [INFO] Processing en-278 | Attempt 1
+2026-01-02 02:09:06,827 [ERROR] Failed en-214: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:06,830 [INFO] Processing en-279 | Attempt 1
+2026-01-02 02:09:07,094 [ERROR] Failed en-216: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:07,101 [INFO] Processing en-280 | Attempt 1
+2026-01-02 02:09:07,192 [ERROR] Failed en-218: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:07,208 [INFO] Processing en-281 | Attempt 1
+2026-01-02 02:09:07,281 [ERROR] Failed en-219: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:07,309 [INFO] Processing en-282 | Attempt 1
+2026-01-02 02:09:07,600 [ERROR] Failed en-220: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:07,615 [INFO] Processing en-283 | Attempt 1
+2026-01-02 02:09:07,721 [ERROR] Failed en-217: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:07,739 [INFO] Processing en-284 | Attempt 1
+2026-01-02 02:09:08,671 [ERROR] Failed en-226: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:08,693 [INFO] Processing en-285 | Attempt 1
+2026-01-02 02:09:08,737 [ERROR] Failed en-227: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:08,773 [ERROR] Failed en-225: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:08,781 [INFO] Processing en-286 | Attempt 1
+2026-01-02 02:09:08,789 [INFO] Processing en-287 | Attempt 1
+2026-01-02 02:09:08,835 [ERROR] Failed en-224: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:08,877 [INFO] Processing en-288 | Attempt 1
+2026-01-02 02:09:08,968 [ERROR] Failed en-228: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:08,969 [ERROR] Failed en-222: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:09,002 [INFO] Processing en-289 | Attempt 1
+2026-01-02 02:09:09,016 [INFO] Processing en-290 | Attempt 1
+2026-01-02 02:09:09,041 [ERROR] Failed en-221: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:09,068 [INFO] Processing en-291 | Attempt 1
+2026-01-02 02:09:09,179 [ERROR] Failed en-230: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:09,194 [INFO] Processing en-292 | Attempt 1
+2026-01-02 02:09:09,497 [ERROR] Failed en-229: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:09,521 [INFO] Processing en-293 | Attempt 1
+2026-01-02 02:09:09,572 [ERROR] Failed en-231: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:09,614 [INFO] Processing en-294 | Attempt 1
+2026-01-02 02:09:09,667 [ERROR] Failed en-232: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:09,695 [INFO] Processing en-295 | Attempt 1
+2026-01-02 02:09:09,790 [ERROR] Failed en-235: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:09,825 [INFO] Processing en-296 | Attempt 1
+2026-01-02 02:09:10,052 [ERROR] Failed en-234: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:10,064 [ERROR] Failed en-223: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:10,078 [INFO] Processing en-297 | Attempt 1
+2026-01-02 02:09:10,083 [INFO] Processing en-298 | Attempt 1
+2026-01-02 02:09:10,546 [ERROR] Failed en-238: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:10,556 [INFO] Processing en-299 | Attempt 1
+2026-01-02 02:09:10,581 [ERROR] Failed en-236: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:10,597 [INFO] Processing en-300 | Attempt 1
+2026-01-02 02:09:10,609 [ERROR] Failed en-237: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:10,831 [ERROR] Failed en-240: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:10,907 [ERROR] Failed en-233: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:10,968 [ERROR] Failed en-246: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:11,100 [ERROR] Failed en-242: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:11,231 [ERROR] Failed en-239: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:19,116 [INFO] Config: Model=x-ai/grok-4.1-fast, Context=False(3 imgs), Hint=char_count, Pass@=False
+2026-01-02 02:09:19,120 [INFO] Loaded 300 samples for language 'en'
+2026-01-02 02:09:19,127 [INFO] Language en: Using 3 examples, 297 test samples.
+2026-01-02 02:09:19,128 [INFO] Processing en-1 | Attempt 1
+2026-01-02 02:09:19,129 [INFO] Processing en-3 | Attempt 1
+2026-01-02 02:09:19,133 [INFO] Processing en-4 | Attempt 1
+2026-01-02 02:09:19,134 [INFO] Processing en-5 | Attempt 1
+2026-01-02 02:09:19,134 [INFO] Processing en-6 | Attempt 1
+2026-01-02 02:09:19,135 [INFO] Processing en-7 | Attempt 1
+2026-01-02 02:09:19,137 [INFO] Processing en-8 | Attempt 1
+2026-01-02 02:09:19,138 [INFO] Processing en-9 | Attempt 1
+2026-01-02 02:09:19,139 [INFO] Processing en-10 | Attempt 1
+2026-01-02 02:09:19,139 [INFO] Processing en-11 | Attempt 1
+2026-01-02 02:09:19,140 [INFO] Processing en-12 | Attempt 1
+2026-01-02 02:09:19,142 [INFO] Processing en-13 | Attempt 1
+2026-01-02 02:09:19,143 [INFO] Processing en-14 | Attempt 1
+2026-01-02 02:09:19,144 [INFO] Processing en-15 | Attempt 1
+2026-01-02 02:09:19,146 [INFO] Processing en-16 | Attempt 1
+2026-01-02 02:09:19,147 [INFO] Processing en-17 | Attempt 1
+2026-01-02 02:09:19,151 [INFO] Processing en-18 | Attempt 1
+2026-01-02 02:09:19,152 [INFO] Processing en-19 | Attempt 1
+2026-01-02 02:09:19,153 [INFO] Processing en-20 | Attempt 1
+2026-01-02 02:09:19,154 [INFO] Processing en-21 | Attempt 1
+2026-01-02 02:09:19,156 [INFO] Processing en-22 | Attempt 1
+2026-01-02 02:09:19,159 [INFO] Processing en-23 | Attempt 1
+2026-01-02 02:09:19,162 [INFO] Processing en-24 | Attempt 1
+2026-01-02 02:09:19,163 [INFO] Processing en-25 | Attempt 1
+2026-01-02 02:09:19,168 [INFO] Processing en-27 | Attempt 1
+2026-01-02 02:09:19,169 [INFO] Processing en-28 | Attempt 1
+2026-01-02 02:09:19,172 [INFO] Processing en-29 | Attempt 1
+2026-01-02 02:09:19,175 [INFO] Processing en-30 | Attempt 1
+2026-01-02 02:09:19,177 [INFO] Processing en-31 | Attempt 1
+2026-01-02 02:09:19,178 [INFO] Processing en-32 | Attempt 1
+2026-01-02 02:09:19,185 [INFO] Processing en-33 | Attempt 1
+2026-01-02 02:09:19,187 [INFO] Processing en-34 | Attempt 1
+2026-01-02 02:09:19,191 [INFO] Processing en-35 | Attempt 1
+2026-01-02 02:09:19,192 [INFO] Processing en-36 | Attempt 1
+2026-01-02 02:09:19,194 [INFO] Processing en-37 | Attempt 1
+2026-01-02 02:09:19,198 [INFO] Processing en-38 | Attempt 1
+2026-01-02 02:09:19,211 [INFO] Processing en-39 | Attempt 1
+2026-01-02 02:09:19,212 [INFO] Processing en-40 | Attempt 1
+2026-01-02 02:09:19,213 [INFO] Processing en-41 | Attempt 1
+2026-01-02 02:09:19,214 [INFO] Processing en-42 | Attempt 1
+2026-01-02 02:09:19,219 [INFO] Processing en-43 | Attempt 1
+2026-01-02 02:09:19,222 [INFO] Processing en-44 | Attempt 1
+2026-01-02 02:09:19,246 [INFO] Processing en-45 | Attempt 1
+2026-01-02 02:09:19,249 [INFO] Processing en-46 | Attempt 1
+2026-01-02 02:09:19,257 [INFO] Processing en-47 | Attempt 1
+2026-01-02 02:09:19,275 [INFO] Processing en-48 | Attempt 1
+2026-01-02 02:09:19,278 [INFO] Processing en-49 | Attempt 1
+2026-01-02 02:09:19,292 [INFO] Processing en-50 | Attempt 1
+2026-01-02 02:09:19,301 [INFO] Processing en-51 | Attempt 1
+2026-01-02 02:09:19,304 [INFO] Processing en-52 | Attempt 1
+2026-01-02 02:09:19,316 [INFO] Processing en-53 | Attempt 1
+2026-01-02 02:09:19,317 [INFO] Processing en-54 | Attempt 1
+2026-01-02 02:09:19,321 [INFO] Processing en-55 | Attempt 1
+2026-01-02 02:09:19,326 [INFO] Processing en-56 | Attempt 1
+2026-01-02 02:09:19,363 [INFO] Processing en-57 | Attempt 1
+2026-01-02 02:09:19,372 [INFO] Processing en-58 | Attempt 1
+2026-01-02 02:09:19,379 [INFO] Processing en-59 | Attempt 1
+2026-01-02 02:09:19,389 [INFO] Processing en-60 | Attempt 1
+2026-01-02 02:09:19,411 [INFO] Processing en-61 | Attempt 1
+2026-01-02 02:09:19,416 [INFO] Processing en-62 | Attempt 1
+2026-01-02 02:09:19,423 [INFO] Processing en-63 | Attempt 1
+2026-01-02 02:09:19,453 [INFO] Processing en-64 | Attempt 1
+2026-01-02 02:09:19,461 [INFO] Processing en-65 | Attempt 1
+2026-01-02 02:09:19,490 [INFO] Processing en-66 | Attempt 1
+2026-01-02 02:09:27,145 [ERROR] Failed en-14: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:27,153 [INFO] Processing en-67 | Attempt 1
+2026-01-02 02:09:27,306 [ERROR] Failed en-15: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:27,310 [INFO] Processing en-68 | Attempt 1
+2026-01-02 02:09:27,437 [ERROR] Failed en-1: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:27,441 [INFO] Processing en-69 | Attempt 1
+2026-01-02 02:09:27,575 [ERROR] Failed en-37: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:27,583 [INFO] Processing en-70 | Attempt 1
+2026-01-02 02:09:27,635 [ERROR] Failed en-20: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:27,644 [INFO] Processing en-71 | Attempt 1
+2026-01-02 02:09:27,681 [ERROR] Failed en-16: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:27,694 [INFO] Processing en-72 | Attempt 1
+2026-01-02 02:09:27,695 [ERROR] Failed en-41: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:27,721 [INFO] Processing en-73 | Attempt 1
+2026-01-02 02:09:27,836 [ERROR] Failed en-43: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:27,863 [INFO] Processing en-74 | Attempt 1
+2026-01-02 02:09:27,881 [ERROR] Failed en-36: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:27,911 [INFO] Processing en-75 | Attempt 1
+2026-01-02 02:09:28,018 [ERROR] Failed en-21: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:28,033 [INFO] Processing en-76 | Attempt 1
+2026-01-02 02:09:28,064 [ERROR] Failed en-22: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:28,083 [INFO] Processing en-77 | Attempt 1
+2026-01-02 02:09:28,094 [ERROR] Failed en-42: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:28,105 [INFO] Processing en-78 | Attempt 1
+2026-01-02 02:09:28,257 [ERROR] Failed en-35: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:28,281 [INFO] Processing en-79 | Attempt 1
+2026-01-02 02:09:28,385 [ERROR] Failed en-55: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:28,400 [INFO] Processing en-80 | Attempt 1
+2026-01-02 02:09:28,844 [ERROR] Failed en-63: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:28,846 [INFO] Processing en-81 | Attempt 1
+2026-01-02 02:09:28,915 [ERROR] Failed en-61: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:28,920 [INFO] Processing en-82 | Attempt 1
+2026-01-02 02:09:28,921 [ERROR] Failed en-56: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:28,933 [INFO] Processing en-83 | Attempt 1
+2026-01-02 02:09:28,983 [ERROR] Failed en-57: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:28,985 [INFO] Processing en-84 | Attempt 1
+2026-01-02 02:09:29,124 [ERROR] Failed en-62: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:29,149 [INFO] Processing en-85 | Attempt 1
+2026-01-02 02:09:29,866 [ERROR] Failed en-52: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:29,882 [INFO] Processing en-86 | Attempt 1
+2026-01-02 02:09:29,982 [ERROR] Failed en-17: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:30,032 [INFO] Processing en-87 | Attempt 1
+2026-01-02 02:09:30,048 [ERROR] Failed en-11: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:30,078 [INFO] Processing en-88 | Attempt 1
+2026-01-02 02:09:30,130 [ERROR] Failed en-34: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:30,138 [INFO] Processing en-89 | Attempt 1
+2026-01-02 02:09:30,195 [ERROR] Failed en-13: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:30,206 [INFO] Processing en-90 | Attempt 1
+2026-01-02 02:09:30,209 [ERROR] Failed en-38: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:30,215 [INFO] Processing en-91 | Attempt 1
+2026-01-02 02:09:30,349 [ERROR] Failed en-40: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:30,364 [INFO] Processing en-92 | Attempt 1
+2026-01-02 02:09:30,381 [ERROR] Failed en-33: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:30,392 [INFO] Processing en-93 | Attempt 1
+2026-01-02 02:09:30,442 [ERROR] Failed en-18: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:30,458 [ERROR] Failed en-12: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:30,458 [ERROR] Failed en-54: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:30,458 [ERROR] Failed en-59: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:30,465 [ERROR] Failed en-32: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:30,503 [INFO] Processing en-94 | Attempt 1
+2026-01-02 02:09:30,553 [INFO] Processing en-95 | Attempt 1
+2026-01-02 02:09:30,560 [INFO] Processing en-96 | Attempt 1
+2026-01-02 02:09:30,601 [INFO] Processing en-97 | Attempt 1
+2026-01-02 02:09:30,635 [INFO] Processing en-98 | Attempt 1
+2026-01-02 02:09:30,643 [ERROR] Failed en-53: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:30,647 [ERROR] Failed en-19: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:30,653 [ERROR] Failed en-39: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:30,872 [INFO] Processing en-99 | Attempt 1
+2026-01-02 02:09:30,873 [ERROR] Failed en-60: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:30,875 [INFO] Processing en-100 | Attempt 1
+2026-01-02 02:09:30,876 [ERROR] Failed en-58: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:30,881 [INFO] Processing en-101 | Attempt 1
+2026-01-02 02:09:30,909 [INFO] Processing en-102 | Attempt 1
+2026-01-02 02:09:30,954 [INFO] Processing en-103 | Attempt 1
+2026-01-02 02:09:31,311 [ERROR] Failed en-5: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:31,336 [INFO] Processing en-104 | Attempt 1
+2026-01-02 02:09:31,472 [ERROR] Failed en-6: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:31,504 [INFO] Processing en-105 | Attempt 1
+2026-01-02 02:09:32,058 [ERROR] Failed en-25: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:32,065 [ERROR] Failed en-27: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:32,082 [INFO] Processing en-106 | Attempt 1
+2026-01-02 02:09:32,097 [INFO] Processing en-107 | Attempt 1
+2026-01-02 02:09:32,269 [ERROR] Failed en-51: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:32,292 [ERROR] Failed en-3: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:32,293 [ERROR] Failed en-8: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:32,299 [ERROR] Failed en-44: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:32,320 [INFO] Processing en-108 | Attempt 1
+2026-01-02 02:09:32,322 [INFO] Processing en-109 | Attempt 1
+2026-01-02 02:09:32,393 [INFO] Processing en-110 | Attempt 1
+2026-01-02 02:09:32,441 [INFO] Processing en-111 | Attempt 1
+2026-01-02 02:09:32,527 [ERROR] Failed en-66: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:32,533 [INFO] Processing en-112 | Attempt 1
+2026-01-02 02:09:32,651 [ERROR] Failed en-24: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:32,682 [INFO] Processing en-113 | Attempt 1
+2026-01-02 02:09:32,742 [ERROR] Failed en-49: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:32,784 [INFO] Processing en-114 | Attempt 1
+2026-01-02 02:09:32,848 [ERROR] Failed en-23: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:32,849 [ERROR] Failed en-7: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:32,873 [ERROR] Failed en-10: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:32,885 [INFO] Processing en-115 | Attempt 1
+2026-01-02 02:09:32,895 [INFO] Processing en-116 | Attempt 1
+2026-01-02 02:09:32,896 [ERROR] Failed en-4: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:32,903 [INFO] Processing en-117 | Attempt 1
+2026-01-02 02:09:32,907 [ERROR] Failed en-28: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:32,914 [INFO] Processing en-119 | Attempt 1
+2026-01-02 02:09:32,915 [ERROR] Failed en-9: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:32,924 [ERROR] Failed en-65: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:32,932 [INFO] Processing en-120 | Attempt 1
+2026-01-02 02:09:32,938 [INFO] Processing en-121 | Attempt 1
+2026-01-02 02:09:32,942 [ERROR] Failed en-50: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:32,949 [INFO] Processing en-122 | Attempt 1
+2026-01-02 02:09:32,971 [ERROR] Failed en-46: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:32,972 [ERROR] Failed en-47: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:33,001 [ERROR] Failed en-30: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:33,002 [ERROR] Failed en-29: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:33,011 [ERROR] Failed en-48: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:33,016 [INFO] Processing en-123 | Attempt 1
+2026-01-02 02:09:33,111 [INFO] Processing en-124 | Attempt 1
+2026-01-02 02:09:33,114 [ERROR] Failed en-31: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:33,151 [INFO] Processing en-125 | Attempt 1
+2026-01-02 02:09:33,167 [INFO] Processing en-126 | Attempt 1
+2026-01-02 02:09:33,235 [INFO] Processing en-127 | Attempt 1
+2026-01-02 02:09:33,243 [INFO] Processing en-128 | Attempt 1
+2026-01-02 02:09:33,325 [ERROR] Failed en-45: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:33,329 [INFO] Processing en-129 | Attempt 1
+2026-01-02 02:09:33,482 [ERROR] Failed en-64: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:33,630 [INFO] Processing en-130 | Attempt 1
+2026-01-02 02:09:33,717 [INFO] Processing en-131 | Attempt 1
+2026-01-02 02:09:34,803 [ERROR] Failed en-67: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:34,806 [INFO] Processing en-132 | Attempt 1
+2026-01-02 02:09:35,372 [ERROR] Failed en-68: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:35,394 [INFO] Processing en-133 | Attempt 1
+2026-01-02 02:09:35,546 [ERROR] Failed en-71: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:35,566 [INFO] Processing en-134 | Attempt 1
+2026-01-02 02:09:35,665 [ERROR] Failed en-69: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:35,687 [INFO] Processing en-135 | Attempt 1
+2026-01-02 02:09:35,733 [ERROR] Failed en-70: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:35,744 [INFO] Processing en-136 | Attempt 1
+2026-01-02 02:09:35,879 [ERROR] Failed en-74: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:35,892 [ERROR] Failed en-75: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:35,901 [INFO] Processing en-137 | Attempt 1
+2026-01-02 02:09:35,905 [INFO] Processing en-138 | Attempt 1
+2026-01-02 02:09:35,952 [ERROR] Failed en-73: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:35,967 [INFO] Processing en-139 | Attempt 1
+2026-01-02 02:09:36,237 [ERROR] Failed en-76: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:36,247 [ERROR] Failed en-72: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:36,261 [INFO] Processing en-140 | Attempt 1
+2026-01-02 02:09:36,274 [INFO] Processing en-141 | Attempt 1
+2026-01-02 02:09:36,376 [ERROR] Failed en-79: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:36,384 [INFO] Processing en-142 | Attempt 1
+2026-01-02 02:09:36,514 [ERROR] Failed en-80: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:36,517 [INFO] Processing en-143 | Attempt 1
+2026-01-02 02:09:36,568 [ERROR] Failed en-78: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:36,592 [INFO] Processing en-144 | Attempt 1
+2026-01-02 02:09:36,682 [ERROR] Failed en-77: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:36,716 [INFO] Processing en-145 | Attempt 1
+2026-01-02 02:09:37,034 [ERROR] Failed en-82: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:37,053 [INFO] Processing en-146 | Attempt 1
+2026-01-02 02:09:37,069 [ERROR] Failed en-81: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:37,093 [INFO] Processing en-147 | Attempt 1
+2026-01-02 02:09:37,192 [ERROR] Failed en-89: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:37,208 [ERROR] Failed en-88: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:37,210 [INFO] Processing en-148 | Attempt 1
+2026-01-02 02:09:37,224 [INFO] Processing en-149 | Attempt 1
+2026-01-02 02:09:37,349 [ERROR] Failed en-84: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:37,412 [INFO] Processing en-150 | Attempt 1
+2026-01-02 02:09:37,423 [ERROR] Failed en-85: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:37,432 [INFO] Processing en-151 | Attempt 1
+2026-01-02 02:09:37,432 [ERROR] Failed en-90: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:37,438 [ERROR] Failed en-86: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:37,477 [INFO] Processing en-152 | Attempt 1
+2026-01-02 02:09:37,503 [INFO] Processing en-153 | Attempt 1
+2026-01-02 02:09:37,545 [ERROR] Failed en-83: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:37,587 [INFO] Processing en-154 | Attempt 1
+2026-01-02 02:09:37,650 [ERROR] Failed en-91: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:37,775 [INFO] Processing en-155 | Attempt 1
+2026-01-02 02:09:38,172 [ERROR] Failed en-92: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:38,186 [INFO] Processing en-156 | Attempt 1
+2026-01-02 02:09:38,187 [ERROR] Failed en-87: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:38,228 [INFO] Processing en-157 | Attempt 1
+2026-01-02 02:09:38,319 [ERROR] Failed en-93: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:38,379 [INFO] Processing en-158 | Attempt 1
+2026-01-02 02:09:40,082 [ERROR] Failed en-105: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:40,110 [INFO] Processing en-159 | Attempt 1
+2026-01-02 02:09:40,247 [ERROR] Failed en-104: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:40,265 [INFO] Processing en-160 | Attempt 1
+2026-01-02 02:09:40,286 [ERROR] Failed en-94: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:40,307 [INFO] Processing en-161 | Attempt 1
+2026-01-02 02:09:40,342 [ERROR] Failed en-102: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:40,368 [INFO] Processing en-162 | Attempt 1
+2026-01-02 02:09:40,452 [ERROR] Failed en-95: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:40,473 [INFO] Processing en-163 | Attempt 1
+2026-01-02 02:09:40,636 [ERROR] Failed en-100: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:40,648 [INFO] Processing en-164 | Attempt 1
+2026-01-02 02:09:40,848 [ERROR] Failed en-103: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:40,859 [INFO] Processing en-165 | Attempt 1
+2026-01-02 02:09:40,868 [ERROR] Failed en-97: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:40,885 [INFO] Processing en-166 | Attempt 1
+2026-01-02 02:09:41,054 [ERROR] Failed en-98: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:41,060 [ERROR] Failed en-99: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:41,083 [INFO] Processing en-167 | Attempt 1
+2026-01-02 02:09:41,106 [INFO] Processing en-168 | Attempt 1
+2026-01-02 02:09:41,161 [ERROR] Failed en-101: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:41,197 [INFO] Processing en-169 | Attempt 1
+2026-01-02 02:09:41,623 [ERROR] Failed en-96: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:41,638 [INFO] Processing en-170 | Attempt 1
+2026-01-02 02:09:41,771 [ERROR] Failed en-107: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:41,808 [INFO] Processing en-171 | Attempt 1
+2026-01-02 02:09:42,573 [ERROR] Failed en-108: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:42,579 [INFO] Processing en-172 | Attempt 1
+2026-01-02 02:09:42,638 [ERROR] Failed en-106: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:42,651 [INFO] Processing en-173 | Attempt 1
+2026-01-02 02:09:42,790 [ERROR] Failed en-110: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:42,808 [INFO] Processing en-174 | Attempt 1
+2026-01-02 02:09:43,239 [ERROR] Failed en-111: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:43,268 [INFO] Processing en-175 | Attempt 1
+2026-01-02 02:09:43,632 [ERROR] Failed en-109: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:43,641 [INFO] Processing en-176 | Attempt 1
+2026-01-02 02:09:43,700 [ERROR] Failed en-113: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:43,750 [INFO] Processing en-177 | Attempt 1
+2026-01-02 02:09:44,189 [ERROR] Failed en-112: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:44,220 [INFO] Processing en-178 | Attempt 1
+2026-01-02 02:09:44,490 [ERROR] Failed en-116: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:44,507 [INFO] Processing en-179 | Attempt 1
+2026-01-02 02:09:44,510 [ERROR] Failed en-114: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:44,518 [INFO] Processing en-180 | Attempt 1
+2026-01-02 02:09:44,625 [ERROR] Failed en-115: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:44,667 [INFO] Processing en-181 | Attempt 1
+2026-01-02 02:09:44,763 [ERROR] Failed en-119: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:44,803 [INFO] Processing en-182 | Attempt 1
+2026-01-02 02:09:45,048 [ERROR] Failed en-132: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:45,048 [ERROR] Failed en-121: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:45,053 [INFO] Processing en-183 | Attempt 1
+2026-01-02 02:09:45,059 [ERROR] Failed en-117: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:45,063 [INFO] Processing en-184 | Attempt 1
+2026-01-02 02:09:45,102 [INFO] Processing en-185 | Attempt 1
+2026-01-02 02:09:45,374 [ERROR] Failed en-120: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:45,386 [INFO] Processing en-186 | Attempt 1
+2026-01-02 02:09:45,506 [ERROR] Failed en-123: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:45,517 [ERROR] Failed en-127: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:45,520 [INFO] Processing en-187 | Attempt 1
+2026-01-02 02:09:45,524 [ERROR] Failed en-125: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:45,528 [INFO] Processing en-188 | Attempt 1
+2026-01-02 02:09:45,542 [INFO] Processing en-189 | Attempt 1
+2026-01-02 02:09:45,583 [ERROR] Failed en-122: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:45,613 [INFO] Processing en-190 | Attempt 1
+2026-01-02 02:09:45,637 [ERROR] Failed en-128: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:45,641 [ERROR] Failed en-129: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:45,643 [ERROR] Failed en-126: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:45,653 [INFO] Processing en-191 | Attempt 1
+2026-01-02 02:09:45,729 [ERROR] Failed en-124: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:45,733 [INFO] Processing en-192 | Attempt 1
+2026-01-02 02:09:45,742 [ERROR] Failed en-131: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:45,752 [INFO] Processing en-193 | Attempt 1
+2026-01-02 02:09:45,817 [INFO] Processing en-194 | Attempt 1
+2026-01-02 02:09:45,845 [INFO] Processing en-195 | Attempt 1
+2026-01-02 02:09:46,079 [ERROR] Failed en-130: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:46,096 [INFO] Processing en-196 | Attempt 1
+2026-01-02 02:09:46,882 [ERROR] Failed en-136: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:46,888 [INFO] Processing en-197 | Attempt 1
+2026-01-02 02:09:46,922 [ERROR] Failed en-139: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:46,933 [INFO] Processing en-198 | Attempt 1
+2026-01-02 02:09:46,938 [ERROR] Failed en-133: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:46,947 [ERROR] Failed en-134: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:46,950 [INFO] Processing en-199 | Attempt 1
+2026-01-02 02:09:46,981 [ERROR] Failed en-138: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:47,004 [INFO] Processing en-200 | Attempt 1
+2026-01-02 02:09:47,063 [INFO] Processing en-201 | Attempt 1
+2026-01-02 02:09:47,206 [ERROR] Failed en-135: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:47,219 [INFO] Processing en-202 | Attempt 1
+2026-01-02 02:09:47,226 [ERROR] Failed en-137: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:47,243 [INFO] Processing en-203 | Attempt 1
+2026-01-02 02:09:47,589 [ERROR] Failed en-141: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:47,609 [INFO] Processing en-204 | Attempt 1
+2026-01-02 02:09:47,647 [ERROR] Failed en-143: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:47,658 [INFO] Processing en-205 | Attempt 1
+2026-01-02 02:09:47,674 [ERROR] Failed en-142: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:47,691 [ERROR] Failed en-144: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:47,703 [INFO] Processing en-206 | Attempt 1
+2026-01-02 02:09:47,722 [INFO] Processing en-207 | Attempt 1
+2026-01-02 02:09:47,723 [ERROR] Failed en-145: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:47,727 [INFO] Processing en-208 | Attempt 1
+2026-01-02 02:09:47,753 [ERROR] Failed en-140: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:47,790 [INFO] Processing en-209 | Attempt 1
+2026-01-02 02:09:47,847 [ERROR] Failed en-152: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:47,863 [INFO] Processing en-210 | Attempt 1
+2026-01-02 02:09:48,143 [ERROR] Failed en-147: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:48,156 [ERROR] Failed en-150: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:48,172 [ERROR] Failed en-151: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:48,182 [INFO] Processing en-211 | Attempt 1
+2026-01-02 02:09:48,184 [INFO] Processing en-212 | Attempt 1
+2026-01-02 02:09:48,185 [INFO] Processing en-213 | Attempt 1
+2026-01-02 02:09:48,294 [ERROR] Failed en-154: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:48,302 [INFO] Processing en-214 | Attempt 1
+2026-01-02 02:09:48,415 [ERROR] Failed en-149: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:48,416 [ERROR] Failed en-146: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:48,439 [INFO] Processing en-215 | Attempt 1
+2026-01-02 02:09:48,451 [INFO] Processing en-216 | Attempt 1
+2026-01-02 02:09:48,516 [ERROR] Failed en-155: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:48,524 [INFO] Processing en-217 | Attempt 1
+2026-01-02 02:09:48,665 [ERROR] Failed en-148: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:48,684 [INFO] Processing en-218 | Attempt 1
+2026-01-02 02:09:48,839 [ERROR] Failed en-153: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:48,855 [ERROR] Failed en-157: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:48,884 [INFO] Processing en-219 | Attempt 1
+2026-01-02 02:09:48,892 [INFO] Processing en-220 | Attempt 1
+2026-01-02 02:09:49,105 [ERROR] Failed en-158: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:49,115 [INFO] Processing en-221 | Attempt 1
+2026-01-02 02:09:49,476 [ERROR] Failed en-163: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:49,506 [INFO] Processing en-222 | Attempt 1
+2026-01-02 02:09:49,527 [ERROR] Failed en-156: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:49,592 [INFO] Processing en-223 | Attempt 1
+2026-01-02 02:09:49,666 [ERROR] Failed en-162: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:49,713 [INFO] Processing en-224 | Attempt 1
+2026-01-02 02:09:49,835 [ERROR] Failed en-164: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:49,854 [INFO] Processing en-225 | Attempt 1
+2026-01-02 02:09:50,170 [ERROR] Failed en-166: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:50,178 [INFO] Processing en-226 | Attempt 1
+2026-01-02 02:09:50,239 [ERROR] Failed en-161: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:50,259 [INFO] Processing en-227 | Attempt 1
+2026-01-02 02:09:50,337 [ERROR] Failed en-159: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:50,361 [ERROR] Failed en-170: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:50,373 [INFO] Processing en-228 | Attempt 1
+2026-01-02 02:09:50,385 [ERROR] Failed en-167: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:50,387 [INFO] Processing en-229 | Attempt 1
+2026-01-02 02:09:50,443 [INFO] Processing en-230 | Attempt 1
+2026-01-02 02:09:50,516 [ERROR] Failed en-165: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:50,638 [ERROR] Failed en-160: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:50,639 [ERROR] Failed en-168: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:50,644 [INFO] Processing en-231 | Attempt 1
+2026-01-02 02:09:50,704 [INFO] Processing en-232 | Attempt 1
+2026-01-02 02:09:50,718 [INFO] Processing en-233 | Attempt 1
+2026-01-02 02:09:50,726 [ERROR] Failed en-169: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:50,766 [INFO] Processing en-234 | Attempt 1
+2026-01-02 02:09:51,211 [ERROR] Failed en-174: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:51,222 [INFO] Processing en-235 | Attempt 1
+2026-01-02 02:09:51,304 [ERROR] Failed en-171: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:51,320 [INFO] Processing en-236 | Attempt 1
+2026-01-02 02:09:51,737 [ERROR] Failed en-173: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:51,741 [INFO] Processing en-237 | Attempt 1
+2026-01-02 02:09:51,860 [ERROR] Failed en-172: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:51,878 [INFO] Processing en-238 | Attempt 1
+2026-01-02 02:09:52,513 [ERROR] Failed en-175: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:52,517 [INFO] Processing en-239 | Attempt 1
+2026-01-02 02:09:52,641 [ERROR] Failed en-183: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:52,648 [INFO] Processing en-240 | Attempt 1
+2026-01-02 02:09:52,794 [ERROR] Failed en-177: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:09:52,817 [INFO] Processing en-241 | Attempt 1
+2026-01-02 02:10:07,800 [INFO] Config: Model=x-ai/grok-4.1-fast, Context=False(3 imgs), Hint=char_count, Pass@=False
+2026-01-02 02:10:07,803 [INFO] Loaded 300 samples for language 'en'
+2026-01-02 02:10:07,812 [INFO] Language en: Using 3 examples, 297 test samples.
+2026-01-02 02:10:07,813 [INFO] Processing en-1 | Attempt 1
+2026-01-02 02:10:07,814 [INFO] Processing en-3 | Attempt 1
+2026-01-02 02:10:07,817 [INFO] Processing en-4 | Attempt 1
+2026-01-02 02:10:07,817 [INFO] Processing en-5 | Attempt 1
+2026-01-02 02:10:07,819 [INFO] Processing en-6 | Attempt 1
+2026-01-02 02:10:07,820 [INFO] Processing en-7 | Attempt 1
+2026-01-02 02:10:07,821 [INFO] Processing en-8 | Attempt 1
+2026-01-02 02:10:07,822 [INFO] Processing en-9 | Attempt 1
+2026-01-02 02:10:07,823 [INFO] Processing en-10 | Attempt 1
+2026-01-02 02:10:07,824 [INFO] Processing en-11 | Attempt 1
+2026-01-02 02:10:07,827 [INFO] Processing en-12 | Attempt 1
+2026-01-02 02:10:07,828 [INFO] Processing en-13 | Attempt 1
+2026-01-02 02:10:07,829 [INFO] Processing en-14 | Attempt 1
+2026-01-02 02:10:07,831 [INFO] Processing en-15 | Attempt 1
+2026-01-02 02:10:07,833 [INFO] Processing en-16 | Attempt 1
+2026-01-02 02:10:07,835 [INFO] Processing en-17 | Attempt 1
+2026-01-02 02:10:07,836 [INFO] Processing en-18 | Attempt 1
+2026-01-02 02:10:07,838 [INFO] Processing en-19 | Attempt 1
+2026-01-02 02:10:07,840 [INFO] Processing en-20 | Attempt 1
+2026-01-02 02:10:07,841 [INFO] Processing en-21 | Attempt 1
+2026-01-02 02:10:07,843 [INFO] Processing en-22 | Attempt 1
+2026-01-02 02:10:07,846 [INFO] Processing en-23 | Attempt 1
+2026-01-02 02:10:07,852 [INFO] Processing en-24 | Attempt 1
+2026-01-02 02:10:07,854 [INFO] Processing en-25 | Attempt 1
+2026-01-02 02:10:07,856 [INFO] Processing en-27 | Attempt 1
+2026-01-02 02:10:07,858 [INFO] Processing en-28 | Attempt 1
+2026-01-02 02:10:07,860 [INFO] Processing en-29 | Attempt 1
+2026-01-02 02:10:07,861 [INFO] Processing en-30 | Attempt 1
+2026-01-02 02:10:07,862 [INFO] Processing en-31 | Attempt 1
+2026-01-02 02:10:07,865 [INFO] Processing en-32 | Attempt 1
+2026-01-02 02:10:07,869 [INFO] Processing en-33 | Attempt 1
+2026-01-02 02:10:07,872 [INFO] Processing en-34 | Attempt 1
+2026-01-02 02:10:07,873 [INFO] Processing en-35 | Attempt 1
+2026-01-02 02:10:07,875 [INFO] Processing en-36 | Attempt 1
+2026-01-02 02:10:07,877 [INFO] Processing en-37 | Attempt 1
+2026-01-02 02:10:07,889 [INFO] Processing en-38 | Attempt 1
+2026-01-02 02:10:07,968 [INFO] Processing en-39 | Attempt 1
+2026-01-02 02:10:07,991 [INFO] Processing en-40 | Attempt 1
+2026-01-02 02:10:07,997 [INFO] Processing en-41 | Attempt 1
+2026-01-02 02:10:08,000 [INFO] Processing en-42 | Attempt 1
+2026-01-02 02:10:08,005 [INFO] Processing en-43 | Attempt 1
+2026-01-02 02:10:08,009 [INFO] Processing en-44 | Attempt 1
+2026-01-02 02:10:08,010 [INFO] Processing en-45 | Attempt 1
+2026-01-02 02:10:08,028 [INFO] Processing en-46 | Attempt 1
+2026-01-02 02:10:08,063 [INFO] Processing en-47 | Attempt 1
+2026-01-02 02:10:08,078 [INFO] Processing en-48 | Attempt 1
+2026-01-02 02:10:08,092 [INFO] Processing en-49 | Attempt 1
+2026-01-02 02:10:08,095 [INFO] Processing en-50 | Attempt 1
+2026-01-02 02:10:08,118 [INFO] Processing en-51 | Attempt 1
+2026-01-02 02:10:08,145 [INFO] Processing en-52 | Attempt 1
+2026-01-02 02:10:08,154 [INFO] Processing en-53 | Attempt 1
+2026-01-02 02:10:08,164 [INFO] Processing en-54 | Attempt 1
+2026-01-02 02:10:08,166 [INFO] Processing en-55 | Attempt 1
+2026-01-02 02:10:08,171 [INFO] Processing en-56 | Attempt 1
+2026-01-02 02:10:08,175 [INFO] Processing en-57 | Attempt 1
+2026-01-02 02:10:08,179 [INFO] Processing en-58 | Attempt 1
+2026-01-02 02:10:08,202 [INFO] Processing en-59 | Attempt 1
+2026-01-02 02:10:08,228 [INFO] Processing en-60 | Attempt 1
+2026-01-02 02:10:08,230 [INFO] Processing en-61 | Attempt 1
+2026-01-02 02:10:08,235 [INFO] Processing en-62 | Attempt 1
+2026-01-02 02:10:08,246 [INFO] Processing en-63 | Attempt 1
+2026-01-02 02:10:08,288 [INFO] Processing en-64 | Attempt 1
+2026-01-02 02:10:08,313 [INFO] Processing en-65 | Attempt 1
+2026-01-02 02:10:08,315 [INFO] Processing en-66 | Attempt 1
+2026-01-02 02:10:15,091 [ERROR] Failed en-20: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:10:15,110 [INFO] Processing en-67 | Attempt 1
+2026-01-02 02:10:15,179 [ERROR] Failed en-16: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:10:15,200 [INFO] Processing en-68 | Attempt 1
+2026-01-02 02:10:15,286 [ERROR] Failed en-22: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:10:15,302 [INFO] Processing en-69 | Attempt 1
+2026-01-02 02:10:15,477 [ERROR] Failed en-1: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:10:15,496 [ERROR] Failed en-36: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:10:15,504 [ERROR] Failed en-21: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:10:15,507 [INFO] Processing en-70 | Attempt 1
+2026-01-02 02:10:15,512 [INFO] Processing en-71 | Attempt 1
+2026-01-02 02:10:15,516 [INFO] Processing en-72 | Attempt 1
+2026-01-02 02:10:15,636 [ERROR] Failed en-35: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:10:15,648 [INFO] Processing en-73 | Attempt 1
+2026-01-02 02:10:15,754 [ERROR] Failed en-37: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:10:15,761 [INFO] Processing en-74 | Attempt 1
+2026-01-02 02:10:15,906 [ERROR] Failed en-15: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:10:15,912 [INFO] Processing en-75 | Attempt 1
+2026-01-02 02:10:15,962 [ERROR] Failed en-14: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:10:15,996 [INFO] Processing en-76 | Attempt 1
+2026-01-02 02:10:16,032 [ERROR] Failed en-43: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:10:16,048 [INFO] Processing en-77 | Attempt 1
+2026-01-02 02:10:16,337 [ERROR] Failed en-41: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:10:16,347 [INFO] Processing en-78 | Attempt 1
+2026-01-02 02:10:16,485 [ERROR] Failed en-42: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:10:16,489 [INFO] Processing en-79 | Attempt 1
+2026-01-02 02:10:17,112 [ERROR] Failed en-56: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:10:17,126 [INFO] Processing en-80 | Attempt 1
+2026-01-02 02:10:17,268 [ERROR] Failed en-55: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:10:17,284 [INFO] Processing en-81 | Attempt 1
+2026-01-02 02:10:17,401 [ERROR] Failed en-63: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:10:17,419 [INFO] Processing en-82 | Attempt 1
+2026-01-02 02:10:17,634 [ERROR] Failed en-57: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:10:17,639 [INFO] Processing en-83 | Attempt 1
+2026-01-02 02:10:17,687 [ERROR] Failed en-62: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:10:17,725 [INFO] Processing en-84 | Attempt 1
+2026-01-02 02:10:18,451 [ERROR] Failed en-39: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:10:18,451 [ERROR] Failed en-11: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:10:18,486 [INFO] Processing en-85 | Attempt 1
+2026-01-02 02:10:18,487 [INFO] Processing en-86 | Attempt 1
+2026-01-02 02:10:18,587 [ERROR] Failed en-32: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:10:18,592 [INFO] Processing en-87 | Attempt 1
+2026-01-02 02:10:18,593 [ERROR] Failed en-13: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:10:18,604 [ERROR] Failed en-61: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:10:18,625 [INFO] Processing en-88 | Attempt 1
+2026-01-02 02:10:18,627 [INFO] Processing en-89 | Attempt 1
+2026-01-02 02:10:18,698 [ERROR] Failed en-19: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:10:18,712 [ERROR] Failed en-38: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:10:18,716 [INFO] Processing en-90 | Attempt 1
+2026-01-02 02:10:18,733 [ERROR] Failed en-17: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:10:18,748 [INFO] Processing en-91 | Attempt 1
+2026-01-02 02:10:18,773 [ERROR] Failed en-18: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:10:18,809 [INFO] Processing en-92 | Attempt 1
+2026-01-02 02:10:18,839 [ERROR] Failed en-40: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:10:18,855 [ERROR] Failed en-12: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:10:18,863 [ERROR] Failed en-52: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:10:18,882 [INFO] Processing en-93 | Attempt 1
+2026-01-02 02:10:18,885 [INFO] Processing en-94 | Attempt 1
+2026-01-02 02:10:18,889 [INFO] Processing en-95 | Attempt 1
+2026-01-02 02:10:18,892 [INFO] Processing en-96 | Attempt 1
+2026-01-02 02:10:18,933 [ERROR] Failed en-34: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:10:19,017 [ERROR] Failed en-60: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:10:19,027 [INFO] Processing en-97 | Attempt 1
+2026-01-02 02:10:19,048 [INFO] Processing en-98 | Attempt 1
+2026-01-02 02:10:19,108 [ERROR] Failed en-33: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:10:19,115 [ERROR] Failed en-59: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:10:19,118 [ERROR] Failed en-58: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:10:19,161 [ERROR] Failed en-53: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:10:19,169 [INFO] Processing en-99 | Attempt 1
+2026-01-02 02:10:19,174 [INFO] Processing en-100 | Attempt 1
+2026-01-02 02:10:19,201 [INFO] Processing en-101 | Attempt 1
+2026-01-02 02:10:19,211 [ERROR] Failed en-54: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:10:19,219 [INFO] Processing en-102 | Attempt 1
+2026-01-02 02:10:19,360 [INFO] Processing en-103 | Attempt 1
+2026-01-02 02:10:20,450 [ERROR] Failed en-28: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:10:20,473 [INFO] Processing en-104 | Attempt 1
+2026-01-02 02:10:20,749 [ERROR] Failed en-5: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:10:20,778 [ERROR] Failed en-47: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:10:20,791 [INFO] Processing en-105 | Attempt 1
+2026-01-02 02:10:20,817 [INFO] Processing en-106 | Attempt 1
+2026-01-02 02:10:20,963 [ERROR] Failed en-23: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:10:20,987 [INFO] Processing en-107 | Attempt 1
+2026-01-02 02:10:21,085 [ERROR] Failed en-48: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:10:21,088 [INFO] Processing en-108 | Attempt 1
+2026-01-02 02:10:21,134 [ERROR] Failed en-27: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:10:21,156 [ERROR] Failed en-65: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:10:21,167 [ERROR] Failed en-46: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:10:21,187 [INFO] Processing en-109 | Attempt 1
+2026-01-02 02:10:21,203 [INFO] Processing en-110 | Attempt 1
+2026-01-02 02:10:21,204 [ERROR] Failed en-31: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:10:21,208 [INFO] Processing en-111 | Attempt 1
+2026-01-02 02:10:21,224 [INFO] Processing en-112 | Attempt 1
+2026-01-02 02:10:21,242 [ERROR] Failed en-9: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:10:21,271 [ERROR] Failed en-49: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:10:21,274 [INFO] Processing en-113 | Attempt 1
+2026-01-02 02:10:21,304 [INFO] Processing en-114 | Attempt 1
+2026-01-02 02:10:21,305 [ERROR] Failed en-66: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:10:21,314 [INFO] Processing en-115 | Attempt 1
+2026-01-02 02:10:21,396 [ERROR] Failed en-50: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:10:21,400 [INFO] Processing en-116 | Attempt 1
+2026-01-02 02:10:21,410 [ERROR] Failed en-51: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:10:21,440 [INFO] Processing en-117 | Attempt 1
+2026-01-02 02:10:21,445 [ERROR] Failed en-25: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:10:21,452 [INFO] Processing en-119 | Attempt 1
+2026-01-02 02:10:21,457 [ERROR] Failed en-45: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:10:21,508 [ERROR] Failed en-24: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:10:21,510 [ERROR] Failed en-10: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:10:21,510 [ERROR] Failed en-8: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:10:21,544 [INFO] Processing en-120 | Attempt 1
+2026-01-02 02:10:21,546 [INFO] Processing en-121 | Attempt 1
+2026-01-02 02:10:21,546 [ERROR] Failed en-4: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:10:21,598 [INFO] Processing en-122 | Attempt 1
+2026-01-02 02:10:21,599 [ERROR] Failed en-7: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:10:21,600 [ERROR] Failed en-29: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:10:21,634 [INFO] Processing en-123 | Attempt 1
+2026-01-02 02:10:21,654 [INFO] Processing en-124 | Attempt 1
+2026-01-02 02:10:21,673 [INFO] Processing en-125 | Attempt 1
+2026-01-02 02:10:21,706 [INFO] Processing en-126 | Attempt 1
+2026-01-02 02:10:21,866 [ERROR] Failed en-6: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:10:21,869 [ERROR] Failed en-44: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:10:21,869 [ERROR] Failed en-3: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:10:21,877 [INFO] Processing en-127 | Attempt 1
+2026-01-02 02:10:21,891 [INFO] Processing en-128 | Attempt 1
+2026-01-02 02:10:21,895 [ERROR] Failed en-30: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:10:21,897 [ERROR] Failed en-64: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:10:21,905 [INFO] Processing en-129 | Attempt 1
+2026-01-02 02:10:21,939 [INFO] Processing en-130 | Attempt 1
+2026-01-02 02:10:21,997 [INFO] Processing en-131 | Attempt 1
+2026-01-02 02:10:23,656 [ERROR] Failed en-67: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:10:23,668 [INFO] Processing en-132 | Attempt 1
+2026-01-02 02:10:24,113 [ERROR] Failed en-68: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:10:24,128 [INFO] Processing en-133 | Attempt 1
+2026-01-02 02:10:24,820 [ERROR] Failed en-73: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:10:24,839 [INFO] Processing en-134 | Attempt 1
+2026-01-02 02:10:24,925 [ERROR] Failed en-71: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:10:24,926 [ERROR] Failed en-69: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:10:24,936 [INFO] Processing en-135 | Attempt 1
+2026-01-02 02:10:24,940 [INFO] Processing en-136 | Attempt 1
+2026-01-02 02:10:24,984 [ERROR] Failed en-76: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:10:24,995 [ERROR] Failed en-72: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:10:25,008 [INFO] Processing en-137 | Attempt 1
+2026-01-02 02:10:25,012 [INFO] Processing en-138 | Attempt 1
+2026-01-02 02:10:25,231 [ERROR] Failed en-70: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:10:25,240 [INFO] Processing en-139 | Attempt 1
+2026-01-02 02:10:26,024 [ERROR] Failed en-74: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:10:26,034 [INFO] Processing en-140 | Attempt 1
+2026-01-02 02:10:26,261 [ERROR] Failed en-77: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:10:26,290 [INFO] Processing en-141 | Attempt 1
+2026-01-02 02:10:26,523 [ERROR] Failed en-75: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:10:26,537 [INFO] Processing en-142 | Attempt 1
+2026-01-02 02:10:26,589 [ERROR] Failed en-79: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:10:26,636 [INFO] Processing en-143 | Attempt 1
+2026-01-02 02:10:26,685 [ERROR] Failed en-78: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:10:26,706 [INFO] Processing en-144 | Attempt 1
+2026-01-02 02:10:27,883 [ERROR] Failed en-80: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:10:27,897 [INFO] Processing en-145 | Attempt 1
+2026-01-02 02:10:28,213 [ERROR] Failed en-82: Request Failed: xAI Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:34,723 [INFO] Config: Model=qwen/qwen3-vl-235b-a22b-instruct, Context=False(3 imgs), Hint=char_count, Pass@=False
+2026-01-02 02:11:34,727 [INFO] Loaded 300 samples for language 'en'
+2026-01-02 02:11:34,736 [INFO] Language en: Using 3 examples, 297 test samples.
+2026-01-02 02:11:34,738 [INFO] Processing en-1 | Attempt 1
+2026-01-02 02:11:34,739 [INFO] Processing en-3 | Attempt 1
+2026-01-02 02:11:34,739 [INFO] Processing en-4 | Attempt 1
+2026-01-02 02:11:34,740 [INFO] Processing en-5 | Attempt 1
+2026-01-02 02:11:34,740 [INFO] Processing en-6 | Attempt 1
+2026-01-02 02:11:34,744 [INFO] Processing en-7 | Attempt 1
+2026-01-02 02:11:34,744 [INFO] Processing en-8 | Attempt 1
+2026-01-02 02:11:34,746 [INFO] Processing en-9 | Attempt 1
+2026-01-02 02:11:34,747 [INFO] Processing en-10 | Attempt 1
+2026-01-02 02:11:34,747 [INFO] Processing en-11 | Attempt 1
+2026-01-02 02:11:34,748 [INFO] Processing en-12 | Attempt 1
+2026-01-02 02:11:34,749 [INFO] Processing en-13 | Attempt 1
+2026-01-02 02:11:34,755 [INFO] Processing en-14 | Attempt 1
+2026-01-02 02:11:34,756 [INFO] Processing en-15 | Attempt 1
+2026-01-02 02:11:34,770 [INFO] Processing en-16 | Attempt 1
+2026-01-02 02:11:34,780 [INFO] Processing en-17 | Attempt 1
+2026-01-02 02:11:34,785 [INFO] Processing en-18 | Attempt 1
+2026-01-02 02:11:34,788 [INFO] Processing en-19 | Attempt 1
+2026-01-02 02:11:34,795 [INFO] Processing en-20 | Attempt 1
+2026-01-02 02:11:34,801 [INFO] Processing en-21 | Attempt 1
+2026-01-02 02:11:34,807 [INFO] Processing en-22 | Attempt 1
+2026-01-02 02:11:34,809 [INFO] Processing en-23 | Attempt 1
+2026-01-02 02:11:34,813 [INFO] Processing en-24 | Attempt 1
+2026-01-02 02:11:34,821 [INFO] Processing en-25 | Attempt 1
+2026-01-02 02:11:34,826 [INFO] Processing en-27 | Attempt 1
+2026-01-02 02:11:34,828 [INFO] Processing en-28 | Attempt 1
+2026-01-02 02:11:34,831 [INFO] Processing en-29 | Attempt 1
+2026-01-02 02:11:34,832 [INFO] Processing en-30 | Attempt 1
+2026-01-02 02:11:34,849 [INFO] Processing en-31 | Attempt 1
+2026-01-02 02:11:34,855 [INFO] Processing en-32 | Attempt 1
+2026-01-02 02:11:34,859 [INFO] Processing en-33 | Attempt 1
+2026-01-02 02:11:34,865 [INFO] Processing en-34 | Attempt 1
+2026-01-02 02:11:34,878 [INFO] Processing en-35 | Attempt 1
+2026-01-02 02:11:34,886 [INFO] Processing en-36 | Attempt 1
+2026-01-02 02:11:34,897 [INFO] Processing en-37 | Attempt 1
+2026-01-02 02:11:34,905 [INFO] Processing en-38 | Attempt 1
+2026-01-02 02:11:34,916 [INFO] Processing en-39 | Attempt 1
+2026-01-02 02:11:34,924 [INFO] Processing en-40 | Attempt 1
+2026-01-02 02:11:34,931 [INFO] Processing en-41 | Attempt 1
+2026-01-02 02:11:34,946 [INFO] Processing en-42 | Attempt 1
+2026-01-02 02:11:34,956 [INFO] Processing en-43 | Attempt 1
+2026-01-02 02:11:34,963 [INFO] Processing en-44 | Attempt 1
+2026-01-02 02:11:35,026 [INFO] Processing en-45 | Attempt 1
+2026-01-02 02:11:35,060 [INFO] Processing en-46 | Attempt 1
+2026-01-02 02:11:35,166 [INFO] Processing en-47 | Attempt 1
+2026-01-02 02:11:35,226 [INFO] Processing en-48 | Attempt 1
+2026-01-02 02:11:35,262 [INFO] Processing en-49 | Attempt 1
+2026-01-02 02:11:35,343 [INFO] Processing en-50 | Attempt 1
+2026-01-02 02:11:35,378 [INFO] Processing en-51 | Attempt 1
+2026-01-02 02:11:35,431 [INFO] Processing en-52 | Attempt 1
+2026-01-02 02:11:35,569 [INFO] Processing en-53 | Attempt 1
+2026-01-02 02:11:35,619 [INFO] Processing en-54 | Attempt 1
+2026-01-02 02:11:35,641 [INFO] Processing en-55 | Attempt 1
+2026-01-02 02:11:35,645 [INFO] Processing en-56 | Attempt 1
+2026-01-02 02:11:35,691 [INFO] Processing en-57 | Attempt 1
+2026-01-02 02:11:35,873 [INFO] Processing en-58 | Attempt 1
+2026-01-02 02:11:35,934 [INFO] Processing en-59 | Attempt 1
+2026-01-02 02:11:36,018 [INFO] Processing en-60 | Attempt 1
+2026-01-02 02:11:36,085 [INFO] Processing en-61 | Attempt 1
+2026-01-02 02:11:36,111 [INFO] Processing en-62 | Attempt 1
+2026-01-02 02:11:36,231 [INFO] Processing en-63 | Attempt 1
+2026-01-02 02:11:36,456 [INFO] Processing en-64 | Attempt 1
+2026-01-02 02:11:36,497 [INFO] Processing en-65 | Attempt 1
+2026-01-02 02:11:36,551 [INFO] Processing en-66 | Attempt 1
+2026-01-02 02:11:41,547 [ERROR] Failed en-11: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:41,591 [INFO] Processing en-67 | Attempt 1
+2026-01-02 02:11:41,593 [ERROR] Failed en-13: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:41,601 [ERROR] Failed en-12: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:41,610 [INFO] Processing en-68 | Attempt 1
+2026-01-02 02:11:41,612 [INFO] Processing en-69 | Attempt 1
+2026-01-02 02:11:41,975 [ERROR] Failed en-17: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:42,012 [INFO] Processing en-70 | Attempt 1
+2026-01-02 02:11:42,025 [ERROR] Failed en-18: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:42,043 [INFO] Processing en-71 | Attempt 1
+2026-01-02 02:11:42,161 [ERROR] Failed en-39: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:42,165 [INFO] Processing en-72 | Attempt 1
+2026-01-02 02:11:42,270 [ERROR] Failed en-32: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:42,277 [INFO] Processing en-73 | Attempt 1
+2026-01-02 02:11:42,347 [ERROR] Failed en-38: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:42,367 [INFO] Processing en-74 | Attempt 1
+2026-01-02 02:11:42,372 [ERROR] Failed en-33: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:42,507 [INFO] Processing en-75 | Attempt 1
+2026-01-02 02:11:42,671 [ERROR] Failed en-35: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:42,681 [INFO] Processing en-76 | Attempt 1
+2026-01-02 02:11:42,707 [ERROR] Failed en-1: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:42,717 [INFO] Processing en-77 | Attempt 1
+2026-01-02 02:11:42,846 [ERROR] Failed en-31: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:42,849 [INFO] Processing en-78 | Attempt 1
+2026-01-02 02:11:42,856 [ERROR] Failed en-21: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:42,861 [INFO] Processing en-79 | Attempt 1
+2026-01-02 02:11:42,928 [ERROR] Failed en-15: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:42,938 [ERROR] Failed en-14: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:42,954 [INFO] Processing en-80 | Attempt 1
+2026-01-02 02:11:42,967 [INFO] Processing en-81 | Attempt 1
+2026-01-02 02:11:43,046 [ERROR] Failed en-52: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:43,063 [INFO] Processing en-82 | Attempt 1
+2026-01-02 02:11:43,093 [ERROR] Failed en-34: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:43,109 [INFO] Processing en-83 | Attempt 1
+2026-01-02 02:11:43,294 [ERROR] Failed en-19: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:43,295 [ERROR] Failed en-57: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:43,298 [INFO] Processing en-84 | Attempt 1
+2026-01-02 02:11:43,298 [ERROR] Failed en-16: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:43,299 [ERROR] Failed en-36: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:43,301 [ERROR] Failed en-10: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:43,301 [ERROR] Failed en-37: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:43,305 [INFO] Processing en-85 | Attempt 1
+2026-01-02 02:11:43,313 [ERROR] Failed en-41: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:43,315 [ERROR] Failed en-42: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:43,315 [ERROR] Failed en-51: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:43,316 [ERROR] Failed en-4: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:43,316 [ERROR] Failed en-40: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:43,328 [INFO] Processing en-86 | Attempt 1
+2026-01-02 02:11:43,377 [INFO] Processing en-87 | Attempt 1
+2026-01-02 02:11:43,394 [INFO] Processing en-88 | Attempt 1
+2026-01-02 02:11:43,402 [INFO] Processing en-89 | Attempt 1
+2026-01-02 02:11:43,410 [INFO] Processing en-90 | Attempt 1
+2026-01-02 02:11:43,419 [INFO] Processing en-91 | Attempt 1
+2026-01-02 02:11:43,429 [INFO] Processing en-92 | Attempt 1
+2026-01-02 02:11:43,439 [INFO] Processing en-93 | Attempt 1
+2026-01-02 02:11:43,456 [INFO] Processing en-94 | Attempt 1
+2026-01-02 02:11:43,492 [ERROR] Failed en-20: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:43,495 [INFO] Processing en-95 | Attempt 1
+2026-01-02 02:11:43,499 [ERROR] Failed en-6: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:43,501 [ERROR] Failed en-9: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:43,502 [ERROR] Failed en-5: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:43,507 [ERROR] Failed en-7: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:43,510 [INFO] Processing en-96 | Attempt 1
+2026-01-02 02:11:43,535 [ERROR] Failed en-53: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:43,538 [INFO] Processing en-97 | Attempt 1
+2026-01-02 02:11:43,543 [INFO] Processing en-98 | Attempt 1
+2026-01-02 02:11:43,553 [INFO] Processing en-99 | Attempt 1
+2026-01-02 02:11:43,575 [INFO] Processing en-100 | Attempt 1
+2026-01-02 02:11:43,680 [ERROR] Failed en-23: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:43,694 [INFO] Processing en-101 | Attempt 1
+2026-01-02 02:11:43,816 [ERROR] Failed en-58: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:43,824 [ERROR] Failed en-54: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:43,824 [ERROR] Failed en-56: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:43,830 [ERROR] Failed en-22: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:43,848 [INFO] Processing en-102 | Attempt 1
+2026-01-02 02:11:43,861 [INFO] Processing en-103 | Attempt 1
+2026-01-02 02:11:43,872 [INFO] Processing en-104 | Attempt 1
+2026-01-02 02:11:43,888 [INFO] Processing en-105 | Attempt 1
+2026-01-02 02:11:43,952 [ERROR] Failed en-28: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:43,979 [ERROR] Failed en-25: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:43,981 [INFO] Processing en-106 | Attempt 1
+2026-01-02 02:11:43,998 [ERROR] Failed en-55: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:43,999 [ERROR] Failed en-30: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:43,999 [ERROR] Failed en-60: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:44,000 [ERROR] Failed en-43: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:44,003 [INFO] Processing en-107 | Attempt 1
+2026-01-02 02:11:44,029 [ERROR] Failed en-46: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:44,041 [INFO] Processing en-108 | Attempt 1
+2026-01-02 02:11:44,044 [ERROR] Failed en-62: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:44,054 [INFO] Processing en-109 | Attempt 1
+2026-01-02 02:11:44,060 [INFO] Processing en-110 | Attempt 1
+2026-01-02 02:11:44,062 [INFO] Processing en-111 | Attempt 1
+2026-01-02 02:11:44,079 [ERROR] Failed en-49: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:44,080 [ERROR] Failed en-29: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:44,112 [INFO] Processing en-112 | Attempt 1
+2026-01-02 02:11:44,113 [ERROR] Failed en-27: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:44,130 [ERROR] Failed en-44: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:44,194 [INFO] Processing en-113 | Attempt 1
+2026-01-02 02:11:44,195 [ERROR] Failed en-45: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:44,195 [ERROR] Failed en-3: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:44,199 [ERROR] Failed en-8: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:44,221 [ERROR] Failed en-24: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:44,303 [ERROR] Failed en-47: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:44,305 [INFO] Processing en-114 | Attempt 1
+2026-01-02 02:11:44,306 [ERROR] Failed en-48: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:44,308 [ERROR] Failed en-50: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:44,318 [INFO] Processing en-115 | Attempt 1
+2026-01-02 02:11:44,338 [ERROR] Failed en-59: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:44,357 [INFO] Processing en-116 | Attempt 1
+2026-01-02 02:11:44,411 [INFO] Processing en-117 | Attempt 1
+2026-01-02 02:11:44,464 [ERROR] Failed en-63: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:44,470 [INFO] Processing en-119 | Attempt 1
+2026-01-02 02:11:44,475 [INFO] Processing en-120 | Attempt 1
+2026-01-02 02:11:44,572 [INFO] Processing en-121 | Attempt 1
+2026-01-02 02:11:44,585 [INFO] Processing en-122 | Attempt 1
+2026-01-02 02:11:44,608 [INFO] Processing en-123 | Attempt 1
+2026-01-02 02:11:44,652 [INFO] Processing en-124 | Attempt 1
+2026-01-02 02:11:44,676 [INFO] Processing en-125 | Attempt 1
+2026-01-02 02:11:44,694 [INFO] Processing en-126 | Attempt 1
+2026-01-02 02:11:44,709 [ERROR] Failed en-61: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:44,757 [INFO] Processing en-127 | Attempt 1
+2026-01-02 02:11:44,828 [ERROR] Failed en-64: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:44,959 [ERROR] Failed en-66: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:44,960 [ERROR] Failed en-65: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:45,230 [INFO] Processing en-128 | Attempt 1
+2026-01-02 02:11:45,256 [INFO] Processing en-129 | Attempt 1
+2026-01-02 02:11:45,275 [INFO] Processing en-130 | Attempt 1
+2026-01-02 02:11:45,283 [INFO] Processing en-131 | Attempt 1
+2026-01-02 02:11:48,257 [ERROR] Failed en-68: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:48,268 [ERROR] Failed en-67: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:48,292 [INFO] Processing en-132 | Attempt 1
+2026-01-02 02:11:48,332 [INFO] Processing en-133 | Attempt 1
+2026-01-02 02:11:48,459 [ERROR] Failed en-69: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:48,470 [INFO] Processing en-134 | Attempt 1
+2026-01-02 02:11:48,513 [ERROR] Failed en-70: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:48,558 [INFO] Processing en-135 | Attempt 1
+2026-01-02 02:11:48,721 [ERROR] Failed en-72: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:48,749 [INFO] Processing en-136 | Attempt 1
+2026-01-02 02:11:48,960 [ERROR] Failed en-71: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:48,983 [INFO] Processing en-137 | Attempt 1
+2026-01-02 02:11:49,045 [ERROR] Failed en-74: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:49,072 [INFO] Processing en-138 | Attempt 1
+2026-01-02 02:11:49,602 [ERROR] Failed en-73: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:49,618 [INFO] Processing en-139 | Attempt 1
+2026-01-02 02:11:49,765 [ERROR] Failed en-75: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:49,785 [INFO] Processing en-140 | Attempt 1
+2026-01-02 02:11:49,948 [ERROR] Failed en-76: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:49,969 [INFO] Processing en-141 | Attempt 1
+2026-01-02 02:11:49,982 [ERROR] Failed en-78: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:49,996 [INFO] Processing en-142 | Attempt 1
+2026-01-02 02:11:50,090 [ERROR] Failed en-79: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:50,122 [INFO] Processing en-143 | Attempt 1
+2026-01-02 02:11:50,227 [ERROR] Failed en-77: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:50,238 [INFO] Processing en-144 | Attempt 1
+2026-01-02 02:11:50,546 [ERROR] Failed en-82: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:50,586 [INFO] Processing en-145 | Attempt 1
+2026-01-02 02:11:50,752 [ERROR] Failed en-81: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:50,777 [INFO] Processing en-146 | Attempt 1
+2026-01-02 02:11:51,006 [ERROR] Failed en-87: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:51,016 [ERROR] Failed en-80: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:51,017 [ERROR] Failed en-85: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:51,019 [INFO] Processing en-147 | Attempt 1
+2026-01-02 02:11:51,030 [INFO] Processing en-148 | Attempt 1
+2026-01-02 02:11:51,033 [INFO] Processing en-149 | Attempt 1
+2026-01-02 02:11:51,201 [ERROR] Failed en-94: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:51,220 [INFO] Processing en-150 | Attempt 1
+2026-01-02 02:11:51,369 [ERROR] Failed en-97: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:51,379 [INFO] Processing en-151 | Attempt 1
+2026-01-02 02:11:51,521 [ERROR] Failed en-99: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:51,523 [ERROR] Failed en-102: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:51,524 [ERROR] Failed en-88: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:51,525 [ERROR] Failed en-91: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:51,526 [ERROR] Failed en-100: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:51,535 [INFO] Processing en-152 | Attempt 1
+2026-01-02 02:11:51,558 [INFO] Processing en-153 | Attempt 1
+2026-01-02 02:11:51,561 [ERROR] Failed en-92: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:51,564 [ERROR] Failed en-86: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:51,582 [INFO] Processing en-154 | Attempt 1
+2026-01-02 02:11:51,599 [INFO] Processing en-155 | Attempt 1
+2026-01-02 02:11:51,602 [INFO] Processing en-156 | Attempt 1
+2026-01-02 02:11:51,616 [INFO] Processing en-157 | Attempt 1
+2026-01-02 02:11:51,648 [INFO] Processing en-158 | Attempt 1
+2026-01-02 02:11:51,761 [ERROR] Failed en-89: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:51,763 [ERROR] Failed en-84: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:51,776 [ERROR] Failed en-98: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:51,869 [ERROR] Failed en-95: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:51,870 [ERROR] Failed en-93: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:51,871 [INFO] Processing en-159 | Attempt 1
+2026-01-02 02:11:51,878 [INFO] Processing en-160 | Attempt 1
+2026-01-02 02:11:51,915 [ERROR] Failed en-83: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:51,916 [ERROR] Failed en-90: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:51,944 [INFO] Processing en-161 | Attempt 1
+2026-01-02 02:11:51,972 [INFO] Processing en-162 | Attempt 1
+2026-01-02 02:11:51,976 [INFO] Processing en-163 | Attempt 1
+2026-01-02 02:11:51,996 [INFO] Processing en-164 | Attempt 1
+2026-01-02 02:11:52,003 [INFO] Processing en-165 | Attempt 1
+2026-01-02 02:11:52,084 [ERROR] Failed en-104: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:52,084 [ERROR] Failed en-103: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:52,125 [INFO] Processing en-166 | Attempt 1
+2026-01-02 02:11:52,135 [INFO] Processing en-167 | Attempt 1
+2026-01-02 02:11:52,178 [ERROR] Failed en-101: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:52,180 [ERROR] Failed en-105: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:52,200 [ERROR] Failed en-96: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:52,230 [INFO] Processing en-168 | Attempt 1
+2026-01-02 02:11:52,233 [INFO] Processing en-169 | Attempt 1
+2026-01-02 02:11:52,234 [ERROR] Failed en-110: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:52,235 [ERROR] Failed en-113: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:52,241 [INFO] Processing en-170 | Attempt 1
+2026-01-02 02:11:52,243 [ERROR] Failed en-126: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:52,261 [INFO] Processing en-171 | Attempt 1
+2026-01-02 02:11:52,268 [INFO] Processing en-172 | Attempt 1
+2026-01-02 02:11:52,363 [INFO] Processing en-173 | Attempt 1
+2026-01-02 02:11:52,405 [ERROR] Failed en-106: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:52,429 [ERROR] Failed en-108: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:52,472 [INFO] Processing en-174 | Attempt 1
+2026-01-02 02:11:52,478 [INFO] Processing en-175 | Attempt 1
+2026-01-02 02:11:52,898 [ERROR] Failed en-109: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:52,904 [INFO] Processing en-176 | Attempt 1
+2026-01-02 02:11:53,021 [ERROR] Failed en-107: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:53,028 [INFO] Processing en-177 | Attempt 1
+2026-01-02 02:11:53,056 [ERROR] Failed en-111: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:53,071 [INFO] Processing en-178 | Attempt 1
+2026-01-02 02:11:53,375 [ERROR] Failed en-112: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:53,392 [INFO] Processing en-179 | Attempt 1
+2026-01-02 02:11:53,507 [ERROR] Failed en-129: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:53,515 [INFO] Processing en-180 | Attempt 1
+2026-01-02 02:11:53,644 [ERROR] Failed en-114: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:53,654 [INFO] Processing en-181 | Attempt 1
+2026-01-02 02:11:53,946 [ERROR] Failed en-122: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:53,950 [INFO] Processing en-182 | Attempt 1
+2026-01-02 02:11:54,089 [ERROR] Failed en-119: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:54,104 [ERROR] Failed en-117: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:54,107 [INFO] Processing en-183 | Attempt 1
+2026-01-02 02:11:54,126 [INFO] Processing en-184 | Attempt 1
+2026-01-02 02:11:54,156 [ERROR] Failed en-115: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:54,197 [INFO] Processing en-185 | Attempt 1
+2026-01-02 02:11:54,283 [ERROR] Failed en-125: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:54,292 [ERROR] Failed en-121: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:54,324 [INFO] Processing en-186 | Attempt 1
+2026-01-02 02:11:54,330 [INFO] Processing en-187 | Attempt 1
+2026-01-02 02:11:54,362 [ERROR] Failed en-120: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:54,407 [INFO] Processing en-188 | Attempt 1
+2026-01-02 02:11:54,537 [ERROR] Failed en-116: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:54,546 [INFO] Processing en-189 | Attempt 1
+2026-01-02 02:11:54,614 [ERROR] Failed en-131: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:54,621 [INFO] Processing en-190 | Attempt 1
+2026-01-02 02:11:54,635 [ERROR] Failed en-123: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:54,654 [INFO] Processing en-191 | Attempt 1
+2026-01-02 02:11:54,687 [ERROR] Failed en-124: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:54,689 [ERROR] Failed en-128: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:54,695 [INFO] Processing en-192 | Attempt 1
+2026-01-02 02:11:54,697 [INFO] Processing en-193 | Attempt 1
+2026-01-02 02:11:54,805 [ERROR] Failed en-127: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:54,812 [INFO] Processing en-194 | Attempt 1
+2026-01-02 02:11:54,976 [ERROR] Failed en-130: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:54,992 [INFO] Processing en-195 | Attempt 1
+2026-01-02 02:11:55,949 [ERROR] Failed en-133: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:55,959 [INFO] Processing en-196 | Attempt 1
+2026-01-02 02:11:56,257 [ERROR] Failed en-132: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:56,263 [INFO] Processing en-197 | Attempt 1
+2026-01-02 02:11:56,406 [ERROR] Failed en-135: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:56,416 [INFO] Processing en-198 | Attempt 1
+2026-01-02 02:11:56,465 [ERROR] Failed en-134: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:56,489 [INFO] Processing en-199 | Attempt 1
+2026-01-02 02:11:56,807 [ERROR] Failed en-137: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:56,821 [INFO] Processing en-200 | Attempt 1
+2026-01-02 02:11:56,841 [ERROR] Failed en-141: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:56,845 [INFO] Processing en-201 | Attempt 1
+2026-01-02 02:11:57,120 [ERROR] Failed en-136: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:57,130 [INFO] Processing en-202 | Attempt 1
+2026-01-02 02:11:57,195 [ERROR] Failed en-138: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:57,230 [INFO] Processing en-203 | Attempt 1
+2026-01-02 02:11:57,510 [ERROR] Failed en-139: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:57,527 [INFO] Processing en-204 | Attempt 1
+2026-01-02 02:11:57,817 [ERROR] Failed en-140: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:57,853 [INFO] Processing en-205 | Attempt 1
+2026-01-02 02:11:57,892 [ERROR] Failed en-143: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:57,945 [INFO] Processing en-206 | Attempt 1
+2026-01-02 02:11:57,967 [ERROR] Failed en-142: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:57,973 [INFO] Processing en-207 | Attempt 1
+2026-01-02 02:11:58,086 [ERROR] Failed en-145: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:58,087 [ERROR] Failed en-144: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:58,119 [INFO] Processing en-208 | Attempt 1
+2026-01-02 02:11:58,127 [INFO] Processing en-209 | Attempt 1
+2026-01-02 02:11:58,231 [ERROR] Failed en-146: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:11:58,266 [INFO] Processing en-210 | Attempt 1
+2026-01-02 02:13:10,582 [INFO] Config: Model=qwen/qwen3-vl-235b-a22b-instruct, Context=False(3 imgs), Hint=char_count, Pass@=False
+2026-01-02 02:13:10,586 [INFO] Loaded 300 samples for language 'en'
+2026-01-02 02:13:10,593 [INFO] Language en: Using 3 examples, 297 test samples.
+2026-01-02 02:13:10,594 [INFO] Processing en-1 | Attempt 1
+2026-01-02 02:13:10,595 [INFO] Processing en-3 | Attempt 1
+2026-01-02 02:13:10,596 [INFO] Processing en-4 | Attempt 1
+2026-01-02 02:13:10,597 [INFO] Processing en-5 | Attempt 1
+2026-01-02 02:13:10,598 [INFO] Processing en-6 | Attempt 1
+2026-01-02 02:13:10,602 [INFO] Processing en-7 | Attempt 1
+2026-01-02 02:13:10,609 [INFO] Processing en-8 | Attempt 1
+2026-01-02 02:13:10,614 [INFO] Processing en-9 | Attempt 1
+2026-01-02 02:13:10,614 [INFO] Processing en-10 | Attempt 1
+2026-01-02 02:13:10,616 [INFO] Processing en-11 | Attempt 1
+2026-01-02 02:13:10,621 [INFO] Processing en-12 | Attempt 1
+2026-01-02 02:13:10,625 [INFO] Processing en-13 | Attempt 1
+2026-01-02 02:13:10,631 [INFO] Processing en-14 | Attempt 1
+2026-01-02 02:13:10,632 [INFO] Processing en-15 | Attempt 1
+2026-01-02 02:13:10,634 [INFO] Processing en-16 | Attempt 1
+2026-01-02 02:13:10,639 [INFO] Processing en-17 | Attempt 1
+2026-01-02 02:13:10,641 [INFO] Processing en-18 | Attempt 1
+2026-01-02 02:13:10,643 [INFO] Processing en-19 | Attempt 1
+2026-01-02 02:13:10,648 [INFO] Processing en-20 | Attempt 1
+2026-01-02 02:13:10,655 [INFO] Processing en-21 | Attempt 1
+2026-01-02 02:13:10,659 [INFO] Processing en-22 | Attempt 1
+2026-01-02 02:13:10,661 [INFO] Processing en-23 | Attempt 1
+2026-01-02 02:13:10,662 [INFO] Processing en-24 | Attempt 1
+2026-01-02 02:13:10,665 [INFO] Processing en-25 | Attempt 1
+2026-01-02 02:13:10,672 [INFO] Processing en-27 | Attempt 1
+2026-01-02 02:13:10,676 [INFO] Processing en-28 | Attempt 1
+2026-01-02 02:13:10,682 [INFO] Processing en-29 | Attempt 1
+2026-01-02 02:13:10,685 [INFO] Processing en-30 | Attempt 1
+2026-01-02 02:13:10,691 [INFO] Processing en-31 | Attempt 1
+2026-01-02 02:13:10,692 [INFO] Processing en-32 | Attempt 1
+2026-01-02 02:13:10,695 [INFO] Processing en-33 | Attempt 1
+2026-01-02 02:13:10,696 [INFO] Processing en-34 | Attempt 1
+2026-01-02 02:13:10,700 [INFO] Processing en-35 | Attempt 1
+2026-01-02 02:13:10,702 [INFO] Processing en-36 | Attempt 1
+2026-01-02 02:13:10,707 [INFO] Processing en-37 | Attempt 1
+2026-01-02 02:13:10,709 [INFO] Processing en-38 | Attempt 1
+2026-01-02 02:13:10,710 [INFO] Processing en-39 | Attempt 1
+2026-01-02 02:13:10,715 [INFO] Processing en-40 | Attempt 1
+2026-01-02 02:13:10,716 [INFO] Processing en-41 | Attempt 1
+2026-01-02 02:13:10,721 [INFO] Processing en-42 | Attempt 1
+2026-01-02 02:13:10,725 [INFO] Processing en-43 | Attempt 1
+2026-01-02 02:13:10,733 [INFO] Processing en-44 | Attempt 1
+2026-01-02 02:13:10,735 [INFO] Processing en-45 | Attempt 1
+2026-01-02 02:13:10,736 [INFO] Processing en-46 | Attempt 1
+2026-01-02 02:13:10,738 [INFO] Processing en-47 | Attempt 1
+2026-01-02 02:13:10,745 [INFO] Processing en-48 | Attempt 1
+2026-01-02 02:13:10,746 [INFO] Processing en-49 | Attempt 1
+2026-01-02 02:13:10,748 [INFO] Processing en-50 | Attempt 1
+2026-01-02 02:13:10,749 [INFO] Processing en-51 | Attempt 1
+2026-01-02 02:13:10,750 [INFO] Processing en-52 | Attempt 1
+2026-01-02 02:13:10,752 [INFO] Processing en-53 | Attempt 1
+2026-01-02 02:13:10,756 [INFO] Processing en-54 | Attempt 1
+2026-01-02 02:13:10,762 [INFO] Processing en-55 | Attempt 1
+2026-01-02 02:13:10,767 [INFO] Processing en-56 | Attempt 1
+2026-01-02 02:13:10,771 [INFO] Processing en-57 | Attempt 1
+2026-01-02 02:13:10,772 [INFO] Processing en-58 | Attempt 1
+2026-01-02 02:13:10,777 [INFO] Processing en-59 | Attempt 1
+2026-01-02 02:13:10,778 [INFO] Processing en-60 | Attempt 1
+2026-01-02 02:13:10,781 [INFO] Processing en-61 | Attempt 1
+2026-01-02 02:13:10,783 [INFO] Processing en-62 | Attempt 1
+2026-01-02 02:13:10,785 [INFO] Processing en-63 | Attempt 1
+2026-01-02 02:13:10,790 [INFO] Processing en-64 | Attempt 1
+2026-01-02 02:13:10,792 [INFO] Processing en-65 | Attempt 1
+2026-01-02 02:13:10,795 [INFO] Processing en-66 | Attempt 1
+2026-01-02 02:13:17,944 [ERROR] Failed en-41: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:17,948 [INFO] Processing en-67 | Attempt 1
+2026-01-02 02:13:17,972 [ERROR] Failed en-61: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:17,981 [INFO] Processing en-68 | Attempt 1
+2026-01-02 02:13:18,151 [ERROR] Failed en-36: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:18,163 [INFO] Processing en-69 | Attempt 1
+2026-01-02 02:13:18,170 [ERROR] Failed en-16: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:18,174 [INFO] Processing en-70 | Attempt 1
+2026-01-02 02:13:18,197 [ERROR] Failed en-15: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:18,198 [ERROR] Failed en-42: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:18,200 [INFO] Processing en-71 | Attempt 1
+2026-01-02 02:13:18,202 [INFO] Processing en-72 | Attempt 1
+2026-01-02 02:13:18,233 [ERROR] Failed en-37: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:18,238 [INFO] Processing en-73 | Attempt 1
+2026-01-02 02:13:18,304 [ERROR] Failed en-56: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:18,314 [INFO] Processing en-74 | Attempt 1
+2026-01-02 02:13:18,347 [ERROR] Failed en-14: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:18,349 [INFO] Processing en-75 | Attempt 1
+2026-01-02 02:13:18,350 [ERROR] Failed en-35: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:18,354 [INFO] Processing en-76 | Attempt 1
+2026-01-02 02:13:18,393 [ERROR] Failed en-21: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:18,394 [ERROR] Failed en-43: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:18,397 [INFO] Processing en-77 | Attempt 1
+2026-01-02 02:13:18,433 [ERROR] Failed en-1: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:18,494 [ERROR] Failed en-22: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:18,498 [ERROR] Failed en-62: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:18,498 [ERROR] Failed en-60: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:18,500 [ERROR] Failed en-55: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:18,504 [INFO] Processing en-78 | Attempt 1
+2026-01-02 02:13:18,531 [INFO] Processing en-79 | Attempt 1
+2026-01-02 02:13:18,532 [INFO] Processing en-80 | Attempt 1
+2026-01-02 02:13:18,535 [INFO] Processing en-81 | Attempt 1
+2026-01-02 02:13:18,537 [INFO] Processing en-82 | Attempt 1
+2026-01-02 02:13:18,539 [INFO] Processing en-83 | Attempt 1
+2026-01-02 02:13:18,610 [ERROR] Failed en-20: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:18,648 [INFO] Processing en-84 | Attempt 1
+2026-01-02 02:13:19,185 [ERROR] Failed en-40: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:19,190 [ERROR] Failed en-54: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:19,208 [INFO] Processing en-85 | Attempt 1
+2026-01-02 02:13:19,216 [INFO] Processing en-86 | Attempt 1
+2026-01-02 02:13:19,242 [ERROR] Failed en-39: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:19,265 [INFO] Processing en-87 | Attempt 1
+2026-01-02 02:13:19,356 [ERROR] Failed en-33: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:19,360 [INFO] Processing en-88 | Attempt 1
+2026-01-02 02:13:19,387 [ERROR] Failed en-11: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:19,388 [ERROR] Failed en-18: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:19,390 [ERROR] Failed en-34: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:19,396 [INFO] Processing en-89 | Attempt 1
+2026-01-02 02:13:19,401 [INFO] Processing en-90 | Attempt 1
+2026-01-02 02:13:19,404 [INFO] Processing en-91 | Attempt 1
+2026-01-02 02:13:19,423 [ERROR] Failed en-19: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:19,425 [ERROR] Failed en-38: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:19,437 [INFO] Processing en-92 | Attempt 1
+2026-01-02 02:13:19,446 [INFO] Processing en-93 | Attempt 1
+2026-01-02 02:13:19,447 [ERROR] Failed en-58: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:19,462 [INFO] Processing en-94 | Attempt 1
+2026-01-02 02:13:19,466 [ERROR] Failed en-32: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:19,477 [ERROR] Failed en-52: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:19,480 [ERROR] Failed en-59: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:19,483 [INFO] Processing en-95 | Attempt 1
+2026-01-02 02:13:19,486 [INFO] Processing en-96 | Attempt 1
+2026-01-02 02:13:19,493 [ERROR] Failed en-57: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:19,509 [INFO] Processing en-97 | Attempt 1
+2026-01-02 02:13:19,512 [ERROR] Failed en-13: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:19,514 [ERROR] Failed en-17: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:19,604 [ERROR] Failed en-53: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:19,605 [ERROR] Failed en-12: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:19,756 [INFO] Processing en-98 | Attempt 1
+2026-01-02 02:13:19,866 [INFO] Processing en-99 | Attempt 1
+2026-01-02 02:13:19,909 [INFO] Processing en-100 | Attempt 1
+2026-01-02 02:13:19,916 [INFO] Processing en-101 | Attempt 1
+2026-01-02 02:13:19,940 [INFO] Processing en-102 | Attempt 1
+2026-01-02 02:13:19,941 [ERROR] Failed en-10: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:19,980 [INFO] Processing en-103 | Attempt 1
+2026-01-02 02:13:20,003 [ERROR] Failed en-30: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:20,013 [ERROR] Failed en-4: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:20,022 [INFO] Processing en-104 | Attempt 1
+2026-01-02 02:13:20,044 [INFO] Processing en-105 | Attempt 1
+2026-01-02 02:13:20,065 [ERROR] Failed en-29: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:20,066 [ERROR] Failed en-23: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:20,073 [INFO] Processing en-106 | Attempt 1
+2026-01-02 02:13:20,077 [INFO] Processing en-107 | Attempt 1
+2026-01-02 02:13:20,081 [ERROR] Failed en-48: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:20,124 [ERROR] Failed en-46: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:20,131 [INFO] Processing en-108 | Attempt 1
+2026-01-02 02:13:20,135 [INFO] Processing en-109 | Attempt 1
+2026-01-02 02:13:20,175 [ERROR] Failed en-9: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:20,186 [ERROR] Failed en-5: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:20,187 [ERROR] Failed en-7: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:20,190 [INFO] Processing en-110 | Attempt 1
+2026-01-02 02:13:20,239 [ERROR] Failed en-31: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:20,262 [ERROR] Failed en-27: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:20,278 [ERROR] Failed en-28: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:20,284 [INFO] Processing en-111 | Attempt 1
+2026-01-02 02:13:20,285 [INFO] Processing en-112 | Attempt 1
+2026-01-02 02:13:20,357 [INFO] Processing en-113 | Attempt 1
+2026-01-02 02:13:20,370 [INFO] Processing en-114 | Attempt 1
+2026-01-02 02:13:20,382 [INFO] Processing en-115 | Attempt 1
+2026-01-02 02:13:20,400 [ERROR] Failed en-24: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:20,405 [INFO] Processing en-116 | Attempt 1
+2026-01-02 02:13:20,431 [ERROR] Failed en-44: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:20,431 [ERROR] Failed en-6: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:20,437 [INFO] Processing en-117 | Attempt 1
+2026-01-02 02:13:20,446 [ERROR] Failed en-63: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:20,447 [ERROR] Failed en-50: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:20,452 [INFO] Processing en-119 | Attempt 1
+2026-01-02 02:13:20,501 [ERROR] Failed en-3: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:20,508 [ERROR] Failed en-51: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:20,508 [ERROR] Failed en-49: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:20,508 [ERROR] Failed en-64: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:20,572 [INFO] Processing en-120 | Attempt 1
+2026-01-02 02:13:20,574 [ERROR] Failed en-25: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:20,645 [INFO] Processing en-121 | Attempt 1
+2026-01-02 02:13:20,646 [ERROR] Failed en-45: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:20,647 [ERROR] Failed en-47: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:20,679 [ERROR] Failed en-66: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:20,679 [ERROR] Failed en-65: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:20,682 [INFO] Processing en-122 | Attempt 1
+2026-01-02 02:13:20,684 [INFO] Processing en-123 | Attempt 1
+2026-01-02 02:13:20,687 [INFO] Processing en-124 | Attempt 1
+2026-01-02 02:13:20,690 [INFO] Processing en-125 | Attempt 1
+2026-01-02 02:13:20,695 [INFO] Processing en-126 | Attempt 1
+2026-01-02 02:13:20,703 [INFO] Processing en-127 | Attempt 1
+2026-01-02 02:13:20,757 [INFO] Processing en-128 | Attempt 1
+2026-01-02 02:13:20,795 [INFO] Processing en-129 | Attempt 1
+2026-01-02 02:13:20,859 [INFO] Processing en-130 | Attempt 1
+2026-01-02 02:13:21,081 [ERROR] Failed en-8: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:21,316 [INFO] Processing en-131 | Attempt 1
+2026-01-02 02:13:25,023 [ERROR] Failed en-67: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:25,027 [INFO] Processing en-132 | Attempt 1
+2026-01-02 02:13:25,377 [ERROR] Failed en-68: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:25,383 [INFO] Processing en-133 | Attempt 1
+2026-01-02 02:13:25,440 [ERROR] Failed en-70: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:25,448 [INFO] Processing en-134 | Attempt 1
+2026-01-02 02:13:25,547 [ERROR] Failed en-72: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:25,552 [INFO] Processing en-135 | Attempt 1
+2026-01-02 02:13:25,562 [ERROR] Failed en-74: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:25,592 [INFO] Processing en-136 | Attempt 1
+2026-01-02 02:13:25,688 [ERROR] Failed en-73: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:25,696 [INFO] Processing en-137 | Attempt 1
+2026-01-02 02:13:25,774 [ERROR] Failed en-76: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:25,785 [INFO] Processing en-138 | Attempt 1
+2026-01-02 02:13:25,800 [ERROR] Failed en-69: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:25,804 [INFO] Processing en-139 | Attempt 1
+2026-01-02 02:13:25,987 [ERROR] Failed en-75: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:26,007 [INFO] Processing en-140 | Attempt 1
+2026-01-02 02:13:26,054 [ERROR] Failed en-81: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:26,057 [INFO] Processing en-141 | Attempt 1
+2026-01-02 02:13:26,081 [ERROR] Failed en-84: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:26,104 [INFO] Processing en-142 | Attempt 1
+2026-01-02 02:13:26,105 [ERROR] Failed en-79: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:26,120 [INFO] Processing en-143 | Attempt 1
+2026-01-02 02:13:26,196 [ERROR] Failed en-71: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:26,212 [INFO] Processing en-144 | Attempt 1
+2026-01-02 02:13:26,215 [ERROR] Failed en-78: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:26,228 [INFO] Processing en-145 | Attempt 1
+2026-01-02 02:13:26,356 [ERROR] Failed en-80: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:26,368 [INFO] Processing en-146 | Attempt 1
+2026-01-02 02:13:26,512 [ERROR] Failed en-83: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:26,520 [INFO] Processing en-147 | Attempt 1
+2026-01-02 02:13:26,521 [ERROR] Failed en-77: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:26,531 [ERROR] Failed en-82: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:26,536 [INFO] Processing en-148 | Attempt 1
+2026-01-02 02:13:26,567 [INFO] Processing en-149 | Attempt 1
+2026-01-02 02:13:26,930 [ERROR] Failed en-85: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:26,933 [INFO] Processing en-150 | Attempt 1
+2026-01-02 02:13:27,130 [ERROR] Failed en-87: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:27,169 [INFO] Processing en-151 | Attempt 1
+2026-01-02 02:13:27,286 [ERROR] Failed en-86: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:27,292 [INFO] Processing en-152 | Attempt 1
+2026-01-02 02:13:27,321 [ERROR] Failed en-94: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:27,353 [INFO] Processing en-153 | Attempt 1
+2026-01-02 02:13:27,465 [ERROR] Failed en-93: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:27,471 [INFO] Processing en-154 | Attempt 1
+2026-01-02 02:13:27,498 [ERROR] Failed en-89: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:27,554 [INFO] Processing en-155 | Attempt 1
+2026-01-02 02:13:27,701 [ERROR] Failed en-92: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:27,710 [ERROR] Failed en-97: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:27,714 [INFO] Processing en-156 | Attempt 1
+2026-01-02 02:13:27,757 [INFO] Processing en-157 | Attempt 1
+2026-01-02 02:13:27,773 [ERROR] Failed en-88: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:27,774 [ERROR] Failed en-90: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:27,777 [INFO] Processing en-158 | Attempt 1
+2026-01-02 02:13:27,783 [INFO] Processing en-159 | Attempt 1
+2026-01-02 02:13:27,810 [ERROR] Failed en-96: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:27,815 [INFO] Processing en-160 | Attempt 1
+2026-01-02 02:13:27,909 [ERROR] Failed en-91: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:27,919 [INFO] Processing en-161 | Attempt 1
+2026-01-02 02:13:28,023 [ERROR] Failed en-95: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:28,053 [INFO] Processing en-162 | Attempt 1
+2026-01-02 02:13:28,083 [ERROR] Failed en-104: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:28,134 [INFO] Processing en-163 | Attempt 1
+2026-01-02 02:13:28,303 [ERROR] Failed en-99: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:28,326 [INFO] Processing en-164 | Attempt 1
+2026-01-02 02:13:28,573 [ERROR] Failed en-103: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:28,579 [ERROR] Failed en-100: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:28,587 [INFO] Processing en-165 | Attempt 1
+2026-01-02 02:13:28,592 [INFO] Processing en-166 | Attempt 1
+2026-01-02 02:13:28,592 [ERROR] Failed en-101: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:28,617 [INFO] Processing en-167 | Attempt 1
+2026-01-02 02:13:28,687 [ERROR] Failed en-102: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:28,687 [ERROR] Failed en-106: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:28,732 [INFO] Processing en-168 | Attempt 1
+2026-01-02 02:13:28,738 [INFO] Processing en-169 | Attempt 1
+2026-01-02 02:13:28,828 [ERROR] Failed en-98: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:28,841 [INFO] Processing en-170 | Attempt 1
+2026-01-02 02:13:28,994 [ERROR] Failed en-110: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:29,011 [INFO] Processing en-171 | Attempt 1
+2026-01-02 02:13:29,209 [ERROR] Failed en-111: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:29,243 [INFO] Processing en-172 | Attempt 1
+2026-01-02 02:13:29,405 [ERROR] Failed en-107: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:29,446 [INFO] Processing en-173 | Attempt 1
+2026-01-02 02:13:29,508 [ERROR] Failed en-115: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:29,529 [INFO] Processing en-174 | Attempt 1
+2026-01-02 02:13:29,561 [ERROR] Failed en-105: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:29,571 [ERROR] Failed en-117: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:29,616 [ERROR] Failed en-109: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:29,619 [INFO] Processing en-175 | Attempt 1
+2026-01-02 02:13:29,639 [INFO] Processing en-176 | Attempt 1
+2026-01-02 02:13:29,641 [INFO] Processing en-177 | Attempt 1
+2026-01-02 02:13:29,668 [ERROR] Failed en-108: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:29,703 [INFO] Processing en-178 | Attempt 1
+2026-01-02 02:13:29,798 [ERROR] Failed en-116: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:29,807 [ERROR] Failed en-119: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:29,856 [INFO] Processing en-179 | Attempt 1
+2026-01-02 02:13:29,862 [INFO] Processing en-180 | Attempt 1
+2026-01-02 02:13:29,886 [ERROR] Failed en-114: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:29,892 [INFO] Processing en-181 | Attempt 1
+2026-01-02 02:13:29,983 [ERROR] Failed en-112: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:30,011 [ERROR] Failed en-113: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:30,014 [INFO] Processing en-182 | Attempt 1
+2026-01-02 02:13:30,032 [ERROR] Failed en-121: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:30,060 [INFO] Processing en-183 | Attempt 1
+2026-01-02 02:13:30,141 [INFO] Processing en-184 | Attempt 1
+2026-01-02 02:13:30,246 [ERROR] Failed en-130: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:30,255 [INFO] Processing en-185 | Attempt 1
+2026-01-02 02:13:30,341 [ERROR] Failed en-122: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:30,385 [ERROR] Failed en-131: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:30,389 [INFO] Processing en-186 | Attempt 1
+2026-01-02 02:13:30,394 [ERROR] Failed en-129: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:30,400 [INFO] Processing en-187 | Attempt 1
+2026-01-02 02:13:30,402 [ERROR] Failed en-120: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:30,410 [INFO] Processing en-188 | Attempt 1
+2026-01-02 02:13:30,417 [INFO] Processing en-189 | Attempt 1
+2026-01-02 02:13:30,436 [ERROR] Failed en-125: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:30,514 [ERROR] Failed en-123: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:30,530 [INFO] Processing en-190 | Attempt 1
+2026-01-02 02:13:30,572 [ERROR] Failed en-126: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:30,569 [INFO] Processing en-191 | Attempt 1
+2026-01-02 02:13:30,646 [INFO] Processing en-192 | Attempt 1
+2026-01-02 02:13:30,662 [ERROR] Failed en-127: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:30,863 [INFO] Processing en-193 | Attempt 1
+2026-01-02 02:13:30,867 [ERROR] Failed en-124: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:30,925 [INFO] Processing en-194 | Attempt 1
+2026-01-02 02:13:31,603 [ERROR] Failed en-128: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:31,627 [INFO] Processing en-195 | Attempt 1
+2026-01-02 02:13:32,721 [ERROR] Failed en-132: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:32,731 [INFO] Processing en-196 | Attempt 1
+2026-01-02 02:13:32,732 [ERROR] Failed en-133: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:32,748 [INFO] Processing en-197 | Attempt 1
+2026-01-02 02:13:33,313 [ERROR] Failed en-134: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:33,315 [INFO] Processing en-198 | Attempt 1
+2026-01-02 02:13:33,321 [ERROR] Failed en-135: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:33,341 [INFO] Processing en-199 | Attempt 1
+2026-01-02 02:13:33,481 [ERROR] Failed en-137: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:33,488 [INFO] Processing en-200 | Attempt 1
+2026-01-02 02:13:33,535 [ERROR] Failed en-136: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:33,539 [ERROR] Failed en-139: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:33,542 [INFO] Processing en-201 | Attempt 1
+2026-01-02 02:13:33,547 [INFO] Processing en-202 | Attempt 1
+2026-01-02 02:13:33,663 [ERROR] Failed en-145: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:33,670 [INFO] Processing en-203 | Attempt 1
+2026-01-02 02:13:33,694 [ERROR] Failed en-138: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:33,698 [INFO] Processing en-204 | Attempt 1
+2026-01-02 02:13:33,835 [ERROR] Failed en-140: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:33,844 [INFO] Processing en-205 | Attempt 1
+2026-01-02 02:13:33,856 [ERROR] Failed en-142: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:33,862 [INFO] Processing en-206 | Attempt 1
+2026-01-02 02:13:33,879 [ERROR] Failed en-146: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:33,893 [INFO] Processing en-207 | Attempt 1
+2026-01-02 02:13:33,896 [ERROR] Failed en-141: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:33,913 [INFO] Processing en-208 | Attempt 1
+2026-01-02 02:13:34,058 [ERROR] Failed en-144: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:34,070 [INFO] Processing en-209 | Attempt 1
+2026-01-02 02:13:34,194 [ERROR] Failed en-143: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:34,202 [ERROR] Failed en-149: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:34,216 [INFO] Processing en-210 | Attempt 1
+2026-01-02 02:13:34,223 [INFO] Processing en-211 | Attempt 1
+2026-01-02 02:13:34,299 [ERROR] Failed en-147: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:13:34,345 [INFO] Processing en-212 | Attempt 1

@@ -34,6 +34,12 @@ def calculate_accuracy(CACHE_FILE):
             model_name = data.get('model_name', 'unknown') 
             language = data.get('language', 'unknown')
             is_solved = data.get('solved', False)
+
+            temperature = data.get('temperature', None)
+            if temperature is None:
+                model_display = model_name
+            else:
+                model_display = f"{model_name}@temp={temperature}"
             
             # Extract Configuration Details
             use_context = data.get('use_context', False)
@@ -45,7 +51,7 @@ def calculate_accuracy(CACHE_FILE):
             # Format: "gpt-4o | Context: True | Hint: shuffle | Pass@: True(3)"
             pass_str = f"True({num_pass})" if pass_at else "False"
             config_key = (
-                f"{model_name:<20} | "
+                f"{model_display:<20} | "
                 f"Ctx: {str(use_context):<5} | "
                 f"Hint: {hint_type:<13} | "
                 f"Pass@: {pass_str}"

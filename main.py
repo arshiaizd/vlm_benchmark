@@ -78,7 +78,9 @@ def load_dataset(root_path: str) -> Dict[str, List[Dict]]:
     lang_dirs = sorted(lang_dirs)
     
     for lang in lang_dirs:
-        if lang not in ["en", "pe", "cross", "ar"]:
+        # if lang not in ["en", "pe", "cross", "ar"]:
+        #     continue
+        if lang not in ["en"]:
             continue
         jsonl_path = os.path.join(root_path, lang, f"{lang}-dataset.jsonl")
         if not os.path.exists(jsonl_path):
@@ -136,7 +138,8 @@ def load_cache() -> Dict[str, Any]:
                         f"{str(data.get('use_context'))}_"
                         f"{str(data.get('hint_type'))}_"
                         f"{str(data.get('pass_at_enabled'))}_"
-                        f"{str(data.get('num_pass'))}"
+                        f"{str(data.get('num_pass'))}_"
+                        f"{str(data.get('temperature'))}"
                     )
                     if data.get('final_response') is not None:
                         cache[key] = data
@@ -347,11 +350,13 @@ def process_sample(
             "use_context": use_context,
             "pass_at_enabled": pass_at_enabled,
             "num_pass": num_pass,
+            "temperature": getattr(model, "temperature", None),
             "solved": is_correct,
             "attempts": attempts,
             "final_response": final_json or attempts[-1]["parsed"],
             "message_history": current_history
         }
+
         save_to_cache(result)
 
     except Exception as e:
@@ -362,6 +367,14 @@ def process_sample(
 # =============================================================================
 def main():
     # Init model (now containing generate_chat)
+    # Configuration
+    USE_CONTEXT = False
+    NUM_EXAMPLES = 3     
+    HINT_TYPE = "char_count" 
+    PASS_AT_ENABLED = False
+    NUM_PASS = 3
+    TEMPERATURE = 0.01
+    
     models = {
         # "gemma": GemmaAPI(),
         # "deepseek": DeepSeekAPI(),
@@ -371,19 +384,12 @@ def main():
         # "gemini-pro": GoogleVertexGemini(GoogleVertexConfig(model_name="gemini-2.5-pro")),
         # "gpt": OpenaiGPT(),
         # "llama": LlamaVision(),
-        # "qwen": Qwen3(),
-        "grok": GrokAPI(),
+        "qwen": Qwen3(),
+        # "grok": GrokAPI(temperature=TEMPERATURE),
     }
     for model in models.keys():
         model = models[model]
         MODEL_NAME = model.model_name
-        
-        # Configuration
-        USE_CONTEXT = False
-        NUM_EXAMPLES = 3     
-        HINT_TYPE = "char_count" 
-        PASS_AT_ENABLED = False
-        NUM_PASS = 3
         
         logger.info(f"Config: Model={MODEL_NAME}, Context={USE_CONTEXT}({NUM_EXAMPLES} imgs), Hint={HINT_TYPE}, Pass@={PASS_AT_ENABLED}")
 
@@ -409,7 +415,8 @@ def main():
                         f"{str(USE_CONTEXT)}_"
                         f"{str(HINT_TYPE)}_"
                         f"{str(PASS_AT_ENABLED)}_"
-                        f"{str(NUM_PASS)}"
+                        f"{str(NUM_PASS)}_"
+                        f"{str(TEMPERATURE)}"
                     )
                     
                     if key in cache:
