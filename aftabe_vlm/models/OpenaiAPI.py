@@ -25,6 +25,7 @@ class OpenaiGPT(VisionLanguageModel):
         # max_tokens: int = 1000,
         effort: str = 'none',
         timeout: int = 120,
+        temperature: Optional[float] = None,
     ):
         if api_key is None:
             api_key = os.environ.get("METIS_API_KEY") or "YOUR_FALLBACK_KEY" # Replace if needed
@@ -39,6 +40,7 @@ class OpenaiGPT(VisionLanguageModel):
         self.provider = provider
         # self.max_tokens = max_tokens
         self.timeout = timeout
+        self.temperature = temperature
 
         # Metis usually mirrors OpenAI paths directly
         # If your provider URL is different, adjust this endpoint construction
@@ -72,18 +74,20 @@ class OpenaiGPT(VisionLanguageModel):
         user_prompt: str,
         image_path: str,
         extra_metadata: Optional[Dict[str, Any]] = None,
+        temperature: Optional[float] = None,
     ) -> ModelResponse:
         """Single-turn wrapper (Legacy compatibility)"""
         # Construct a single-turn chat history
         messages = [
             {"role": "user", "text": f"{system_prompt}\n\n{user_prompt}", "image_path": image_path}
         ]
-        return self.generate_chat(messages, extra_metadata)
+        return self.generate_chat(messages, extra_metadata, temperature)
 
     def generate_chat(
         self, 
         messages: List[Dict[str, Any]], 
-        extra_metadata: Optional[Dict[str, Any]] = None
+        extra_metadata: Optional[Dict[str, Any]] = None,
+        temperature: Optional[float] = None
     ) -> ModelResponse:
         """
         Multi-turn chat generation compatible with the main.py loop.
@@ -130,6 +134,10 @@ class OpenaiGPT(VisionLanguageModel):
             "messages": openai_messages,
             # "max_tokens": self.max_tokens
         }
+
+        temp = self.temperature if temperature is None else temperature
+        if temp is not None:
+            payload["temperature"] = float(temp)
         
         # Add 'reasoning_effort' only for models that support it (like o1/gpt-4o-reasoning)
         if self.effort:

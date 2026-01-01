@@ -16,6 +16,7 @@ class GoogleVertexConfig:
     model_name: str = "gemini-2.5-flash" 
     base_url: str = "https://aiplatform.googleapis.com"
     timeout: int = 480
+    temperature: Optional[float] = None
 
 class GoogleVertexGemini(VisionLanguageModel):
     def __init__(self, config: Optional[GoogleVertexConfig] = None) -> None:
@@ -29,6 +30,7 @@ class GoogleVertexGemini(VisionLanguageModel):
         self.model_name = self.config.model_name
         self.base_url = self.config.base_url.rstrip("/")
         self.timeout = self.config.timeout
+        self.temperature = self.config.temperature
 
         self.endpoint = f"{self.base_url}/v1/publishers/google/models/{self.model_name}:generateContent"
         
@@ -58,6 +60,7 @@ class GoogleVertexGemini(VisionLanguageModel):
         user_prompt: str,
         image_path: str | Path,
         extra_metadata: Optional[Dict[str, Any]] = None,
+        temperature: Optional[float] = None,
     ) -> ModelResponse:
         """
         Single-turn generation (legacy support).
@@ -78,9 +81,19 @@ class GoogleVertexGemini(VisionLanguageModel):
             ],
         }
 
+        temp = self.temperature if temperature is None else temperature
+        if temp is not None:
+            payload["generationConfig"] = payload.get("generationConfig", {})
+            payload["generationConfig"]["temperature"] = float(temp)
+
         return self._send_request(payload, extra_metadata)
 
-    def generate_chat(self, messages: List[Dict[str, Any]], extra_metadata: Optional[Dict[str, Any]] = None) -> ModelResponse:
+    def generate_chat(
+        self,
+        messages: List[Dict[str, Any]],
+        extra_metadata: Optional[Dict[str, Any]] = None,
+        temperature: Optional[float] = None,
+    ) -> ModelResponse:
         """
         Multi-turn chat generation.
         
@@ -115,6 +128,10 @@ class GoogleVertexGemini(VisionLanguageModel):
                 # "maxOutputTokens": 1000
             }
         }
+
+        temp = self.temperature if temperature is None else temperature
+        if temp is not None:
+            payload["generationConfig"]["temperature"] = float(temp)
         
         return self._send_request(payload, extra_metadata)
 
@@ -149,4 +166,3 @@ class GoogleVertexGemini(VisionLanguageModel):
         }
         
         return ModelResponse(raw_text=text, provider_payload=provider_payload)
-
