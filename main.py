@@ -18,12 +18,14 @@ from aftabe_vlm.models.DeepSeekAPI import DeepSeekAPI
 from aftabe_vlm.models.GemmaAPI import GemmaAPI
 from aftabe_vlm.models.OpenaiAPI import OpenaiGPT
 from aftabe_vlm.models.QwenAPI import Qwen3
+from aftabe_vlm.models.GrokAPI import GrokAPI
+from aftabe_vlm.models.LlamaAPI import LlamaVision
 # --------------------------------------
 
 # --- Configuration ---
 DATASET_ROOT = "dataset"
 CACHE_FILE = "results_cache.jsonl"
-MAX_WORKERS = 8
+MAX_WORKERS = 64
 
 # Logging Setup
 logging.basicConfig(
@@ -363,12 +365,14 @@ def main():
     models = {
         # "gemma": GemmaAPI(),
         # "deepseek": DeepSeekAPI(),
-        "gemini-flash": AvalAiGemini(model="gemini-2.5-flash"),
-        "gemini-pro": AvalAiGemini(model="gemini-2.5-pro"),
+        # "gemini-flash": AvalAiGemini(model="gemini-2.5-flash"),
+        # "gemini-pro": AvalAiGemini(model="gemini-2.5-pro"),
         # "gemini-flash": GoogleVertexGemini(GoogleVertexConfig(model_name="gemini-2.5-flash")),
         # "gemini-pro": GoogleVertexGemini(GoogleVertexConfig(model_name="gemini-2.5-pro")),
-        "gpt": OpenaiGPT(),
+        # "gpt": OpenaiGPT(),
+        # "llama": LlamaVision(),
         # "qwen": Qwen3(),
+        "grok": GrokAPI(),
     }
     for model in models.keys():
         model = models[model]
@@ -377,7 +381,7 @@ def main():
         # Configuration
         USE_CONTEXT = False
         NUM_EXAMPLES = 3     
-        HINT_TYPE = "shuffle_chars" 
+        HINT_TYPE = "char_count" 
         PASS_AT_ENABLED = False
         NUM_PASS = 3
         

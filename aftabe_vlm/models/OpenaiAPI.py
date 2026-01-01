@@ -7,7 +7,7 @@ import requests
 
 # Adjust these imports to match your project structure
 # from validation.prompts_config import get_base_prompts, get_prompt_variants
-from base import VisionLanguageModel, ModelResponse
+from .base import VisionLanguageModel, ModelResponse
 
 
 class OpenaiGPT(VisionLanguageModel):

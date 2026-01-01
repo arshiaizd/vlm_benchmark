@@ -151,21 +151,21 @@ class LlamaVision(VisionLanguageModel):
         return ModelResponse(raw_text=raw_text, provider_payload=provider_payload)
 
 
-def main():
-    client = LlamaVision(
-    )
+# def main():
+#     client = LlamaVision(
+#     )
 
-    image_path = r"D:\study\agha omid\vlm_benchmark\dataset\en\en_images\1.jpg"
+#     image_path = r"D:\study\agha omid\vlm_benchmark\dataset\en\en_images\1.jpg"
 
-    resp = client.generate(
-        system_prompt="You are a helpful vision assistant.",
-        user_prompt="Describe the image in 3 bullet points.",
-        image_path=image_path,
-        max_tokens=500,
-    )
+#     resp = client.generate(
+#         system_prompt="You are a helpful vision assistant.",
+#         user_prompt="Describe the image in 3 bullet points.",
+#         image_path=image_path,
+#         max_tokens=500,
+#     )
 
-    print(resp.raw_text)
+#     print(resp.raw_text)
 
 
-if __name__ == "__main__":
-    main()
+# if __name__ == "__main__":
+#     main()

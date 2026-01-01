@@ -1,10 +1,14 @@
 import os
 import base64
+from pprint import pprint
+
 import requests
 import json
 from pathlib import Path
 from typing import Any, Dict, Optional, List
-from OpenaiAPI import OpenaiGPT
+
+from openai import OpenAI
+
 # Adjust import to match your project
 from aftabe_vlm.models.base import VisionLanguageModel, ModelResponse
 
@@ -21,9 +25,9 @@ class Qwen3(VisionLanguageModel):
 
     def __init__(
             self,
-            api_key: Optional[str] = "aa-roEXspUP5ipchJI5JdcDeew7WquYsRMSMJjkwCzRR1QCmoxz",
-            model: str = "qwen3-vl-plus",  # Updated to Qwen 3 Flagship
-            base_url: str = "https://api.avalapis.ir/v1",
+            api_key: Optional[str] = "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",
+            model: str = "qwen/qwen3-vl-235b-a22b-instruct",  # Updated to Qwen 3 Flagship
+            base_url: str = "https://openrouter.ai/api/v1",
             timeout: int = 120,
     ):
         if not api_key:
@@ -148,22 +152,53 @@ class Qwen3(VisionLanguageModel):
 
 
 
-def main():
-    client = Qwen3(
-    )
+# def main():
+#     client = Qwen3(
+#     )
 
-    image_path = "D:\\study\\agha omid\\vlm_benchmark\dataset\en\en_images\\1.jpg"
+#     image_path = "D:\\study\\agha omid\\vlm_benchmark\dataset\en\en_images\\1.jpg"
 
-    image_url = "https://picsum.photos/512" # random image
-    resp = client.generate(
-        system_prompt="You are a helpful vision assistant.",
-        user_prompt="Describe the image in 3 bullet points. also tell me about what version of GPT are you",
-        image_path=image_path,
-    )
-    print("\n=== URL IMAGE RESULT ===")
-    print(resp.raw_text)
+#     image_url = "https://picsum.photos/512" # random image
+#     resp = client.generate(
+#         system_prompt="You are a helpful vision assistant.",
+#         user_prompt="describe the picture.",
+#         image_path=image_path,
+#     )
+#     print("\n=== URL IMAGE RESULT ===")
+#     print(resp.raw_text)
 
 
-if __name__ == "__main__":
-    main()
+# api = "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"
+
+# def x():
+#     client = OpenAI(
+#         base_url="https://openrouter.ai/api/v1",
+#         api_key=api,
+#     )
+
+#     completion = client.chat.completions.create(
+#         extra_body={},
+#         model="qwen/qwen3-vl-235b-a22b-instruct",
+#         messages=[
+#             {
+#                 "role": "user",
+#                 "content": [
+#                     {
+#                         "type": "text",
+#                         "text": "What is in this image?"
+#                     },
+#                     {
+#                         "type": "image_url",
+#                         "image_url": {
+#                             "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Gfp-wisconsin-madison-the-nature-boardwalk.jpg/2560px-Gfp-wisconsin-madison-the-nature-boardwalk.jpg"
+#                         }
+#                     }
+#                 ]
+#             }
+#         ]
+#     )
+#     print(completion.choices[0].message.content)
+
+# if __name__ == "__main__":
+#     main()
 

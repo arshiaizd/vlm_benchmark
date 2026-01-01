@@ -1,71 +1,59 @@
-from __future__ import annotations
-from pathlib import Path
-from typing import Any, Dict, Optional, List
-import base64
-import os
-import requests
-import mimetypes
-from dataclasses import dataclass
-
-# Adjust imports to match your project
-from .base import VisionLanguageModel, ModelResponse
-
-
 import base64
 import mimetypes
 from pathlib import Path
 from typing import Any, Dict, Optional, List
 
 import requests
-
+from clean.prompt import get_prompt
 # Adjust import to match your project
-from openai import OpenAI
-
 from aftabe_vlm.models.base import VisionLanguageModel, ModelResponse
 
-
-class GemmaAPI(VisionLanguageModel):
+class GrokAPI(VisionLanguageModel):
     """
-    VisionLanguageModel implementation for InternVL via OpenRouter.
+    VisionLanguageModel implementation for xAI Grok (xAI API).
 
-    Common OpenRouter InternVL model ids:
-      - "opengvlab/internvl3-14b"
-      - "opengvlab/internvl3-78b"
+    Base:
+      - https://api.x.ai
+    Endpoint:
+      - /v1/chat/completions  (OpenAI-compatible)  :contentReference[oaicite:2]{index=2}
+
+    Common model ids (check your account availability):
+      - "grok-4" (reasoning + vision) :contentReference[oaicite:3]{index=3}
+      - "grok-4-fast-non-reasoning" (fast) :contentReference[oaicite:4]{index=4}
+      - "grok-4-1-fast-non-reasoning" (agentic/tooling oriented) :contentReference[oaicite:5]{index=5}
     """
 
     def __init__(
         self,
-        api_key: Optional[str] = "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",
-        model: str = "google/gemma-3-27b-it",
+        api_key: Optional[str] = "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",
+        model: str = "x-ai/grok-4.1-fast",
         base_url: str = "https://openrouter.ai/api/v1",
         timeout: int = 120,
-        # Optional but recommended by OpenRouter for analytics/leaderboards:
-        http_referer: Optional[str] = None,
-        x_title: Optional[str] = None,
+        image_detail: str = "high",  # "low" | "high" (if supported by the model)
     ):
         if not api_key:
-            raise RuntimeError("API key is required (set it via env var, don't hardcode).")
+            raise RuntimeError("API key is required (use env var XAI_API_KEY).")
 
         self.api_key = api_key
         self.model_name = model
         self.base_url = base_url.rstrip("/")
         self.timeout = timeout
+        self.image_detail = image_detail
 
-        # OpenRouter OpenAI-compatible endpoint:
-        self.endpoint = f"{self.base_url}/chat/completions"
+        # If base_url already ends with /v1, append /chat/completions, else append /v1/chat/completions
+        if self.base_url.endswith("/v1"):
+            self.endpoint = f"{self.base_url}/chat/completions"
+        else:
+            self.endpoint = f"{self.base_url}/v1/chat/completions"
 
         self.headers = {
             "Authorization": f"Bearer {self.api_key}",
             "Content-Type": "application/json",
         }
-        if http_referer:
-            self.headers["HTTP-Referer"] = http_referer
-        if x_title:
-            self.headers["X-Title"] = x_title
 
     @property
     def name(self) -> str:
-        return f"openrouter-{self.model_name}"
+        return f"xai-{self.model_name}"
 
     def _encode_image_as_data_url(self, image_path_or_url: str) -> str:
         # If it's already a URL, pass-through
@@ -119,10 +107,15 @@ class GemmaAPI(VisionLanguageModel):
             if msg.get("image_path"):
                 data_url_or_url = self._encode_image_as_data_url(msg["image_path"])
                 content_parts.append(
-                    {"type": "image_url", "image_url": {"url": data_url_or_url}}
+                    {
+                        "type": "image_url",
+                        "image_url": {
+                            "url": data_url_or_url,
+                            "detail": self.image_detail,
+                        },
+                    }
                 )
 
-            # OpenRouter expects "content" as either a string or an array of parts.
             openai_messages.append({"role": role, "content": content_parts})
 
         payload = {
@@ -138,13 +131,13 @@ class GemmaAPI(VisionLanguageModel):
                 timeout=self.timeout,
             )
             if resp.status_code != 200:
-                raise RuntimeError(f"OpenRouter Error {resp.status_code}: {resp.text}")
+                raise RuntimeError(f"xAI Error {resp.status_code}: {resp.text}")
 
             data = resp.json()
             choice = data["choices"][0]
             content = choice["message"]["content"]
 
-            # Usually a string, but keep your old fallback
+            # Usually a string, but keep fallback
             if isinstance(content, str):
                 raw_text = content
             else:
@@ -163,3 +156,31 @@ class GemmaAPI(VisionLanguageModel):
         }
         return ModelResponse(raw_text=raw_text, provider_payload=provider_payload)
 
+
+# def build_base_mode_user_text(lang: str) -> str:
+#     """
+#     EXACT base mode from your benchmark (USE_CONTEXT=False):
+#       f"{sys_prompt}\\n\\nAnalyze the image and provide the JSON solution."
+#     """
+#     sys_prompt = get_prompt(lang)
+#     return f"{sys_prompt}\n\nAnalyze the image and provide the JSON solution."
+
+
+# def main():
+
+#     client = GrokAPI()
+
+#     image_path = r"D:\study\agha omid\vlm_benchmark\dataset\en\en_images\168.jpg"
+#     lang = "en"
+
+#     # Build prompt exactly like your benchmark base mode
+#     user_text = build_base_mode_user_text(lang)
+
+#     # Option A (closest to benchmark): call generate_chat with single user msg
+#     resp = client.generate(system_prompt="", user_prompt=user_text, image_path=image_path)
+#     print(resp.raw_text)
+
+
+
+# if __name__ == "__main__":
+#     main()
