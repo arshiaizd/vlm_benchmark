@@ -2099,3 +2099,421 @@
 2026-01-02 02:13:34,223 [INFO] Processing en-211 | Attempt 1
 2026-01-02 02:13:34,299 [ERROR] Failed en-147: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
 2026-01-02 02:13:34,345 [INFO] Processing en-212 | Attempt 1
+2026-01-02 02:25:37,642 [INFO] Config: Model=qwen/qwen3-vl-235b-a22b-instruct, Context=False(3 imgs), Hint=char_count, Pass@=False
+2026-01-02 02:25:37,646 [INFO] Loaded 300 samples for language 'en'
+2026-01-02 02:25:37,653 [INFO] Language en: Using 3 examples, 297 test samples.
+2026-01-02 02:25:37,654 [INFO] Processing en-1 | Attempt 1
+2026-01-02 02:25:37,655 [INFO] Processing en-3 | Attempt 1
+2026-01-02 02:25:37,656 [INFO] Processing en-4 | Attempt 1
+2026-01-02 02:25:37,656 [INFO] Processing en-5 | Attempt 1
+2026-01-02 02:25:37,658 [INFO] Processing en-6 | Attempt 1
+2026-01-02 02:25:37,669 [INFO] Processing en-7 | Attempt 1
+2026-01-02 02:25:37,675 [INFO] Processing en-8 | Attempt 1
+2026-01-02 02:25:37,676 [INFO] Processing en-9 | Attempt 1
+2026-01-02 02:25:37,678 [INFO] Processing en-10 | Attempt 1
+2026-01-02 02:25:37,682 [INFO] Processing en-11 | Attempt 1
+2026-01-02 02:25:37,685 [INFO] Processing en-12 | Attempt 1
+2026-01-02 02:25:37,688 [INFO] Processing en-13 | Attempt 1
+2026-01-02 02:25:37,689 [INFO] Processing en-14 | Attempt 1
+2026-01-02 02:25:37,692 [INFO] Processing en-15 | Attempt 1
+2026-01-02 02:25:37,693 [INFO] Processing en-16 | Attempt 1
+2026-01-02 02:25:37,694 [INFO] Processing en-17 | Attempt 1
+2026-01-02 02:25:37,695 [INFO] Processing en-18 | Attempt 1
+2026-01-02 02:25:37,696 [INFO] Processing en-19 | Attempt 1
+2026-01-02 02:25:37,700 [INFO] Processing en-20 | Attempt 1
+2026-01-02 02:25:37,704 [INFO] Processing en-21 | Attempt 1
+2026-01-02 02:25:37,709 [INFO] Processing en-22 | Attempt 1
+2026-01-02 02:25:37,710 [INFO] Processing en-23 | Attempt 1
+2026-01-02 02:25:37,718 [INFO] Processing en-24 | Attempt 1
+2026-01-02 02:25:37,720 [INFO] Processing en-25 | Attempt 1
+2026-01-02 02:25:37,724 [INFO] Processing en-27 | Attempt 1
+2026-01-02 02:25:37,733 [INFO] Processing en-28 | Attempt 1
+2026-01-02 02:25:37,734 [INFO] Processing en-29 | Attempt 1
+2026-01-02 02:25:37,736 [INFO] Processing en-30 | Attempt 1
+2026-01-02 02:25:37,740 [INFO] Processing en-31 | Attempt 1
+2026-01-02 02:25:37,743 [INFO] Processing en-32 | Attempt 1
+2026-01-02 02:25:37,748 [INFO] Processing en-33 | Attempt 1
+2026-01-02 02:25:37,750 [INFO] Processing en-34 | Attempt 1
+2026-01-02 02:25:37,755 [INFO] Processing en-35 | Attempt 1
+2026-01-02 02:25:37,759 [INFO] Processing en-36 | Attempt 1
+2026-01-02 02:25:37,760 [INFO] Processing en-37 | Attempt 1
+2026-01-02 02:25:37,762 [INFO] Processing en-38 | Attempt 1
+2026-01-02 02:25:37,767 [INFO] Processing en-39 | Attempt 1
+2026-01-02 02:25:37,770 [INFO] Processing en-40 | Attempt 1
+2026-01-02 02:25:37,774 [INFO] Processing en-41 | Attempt 1
+2026-01-02 02:25:37,776 [INFO] Processing en-42 | Attempt 1
+2026-01-02 02:25:37,777 [INFO] Processing en-43 | Attempt 1
+2026-01-02 02:25:37,778 [INFO] Processing en-44 | Attempt 1
+2026-01-02 02:25:37,780 [INFO] Processing en-45 | Attempt 1
+2026-01-02 02:25:37,787 [INFO] Processing en-46 | Attempt 1
+2026-01-02 02:25:37,792 [INFO] Processing en-47 | Attempt 1
+2026-01-02 02:25:37,796 [INFO] Processing en-48 | Attempt 1
+2026-01-02 02:25:37,797 [INFO] Processing en-49 | Attempt 1
+2026-01-02 02:25:37,802 [INFO] Processing en-50 | Attempt 1
+2026-01-02 02:25:37,805 [INFO] Processing en-51 | Attempt 1
+2026-01-02 02:25:37,810 [INFO] Processing en-52 | Attempt 1
+2026-01-02 02:25:37,813 [INFO] Processing en-53 | Attempt 1
+2026-01-02 02:25:37,822 [INFO] Processing en-54 | Attempt 1
+2026-01-02 02:25:37,824 [INFO] Processing en-55 | Attempt 1
+2026-01-02 02:25:37,829 [INFO] Processing en-56 | Attempt 1
+2026-01-02 02:25:37,833 [INFO] Processing en-57 | Attempt 1
+2026-01-02 02:25:37,836 [INFO] Processing en-58 | Attempt 1
+2026-01-02 02:25:37,841 [INFO] Processing en-59 | Attempt 1
+2026-01-02 02:25:37,843 [INFO] Processing en-60 | Attempt 1
+2026-01-02 02:25:37,848 [INFO] Processing en-61 | Attempt 1
+2026-01-02 02:25:37,852 [INFO] Processing en-62 | Attempt 1
+2026-01-02 02:25:37,855 [INFO] Processing en-63 | Attempt 1
+2026-01-02 02:25:37,857 [INFO] Processing en-64 | Attempt 1
+2026-01-02 02:25:37,864 [INFO] Processing en-65 | Attempt 1
+2026-01-02 02:25:37,869 [INFO] Processing en-66 | Attempt 1
+2026-01-02 02:25:45,003 [ERROR] Failed en-11: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:25:45,017 [INFO] Processing en-67 | Attempt 1
+2026-01-02 02:25:45,069 [ERROR] Failed en-22: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:25:45,072 [INFO] Processing en-68 | Attempt 1
+2026-01-02 02:25:45,076 [ERROR] Failed en-57: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:25:45,079 [ERROR] Failed en-59: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:25:45,091 [INFO] Processing en-69 | Attempt 1
+2026-01-02 02:25:45,095 [INFO] Processing en-70 | Attempt 1
+2026-01-02 02:25:45,167 [ERROR] Failed en-40: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:25:45,169 [ERROR] Failed en-54: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:25:45,172 [ERROR] Failed en-58: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:25:45,177 [INFO] Processing en-71 | Attempt 1
+2026-01-02 02:25:45,179 [INFO] Processing en-72 | Attempt 1
+2026-01-02 02:25:45,182 [INFO] Processing en-73 | Attempt 1
+2026-01-02 02:25:45,252 [ERROR] Failed en-41: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:25:45,262 [INFO] Processing en-74 | Attempt 1
+2026-01-02 02:25:45,433 [ERROR] Failed en-60: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:25:45,441 [INFO] Processing en-75 | Attempt 1
+2026-01-02 02:25:45,464 [ERROR] Failed en-17: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:25:45,469 [INFO] Processing en-76 | Attempt 1
+2026-01-02 02:25:45,472 [ERROR] Failed en-13: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:25:45,476 [INFO] Processing en-77 | Attempt 1
+2026-01-02 02:25:45,510 [ERROR] Failed en-53: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:25:45,510 [ERROR] Failed en-32: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:25:45,511 [ERROR] Failed en-36: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:25:45,524 [INFO] Processing en-78 | Attempt 1
+2026-01-02 02:25:45,526 [INFO] Processing en-79 | Attempt 1
+2026-01-02 02:25:45,529 [INFO] Processing en-80 | Attempt 1
+2026-01-02 02:25:45,567 [ERROR] Failed en-18: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:25:45,571 [INFO] Processing en-81 | Attempt 1
+2026-01-02 02:25:45,591 [ERROR] Failed en-37: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:25:45,593 [INFO] Processing en-82 | Attempt 1
+2026-01-02 02:25:45,606 [ERROR] Failed en-52: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:25:45,612 [ERROR] Failed en-39: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:25:45,614 [INFO] Processing en-83 | Attempt 1
+2026-01-02 02:25:45,629 [INFO] Processing en-84 | Attempt 1
+2026-01-02 02:25:45,630 [ERROR] Failed en-14: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:25:45,658 [INFO] Processing en-85 | Attempt 1
+2026-01-02 02:25:45,670 [ERROR] Failed en-34: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:25:45,682 [INFO] Processing en-86 | Attempt 1
+2026-01-02 02:25:45,684 [ERROR] Failed en-38: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:25:45,685 [ERROR] Failed en-1: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:25:45,695 [ERROR] Failed en-19: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:25:45,702 [ERROR] Failed en-12: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:25:45,729 [INFO] Processing en-87 | Attempt 1
+2026-01-02 02:25:45,731 [INFO] Processing en-88 | Attempt 1
+2026-01-02 02:25:45,743 [ERROR] Failed en-61: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:25:45,752 [INFO] Processing en-89 | Attempt 1
+2026-01-02 02:25:45,753 [ERROR] Failed en-43: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:25:45,761 [INFO] Processing en-90 | Attempt 1
+2026-01-02 02:25:45,768 [ERROR] Failed en-21: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:25:45,768 [ERROR] Failed en-35: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:25:45,774 [INFO] Processing en-91 | Attempt 1
+2026-01-02 02:25:45,789 [ERROR] Failed en-62: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:25:45,799 [INFO] Processing en-92 | Attempt 1
+2026-01-02 02:25:45,802 [INFO] Processing en-93 | Attempt 1
+2026-01-02 02:25:45,805 [ERROR] Failed en-16: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:25:45,807 [INFO] Processing en-94 | Attempt 1
+2026-01-02 02:25:45,809 [INFO] Processing en-95 | Attempt 1
+2026-01-02 02:25:45,824 [INFO] Processing en-96 | Attempt 1
+2026-01-02 02:25:45,848 [ERROR] Failed en-56: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:25:45,851 [INFO] Processing en-97 | Attempt 1
+2026-01-02 02:25:45,879 [ERROR] Failed en-42: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:25:45,886 [INFO] Processing en-98 | Attempt 1
+2026-01-02 02:25:45,894 [ERROR] Failed en-55: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:25:45,907 [INFO] Processing en-99 | Attempt 1
+2026-01-02 02:25:45,964 [ERROR] Failed en-15: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:25:45,976 [INFO] Processing en-100 | Attempt 1
+2026-01-02 02:25:46,020 [ERROR] Failed en-20: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:25:46,028 [INFO] Processing en-101 | Attempt 1
+2026-01-02 02:25:46,080 [ERROR] Failed en-33: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:25:46,302 [INFO] Processing en-102 | Attempt 1
+2026-01-02 02:25:46,467 [ERROR] Failed en-7: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:25:46,474 [INFO] Processing en-103 | Attempt 1
+2026-01-02 02:25:46,630 [ERROR] Failed en-50: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:25:46,639 [ERROR] Failed en-51: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:25:46,648 [ERROR] Failed en-65: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:25:46,650 [ERROR] Failed en-28: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:25:46,654 [INFO] Processing en-104 | Attempt 1
+2026-01-02 02:25:46,661 [INFO] Processing en-105 | Attempt 1
+2026-01-02 02:25:46,663 [ERROR] Failed en-46: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:25:46,697 [INFO] Processing en-106 | Attempt 1
+2026-01-02 02:25:46,711 [INFO] Processing en-107 | Attempt 1
+2026-01-02 02:25:46,729 [INFO] Processing en-108 | Attempt 1
+2026-01-02 02:25:46,833 [ERROR] Failed en-5: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:25:46,842 [INFO] Processing en-109 | Attempt 1
+2026-01-02 02:25:46,851 [ERROR] Failed en-27: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:25:46,855 [INFO] Processing en-110 | Attempt 1
+2026-01-02 02:25:46,857 [ERROR] Failed en-64: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:25:46,858 [ERROR] Failed en-45: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:25:46,878 [ERROR] Failed en-29: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:25:46,888 [INFO] Processing en-111 | Attempt 1
+2026-01-02 02:25:46,902 [ERROR] Failed en-10: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:25:46,903 [ERROR] Failed en-23: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:25:46,935 [ERROR] Failed en-30: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:25:46,940 [ERROR] Failed en-66: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:25:46,943 [ERROR] Failed en-48: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:25:46,953 [ERROR] Failed en-9: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:25:46,971 [INFO] Processing en-112 | Attempt 1
+2026-01-02 02:25:46,984 [INFO] Processing en-113 | Attempt 1
+2026-01-02 02:25:47,002 [INFO] Processing en-114 | Attempt 1
+2026-01-02 02:25:47,007 [INFO] Processing en-115 | Attempt 1
+2026-01-02 02:25:47,025 [ERROR] Failed en-4: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:25:47,046 [INFO] Processing en-116 | Attempt 1
+2026-01-02 02:25:47,054 [ERROR] Failed en-47: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:25:47,066 [ERROR] Failed en-25: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:25:47,069 [INFO] Processing en-117 | Attempt 1
+2026-01-02 02:25:47,072 [ERROR] Failed en-63: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:25:47,078 [ERROR] Failed en-24: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:25:47,087 [INFO] Processing en-119 | Attempt 1
+2026-01-02 02:25:47,090 [INFO] Processing en-120 | Attempt 1
+2026-01-02 02:25:47,097 [ERROR] Failed en-49: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:25:47,098 [ERROR] Failed en-44: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:25:47,107 [ERROR] Failed en-6: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:25:47,134 [INFO] Processing en-121 | Attempt 1
+2026-01-02 02:25:47,145 [ERROR] Failed en-3: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:25:47,160 [ERROR] Failed en-8: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:25:47,179 [ERROR] Failed en-31: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:25:47,256 [INFO] Processing en-122 | Attempt 1
+2026-01-02 02:25:47,258 [INFO] Processing en-123 | Attempt 1
+2026-01-02 02:25:47,324 [INFO] Processing en-124 | Attempt 1
+2026-01-02 02:25:47,338 [INFO] Processing en-125 | Attempt 1
+2026-01-02 02:25:47,372 [INFO] Processing en-126 | Attempt 1
+2026-01-02 02:25:47,442 [INFO] Processing en-127 | Attempt 1
+2026-01-02 02:25:47,478 [INFO] Processing en-128 | Attempt 1
+2026-01-02 02:25:47,537 [INFO] Processing en-129 | Attempt 1
+2026-01-02 02:25:47,580 [INFO] Processing en-130 | Attempt 1
+2026-01-02 02:25:47,608 [INFO] Processing en-131 | Attempt 1
+2026-01-02 02:28:51,650 [INFO] Config: Model=qwen/qwen3-vl-235b-a22b-instruct, Context=False(3 imgs), Hint=char_count, Pass@=False
+2026-01-02 02:28:51,654 [INFO] Loaded 300 samples for language 'en'
+2026-01-02 02:28:51,661 [INFO] Language en: Using 3 examples, 297 test samples.
+2026-01-02 02:28:51,663 [INFO] Processing en-1 | Attempt 1
+2026-01-02 02:28:51,664 [INFO] Processing en-3 | Attempt 1
+2026-01-02 02:28:51,665 [INFO] Processing en-4 | Attempt 1
+2026-01-02 02:28:51,666 [INFO] Processing en-5 | Attempt 1
+2026-01-02 02:28:51,669 [INFO] Processing en-6 | Attempt 1
+2026-01-02 02:28:51,675 [INFO] Processing en-7 | Attempt 1
+2026-01-02 02:28:51,679 [INFO] Processing en-8 | Attempt 1
+2026-01-02 02:28:51,683 [INFO] Processing en-9 | Attempt 1
+2026-01-02 02:28:51,688 [INFO] Processing en-10 | Attempt 1
+2026-01-02 02:28:51,692 [INFO] Processing en-11 | Attempt 1
+2026-01-02 02:28:51,695 [INFO] Processing en-12 | Attempt 1
+2026-01-02 02:28:51,699 [INFO] Processing en-13 | Attempt 1
+2026-01-02 02:28:51,700 [INFO] Processing en-14 | Attempt 1
+2026-01-02 02:28:51,704 [INFO] Processing en-15 | Attempt 1
+2026-01-02 02:28:51,708 [INFO] Processing en-16 | Attempt 1
+2026-01-02 02:28:51,712 [INFO] Processing en-17 | Attempt 1
+2026-01-02 02:28:51,715 [INFO] Processing en-18 | Attempt 1
+2026-01-02 02:28:51,719 [INFO] Processing en-19 | Attempt 1
+2026-01-02 02:28:51,720 [INFO] Processing en-20 | Attempt 1
+2026-01-02 02:28:51,725 [INFO] Processing en-21 | Attempt 1
+2026-01-02 02:28:51,727 [INFO] Processing en-22 | Attempt 1
+2026-01-02 02:28:51,731 [INFO] Processing en-23 | Attempt 1
+2026-01-02 02:28:51,733 [INFO] Processing en-24 | Attempt 1
+2026-01-02 02:28:51,737 [INFO] Processing en-25 | Attempt 1
+2026-01-02 02:28:51,738 [INFO] Processing en-27 | Attempt 1
+2026-01-02 02:28:51,742 [INFO] Processing en-28 | Attempt 1
+2026-01-02 02:28:51,748 [INFO] Processing en-29 | Attempt 1
+2026-01-02 02:28:51,753 [INFO] Processing en-30 | Attempt 1
+2026-01-02 02:28:51,756 [INFO] Processing en-31 | Attempt 1
+2026-01-02 02:28:51,758 [INFO] Processing en-32 | Attempt 1
+2026-01-02 02:28:51,763 [INFO] Processing en-33 | Attempt 1
+2026-01-02 02:28:51,765 [INFO] Processing en-34 | Attempt 1
+2026-01-02 02:28:51,766 [INFO] Processing en-35 | Attempt 1
+2026-01-02 02:28:51,775 [INFO] Processing en-36 | Attempt 1
+2026-01-02 02:28:51,777 [INFO] Processing en-37 | Attempt 1
+2026-01-02 02:28:51,780 [INFO] Processing en-38 | Attempt 1
+2026-01-02 02:28:51,782 [INFO] Processing en-39 | Attempt 1
+2026-01-02 02:28:51,784 [INFO] Processing en-40 | Attempt 1
+2026-01-02 02:28:51,786 [INFO] Processing en-41 | Attempt 1
+2026-01-02 02:28:51,789 [INFO] Processing en-42 | Attempt 1
+2026-01-02 02:28:51,792 [INFO] Processing en-43 | Attempt 1
+2026-01-02 02:28:51,794 [INFO] Processing en-44 | Attempt 1
+2026-01-02 02:28:51,796 [INFO] Processing en-45 | Attempt 1
+2026-01-02 02:28:51,799 [INFO] Processing en-46 | Attempt 1
+2026-01-02 02:28:51,806 [INFO] Processing en-47 | Attempt 1
+2026-01-02 02:28:51,811 [INFO] Processing en-48 | Attempt 1
+2026-01-02 02:28:51,813 [INFO] Processing en-49 | Attempt 1
+2026-01-02 02:28:51,816 [INFO] Processing en-50 | Attempt 1
+2026-01-02 02:28:51,823 [INFO] Processing en-51 | Attempt 1
+2026-01-02 02:28:51,840 [INFO] Processing en-52 | Attempt 1
+2026-01-02 02:28:52,161 [INFO] Processing en-53 | Attempt 1
+2026-01-02 02:28:52,268 [INFO] Processing en-54 | Attempt 1
+2026-01-02 02:28:52,429 [INFO] Processing en-55 | Attempt 1
+2026-01-02 02:28:52,501 [INFO] Processing en-56 | Attempt 1
+2026-01-02 02:28:52,565 [INFO] Processing en-57 | Attempt 1
+2026-01-02 02:28:52,702 [INFO] Processing en-58 | Attempt 1
+2026-01-02 02:28:52,770 [INFO] Processing en-59 | Attempt 1
+2026-01-02 02:28:52,818 [INFO] Processing en-60 | Attempt 1
+2026-01-02 02:28:52,870 [INFO] Processing en-61 | Attempt 1
+2026-01-02 02:28:52,912 [INFO] Processing en-62 | Attempt 1
+2026-01-02 02:28:52,954 [INFO] Processing en-63 | Attempt 1
+2026-01-02 02:28:53,094 [INFO] Processing en-64 | Attempt 1
+2026-01-02 02:28:53,243 [INFO] Processing en-65 | Attempt 1
+2026-01-02 02:28:53,350 [INFO] Processing en-66 | Attempt 1
+2026-01-02 02:28:58,187 [ERROR] Failed en-34: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:28:58,193 [INFO] Processing en-67 | Attempt 1
+2026-01-02 02:28:58,277 [ERROR] Failed en-21: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:28:58,284 [INFO] Processing en-68 | Attempt 1
+2026-01-02 02:28:58,310 [ERROR] Failed en-35: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:28:58,312 [INFO] Processing en-69 | Attempt 1
+2026-01-02 02:28:58,480 [ERROR] Failed en-36: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:28:58,484 [INFO] Processing en-70 | Attempt 1
+2026-01-02 02:28:58,485 [ERROR] Failed en-41: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:28:58,492 [INFO] Processing en-71 | Attempt 1
+2026-01-02 02:28:58,531 [ERROR] Failed en-15: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:28:58,531 [ERROR] Failed en-40: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:28:58,535 [INFO] Processing en-72 | Attempt 1
+2026-01-02 02:28:58,546 [INFO] Processing en-73 | Attempt 1
+2026-01-02 02:28:58,575 [ERROR] Failed en-1: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:28:58,585 [INFO] Processing en-74 | Attempt 1
+2026-01-02 02:28:58,635 [ERROR] Failed en-14: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:28:58,640 [INFO] Processing en-75 | Attempt 1
+2026-01-02 02:28:58,677 [ERROR] Failed en-19: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:28:58,682 [ERROR] Failed en-20: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:28:58,697 [INFO] Processing en-76 | Attempt 1
+2026-01-02 02:28:58,734 [INFO] Processing en-77 | Attempt 1
+2026-01-02 02:28:58,838 [ERROR] Failed en-42: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:28:58,870 [INFO] Processing en-78 | Attempt 1
+2026-01-02 02:28:59,269 [ERROR] Failed en-39: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:28:59,320 [INFO] Processing en-79 | Attempt 1
+2026-01-02 02:28:59,539 [ERROR] Failed en-17: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:28:59,553 [INFO] Processing en-80 | Attempt 1
+2026-01-02 02:28:59,680 [ERROR] Failed en-31: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:28:59,683 [ERROR] Failed en-13: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:28:59,690 [INFO] Processing en-81 | Attempt 1
+2026-01-02 02:28:59,696 [INFO] Processing en-82 | Attempt 1
+2026-01-02 02:28:59,819 [ERROR] Failed en-38: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:28:59,825 [INFO] Processing en-83 | Attempt 1
+2026-01-02 02:28:59,936 [ERROR] Failed en-11: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:28:59,943 [ERROR] Failed en-18: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:28:59,944 [ERROR] Failed en-32: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:28:59,951 [INFO] Processing en-84 | Attempt 1
+2026-01-02 02:28:59,975 [INFO] Processing en-85 | Attempt 1
+2026-01-02 02:29:00,013 [INFO] Processing en-86 | Attempt 1
+2026-01-02 02:29:00,025 [ERROR] Failed en-12: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:29:00,059 [INFO] Processing en-87 | Attempt 1
+2026-01-02 02:29:00,060 [ERROR] Failed en-37: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:29:00,071 [ERROR] Failed en-55: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:29:00,142 [ERROR] Failed en-16: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:29:00,179 [INFO] Processing en-88 | Attempt 1
+2026-01-02 02:29:00,201 [INFO] Processing en-89 | Attempt 1
+2026-01-02 02:29:00,207 [INFO] Processing en-90 | Attempt 1
+2026-01-02 02:29:00,212 [ERROR] Failed en-54: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:29:00,223 [INFO] Processing en-91 | Attempt 1
+2026-01-02 02:29:00,232 [ERROR] Failed en-60: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:29:00,271 [ERROR] Failed en-22: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:29:00,376 [INFO] Processing en-92 | Attempt 1
+2026-01-02 02:29:00,379 [INFO] Processing en-93 | Attempt 1
+2026-01-02 02:29:00,379 [ERROR] Failed en-56: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:29:00,391 [ERROR] Failed en-33: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:29:00,396 [INFO] Processing en-94 | Attempt 1
+2026-01-02 02:29:00,427 [INFO] Processing en-95 | Attempt 1
+2026-01-02 02:29:00,462 [ERROR] Failed en-52: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:29:00,462 [ERROR] Failed en-53: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:29:00,472 [INFO] Processing en-96 | Attempt 1
+2026-01-02 02:29:00,476 [INFO] Processing en-97 | Attempt 1
+2026-01-02 02:29:00,481 [ERROR] Failed en-58: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:29:00,502 [ERROR] Failed en-9: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:29:00,587 [ERROR] Failed en-61: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:29:00,589 [ERROR] Failed en-57: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:29:00,642 [ERROR] Failed en-23: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:29:00,650 [ERROR] Failed en-62: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:29:00,651 [ERROR] Failed en-25: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:29:00,655 [ERROR] Failed en-28: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:29:00,670 [INFO] Processing en-98 | Attempt 1
+2026-01-02 02:29:00,673 [INFO] Processing en-99 | Attempt 1
+2026-01-02 02:29:00,673 [ERROR] Failed en-4: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:29:00,675 [ERROR] Failed en-51: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:29:00,679 [INFO] Processing en-100 | Attempt 1
+2026-01-02 02:29:00,687 [ERROR] Failed en-10: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:29:00,691 [INFO] Processing en-101 | Attempt 1
+2026-01-02 02:29:00,693 [INFO] Processing en-102 | Attempt 1
+2026-01-02 02:29:00,717 [INFO] Processing en-103 | Attempt 1
+2026-01-02 02:29:00,739 [INFO] Processing en-104 | Attempt 1
+2026-01-02 02:29:00,749 [ERROR] Failed en-43: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:29:00,752 [INFO] Processing en-105 | Attempt 1
+2026-01-02 02:29:00,767 [INFO] Processing en-106 | Attempt 1
+2026-01-02 02:29:00,801 [INFO] Processing en-107 | Attempt 1
+2026-01-02 02:29:00,859 [ERROR] Failed en-6: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:29:00,859 [ERROR] Failed en-59: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:29:00,866 [INFO] Processing en-108 | Attempt 1
+2026-01-02 02:29:00,953 [ERROR] Failed en-3: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:29:00,964 [ERROR] Failed en-7: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:29:01,024 [ERROR] Failed en-30: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:29:01,066 [ERROR] Failed en-27: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:29:01,074 [INFO] Processing en-109 | Attempt 1
+2026-01-02 02:29:01,108 [ERROR] Failed en-29: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:29:01,109 [ERROR] Failed en-24: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:29:01,110 [ERROR] Failed en-44: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:29:01,144 [ERROR] Failed en-5: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:29:01,147 [INFO] Processing en-110 | Attempt 1
+2026-01-02 02:29:01,217 [ERROR] Failed en-46: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:29:01,224 [ERROR] Failed en-8: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:29:01,232 [INFO] Processing en-111 | Attempt 1
+2026-01-02 02:29:01,290 [INFO] Processing en-112 | Attempt 1
+2026-01-02 02:29:01,293 [INFO] Processing en-113 | Attempt 1
+2026-01-02 02:29:01,313 [ERROR] Failed en-49: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:29:01,324 [INFO] Processing en-114 | Attempt 1
+2026-01-02 02:29:01,328 [ERROR] Failed en-48: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:29:01,340 [INFO] Processing en-115 | Attempt 1
+2026-01-02 02:29:01,344 [INFO] Processing en-116 | Attempt 1
+2026-01-02 02:29:01,365 [INFO] Processing en-117 | Attempt 1
+2026-01-02 02:29:01,376 [ERROR] Failed en-47: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:29:01,395 [INFO] Processing en-119 | Attempt 1
+2026-01-02 02:29:01,407 [INFO] Processing en-120 | Attempt 1
+2026-01-02 02:29:01,408 [ERROR] Failed en-45: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:29:01,411 [INFO] Processing en-121 | Attempt 1
+2026-01-02 02:29:01,437 [ERROR] Failed en-50: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:29:01,438 [ERROR] Failed en-63: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:29:01,447 [INFO] Processing en-122 | Attempt 1
+2026-01-02 02:29:01,466 [INFO] Processing en-123 | Attempt 1
+2026-01-02 02:29:01,471 [INFO] Processing en-124 | Attempt 1
+2026-01-02 02:29:01,502 [ERROR] Failed en-64: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:29:01,606 [INFO] Processing en-125 | Attempt 1
+2026-01-02 02:29:01,652 [INFO] Processing en-126 | Attempt 1
+2026-01-02 02:29:01,734 [INFO] Processing en-127 | Attempt 1
+2026-01-02 02:29:01,756 [ERROR] Failed en-65: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:29:01,855 [INFO] Processing en-128 | Attempt 1
+2026-01-02 02:29:01,870 [ERROR] Failed en-66: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:29:02,000 [INFO] Processing en-129 | Attempt 1
+2026-01-02 02:29:02,154 [INFO] Processing en-130 | Attempt 1
+2026-01-02 02:29:02,284 [INFO] Processing en-131 | Attempt 1
+2026-01-02 02:29:05,673 [ERROR] Failed en-68: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:29:05,695 [INFO] Processing en-132 | Attempt 1
+2026-01-02 02:29:05,799 [ERROR] Failed en-67: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:29:05,816 [INFO] Processing en-133 | Attempt 1
+2026-01-02 02:29:05,817 [ERROR] Failed en-72: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:29:05,821 [INFO] Processing en-134 | Attempt 1
+2026-01-02 02:29:05,928 [ERROR] Failed en-73: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:29:05,948 [ERROR] Failed en-69: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:29:05,956 [INFO] Processing en-135 | Attempt 1
+2026-01-02 02:29:05,964 [INFO] Processing en-136 | Attempt 1
+2026-01-02 02:29:06,029 [ERROR] Failed en-70: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:29:06,042 [INFO] Processing en-137 | Attempt 1
+2026-01-02 02:29:06,052 [ERROR] Failed en-74: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:29:06,089 [INFO] Processing en-138 | Attempt 1
+2026-01-02 02:29:06,124 [ERROR] Failed en-76: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:29:06,135 [INFO] Processing en-139 | Attempt 1
+2026-01-02 02:29:06,432 [ERROR] Failed en-77: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:29:06,446 [ERROR] Failed en-79: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:29:06,452 [INFO] Processing en-140 | Attempt 1
+2026-01-02 02:29:06,461 [INFO] Processing en-141 | Attempt 1
+2026-01-02 02:29:06,476 [ERROR] Failed en-78: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:29:06,477 [ERROR] Failed en-71: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:29:06,482 [INFO] Processing en-142 | Attempt 1
+2026-01-02 02:29:06,489 [INFO] Processing en-143 | Attempt 1
+2026-01-02 02:29:06,694 [ERROR] Failed en-75: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:29:06,703 [INFO] Processing en-144 | Attempt 1
+2026-01-02 02:29:06,822 [ERROR] Failed en-80: Request Failed: AvalAI Qwen 3 Error 401: {"error":{"message":"User not found.","code":401}}
+2026-01-02 02:29:06,848 [INFO] Processing en-145 | Attempt 1

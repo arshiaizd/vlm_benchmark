@@ -383,8 +383,8 @@ def main():
         # "gemini-flash": GoogleVertexGemini(GoogleVertexConfig(model_name="gemini-2.5-flash")),
         # "gemini-pro": GoogleVertexGemini(GoogleVertexConfig(model_name="gemini-2.5-pro")),
         # "gpt": OpenaiGPT(),
-        # "llama": LlamaVision(),
-        "qwen": Qwen3(),
+        "llama": LlamaVision(temperature=),
+        # "qwen": Qwen3(),
         # "grok": GrokAPI(temperature=TEMPERATURE),
     }
     for model in models.keys():
