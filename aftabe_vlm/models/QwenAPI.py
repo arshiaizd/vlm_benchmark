@@ -25,7 +25,7 @@ class Qwen3(VisionLanguageModel):
 
     def __init__(
             self,
-            api_key: Optional[str] = "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",
+            api_key: Optional[str] = "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",
             model: str = "qwen/qwen3-vl-235b-a22b-instruct",  # Updated to Qwen 3 Flagship
             base_url: str = "https://openrouter.ai/api/v1",
             timeout: int = 120,

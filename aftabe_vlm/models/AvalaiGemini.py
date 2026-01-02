@@ -20,6 +20,7 @@ class AvalAiGemini(VisionLanguageModel):
         model: str = "gemini-2.5-flash", # Default to a Gemini model supported by AvalAI
         base_url: str = "https://api.avalapis.ir/v1",
         timeout: int = 480,
+        temperature: Optional[float] = None,
     ):
         if api_key is None:
             api_key = os.environ.get("METIS_API_KEY") or "YOUR_FALLBACK_KEY"
@@ -31,6 +32,7 @@ class AvalAiGemini(VisionLanguageModel):
         self.model_name = model
         self.base_url = base_url.rstrip("/")
         self.timeout = timeout
+        self.temperature = temperature
 
         # AvalAI uses the standard OpenAI chat completions endpoint
         if self.base_url.endswith("/v1"):
@@ -64,17 +66,19 @@ class AvalAiGemini(VisionLanguageModel):
         user_prompt: str,
         image_path: str,
         extra_metadata: Optional[Dict[str, Any]] = None,
+        temperature: Optional[float] = None,
     ) -> ModelResponse:
         """Single-turn generation wrapper."""
         messages = [
             {"role": "user", "text": f"{system_prompt}\n\n{user_prompt}", "image_path": image_path}
         ]
-        return self.generate_chat(messages, extra_metadata)
+        return self.generate_chat(messages, extra_metadata, temperature)
 
     def generate_chat(
         self, 
         messages: List[Dict[str, Any]], 
-        extra_metadata: Optional[Dict[str, Any]] = None
+        extra_metadata: Optional[Dict[str, Any]] = None,
+        temperature: Optional[float] = None
     ) -> ModelResponse:
         """
         Multi-turn chat generation.
@@ -113,6 +117,10 @@ class AvalAiGemini(VisionLanguageModel):
             "messages": openai_messages,
             # "stream": False
         }
+
+        temp = self.temperature if temperature is None else temperature
+        if temp is not None:
+            payload["temperature"] = float(temp)
         
         
         try:

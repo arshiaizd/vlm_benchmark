@@ -25,7 +25,7 @@ from aftabe_vlm.models.LlamaAPI import LlamaVision
 # --- Configuration ---
 DATASET_ROOT = "dataset"
 CACHE_FILE = "results_cache.jsonl"
-MAX_WORKERS = 64
+MAX_WORKERS = 8
 
 # Logging Setup
 logging.basicConfig(
@@ -368,7 +368,7 @@ def process_sample(
 def main():
     # Init model (now containing generate_chat)
     # Configuration
-    USE_CONTEXT = False
+    USE_CONTEXT = True
     NUM_EXAMPLES = 3     
     HINT_TYPE = "char_count" 
     PASS_AT_ENABLED = False
@@ -379,12 +379,12 @@ def main():
         # "gemma": GemmaAPI(),
         # "deepseek": DeepSeekAPI(),
         # "gemini-flash": AvalAiGemini(model="gemini-2.5-flash"),
-        # "gemini-pro": AvalAiGemini(model="gemini-2.5-pro"),
+        "gemini-pro": AvalAiGemini(model="gemini-2.5-pro", temperature=TEMPERATURE),
         # "gemini-flash": GoogleVertexGemini(GoogleVertexConfig(model_name="gemini-2.5-flash")),
-        # "gemini-pro": GoogleVertexGemini(GoogleVertexConfig(model_name="gemini-2.5-pro")),
+        # "gemini-pro": GoogleVertexGemini(GoogleVertexConfig(model_name="gemini-2.5-pro", temperature=TEMPERATURE)),
         # "gpt": OpenaiGPT(),
-        "llama": LlamaVision(temperature=),
-        # "qwen": Qwen3(),
+        # "llama": LlamaVision(temperature=TEMPERATURE),
+        # "qwen": Qwen3(temperature=TEMPERATURE),
         # "grok": GrokAPI(temperature=TEMPERATURE),
     }
     for model in models.keys():
